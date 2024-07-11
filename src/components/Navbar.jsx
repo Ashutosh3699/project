@@ -10,7 +10,7 @@ const Navbar = () => {
         <img src='' alt='image'  />
     </NavLink>
     </div>
-    <ul  className='flex gap-6 '>
+    <ul  className='flex gap-6 text-lg'>
         <li>
             <NavLink  to={"/about-us"}>
                 About-us
