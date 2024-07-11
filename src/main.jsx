@@ -25,39 +25,39 @@ const router = createBrowserRouter([
         element: <Home/>
       },
       {
-        path: "about-us",
+        path: "/about-us",
         element: <AboutUS/>
       },
       {
-        path: "blogs",
+        path: "/blogs",
         element: <Blogs/>
       },
       {
-        path: "contact-us",
+        path: "/contact-us",
         element: <ContactUs/>
       },
       {
-        path: "career",
+        path: "/career",
         element: <Career/>
       },
       {
-        path: "our-field",
+        path: "/our-field",
         element: <Ourfield/>
       },
       {
-        path: "partnership",
+        path: "/partnership",
         element: <Partnership/>
       },
       {
-        path: "stores",
+        path: "/stores",
         element: <Stores/>
       },
       {
-        path: "login",
+        path: "/login",
         element: <Login/>
       },
       {
-        path: "sign-up",
+        path: "/sign-up",
         element: <SignUp/>
       }
     ],

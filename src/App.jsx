@@ -8,7 +8,7 @@ function App() {
   return (
   
     <div className="w-full h-screen overflow-x-hidden overflow-y-auto">
-    <div  className="w-full px-4  py-5">
+    <div  className="w-full ">
       <Navbar/>
     </div>
 
