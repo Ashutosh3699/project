@@ -5,6 +5,7 @@ import bgImage3 from  '../../assets/outexp3.png';
 import { FaChevronRight } from "react-icons/fa";
 
 const OurExploration = () => {
+
   return (
     <div className='w-full relative h-full  opacity-90  py-5 ' >
             <h3 className='flex  justify-center text-3xl pt-4  font-bold  text-slate-500'>Our Exploration</h3>
