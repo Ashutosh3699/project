@@ -7,10 +7,6 @@ const Navbar = () => {
     const [show, setShow] = useState("hidden");
     const [color, setColor] = useState("bg-regal-blue");
 
-    const changeBackground = () =>{
-        console.log(window.scrollY);
-    }
-
     function showFunction(){
 
         if(show === "hidden"){
@@ -21,10 +17,9 @@ const Navbar = () => {
         }
     }
 
-    window.addEventListener('scroll', changeBackground);
     
   return (
-    <div className={`w-full flex justify-between lg:justify-around items-center ${color}  text-white   px-4  py-5 `}  >
+    <div className={`w-full flex justify-between lg:justify-around items-center ${color} opacity-95  text-white   px-4  py-5 `}  >
     
     <div>
     <NavLink  to={'/'}>
