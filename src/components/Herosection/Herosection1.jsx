@@ -4,7 +4,7 @@ import "./herosection.css";
 
 const Herosection1 = () => {
   return (
-    <div>
+    <div className='h-full'>
       <img  src={bgImage} className='w-full h-full object-cover  hero-animation' />
     </div>
   )
