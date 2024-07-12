@@ -24,6 +24,8 @@ const Navbar = () => {
         <img src='' alt='image'  />
     </NavLink>
     </div>
+
+    {/* for mobile */}
     <div  className=' flex lg:hidden relative'  onClick={showFunction}>
         <GiHamburgerMenu />
         <ul  className={`${show} flex-col  gap-3 absolute top-4 right-0 bg-blue-color  text-md  cursor-pointer`}>

@@ -1,5 +1,5 @@
 import React from 'react'
-import Herosection1 from '../components/Herosection1';
+import Herosection1 from '../components/Herosection/Herosection1';
 import { FaChevronRight } from "react-icons/fa";
 import { FaChevronLeft } from "react-icons/fa";
 
