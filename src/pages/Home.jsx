@@ -23,13 +23,13 @@ const Home = () => {
                 }
             </div>
             <div className='absolute z-10  text-4xl  top-1/2  left-10  cursor-pointer bg-black opacity-40 rounded-full 
-            flex justify-center items-center px-3 py-3  text-white'
+            flex justify-center items-center px-3 py-3  text-white  hover:animate-bounce'
             onClick={() => {setSlide(slide === 1 ? (3): (slide-1))}}
             >
                 <FaChevronLeft />
             </div>
             <div className='absolute z-10  text-4xl  top-1/2  right-10  cursor-pointer bg-black opacity-40 rounded-full 
-            flex justify-center items-center px-3 py-3  text-white'
+            flex justify-center items-center px-3 py-3  text-white hover:animate-bounce'
             onClick={() => {setSlide(slide === 3 ? (1): (slide+1))}}
             >
                 <FaChevronRight/> 
