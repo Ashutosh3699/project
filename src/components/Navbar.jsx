@@ -1,10 +1,15 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import { NavLink } from 'react-router-dom';
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
 
     const [show, setShow] = useState("hidden");
+    const [color, setColor] = useState("bg-regal-blue");
+
+    const changeBackground = () =>{
+        console.log(window.scrollY);
+    }
 
     function showFunction(){
 
@@ -16,8 +21,10 @@ const Navbar = () => {
         }
     }
 
+    window.addEventListener('scroll', changeBackground);
+    
   return (
-    <div className='w-full flex justify-between lg:justify-around items-center bg-regal-blue text-white opacity-80  px-4  py-5'>
+    <div className={`w-full flex justify-between lg:justify-around items-center ${color}  text-white   px-4  py-5 `}  >
     
     <div>
     <NavLink  to={'/'}>
@@ -71,7 +78,7 @@ const Navbar = () => {
     <ul  className='lg:flex gap-6 text-lg hidden  '>
         <li className='cursor-pointer'>
             <NavLink  to={"/about-us"}>
-                About-us
+                About us
             </NavLink>
         </li>
         <li>
@@ -81,7 +88,7 @@ const Navbar = () => {
         </li>
         <li>
             <NavLink  to={"/stores"}>
-                Stores
+                Products
             </NavLink>
         </li>
         <li>

@@ -3,6 +3,7 @@ import Herosection1 from '../components/Herosection/Herosection1';
 import { FaChevronRight } from "react-icons/fa";
 import { FaChevronLeft } from "react-icons/fa";
 import Weprovide from '../components/Herosection/Weprovide';
+import OurExploration from '../components/ourexploration/OurExploration';
 
 const Home = () => {
   return (
@@ -22,6 +23,10 @@ const Home = () => {
 
         <div className=' w-full '>
             <Weprovide/>
+        </div>
+
+        <div>
+          <OurExploration/>
         </div>
         
     
