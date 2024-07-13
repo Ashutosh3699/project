@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import Herosection1 from '../components/Herosection/Herosection1';
 import { FaChevronRight } from "react-icons/fa";
 import { FaChevronLeft } from "react-icons/fa";
-import Weprovide from '../components/Herosection/Weprovide';
+import Weprovide from '../components/WhatWeProvide/Weprovide';
 import OurExploration from '../components/ourexploration/OurExploration';
 import Herosection2 from '../components/Herosection/Herosection2';
 import Herosection3 from '../components/Herosection/Herosection3';
+import OurClient from '../components/OurClient/OurClient';
 
 const Home = () => {
 
@@ -15,6 +16,7 @@ const Home = () => {
   return (
     <div  className='w-full  '>
 
+        {/* hero-section */}
         <div className=' relative  overflow-hidden   w-full'>
             <div  className='z-0 duration-300'>
 
@@ -36,13 +38,25 @@ const Home = () => {
             </div>
         </div>
 
+          {/* What we provide */}
         <div className=' w-full '>
             <Weprovide/>
         </div>
 
+         {/* our expolartion */}
         <div>
           <OurExploration/>
         </div>
+
+        {/* content here left */}
+        <div className='w-full border h-4  flex justify-center items-center py-4'>
+                Content left here  to do .....
+        </div>
+
+        {/* Client section */}
+        <OurClient/>
+
+        
         
     
     </div>
