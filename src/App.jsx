@@ -1,7 +1,7 @@
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/Navbar";
 import {Outlet} from  "react-router-dom";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
 
 function App() {

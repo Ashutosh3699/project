@@ -1,4 +1,5 @@
 import React from 'react'
+import Review from './Review'
 
 const OurClient = () => {
 
@@ -51,7 +52,7 @@ const OurClient = () => {
                 <h2 className='text-xl text-slate-400  font-bold'>Reviews</h2>
 
                 <div>
-                    {/* reviews */}
+                    <Review/>
                 </div>
             </div>
 

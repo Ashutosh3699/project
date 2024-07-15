@@ -10,6 +10,7 @@ export default {
 
         'regal-blue': '#002D4E',
         'blue-color':  '#40BAFF',
+        'gray-bg': '#575050',
         
       },
     },
