@@ -3,6 +3,7 @@ import React from 'react';
 import image1 from "../assets/image1.png";
 import AboutUsHero from '../components/About us/AboutUsHero';
 import OurValue from '../components/About us/OurValue';
+import Mission from '../components/About us/Mission';
 
 const AboutUS = () => {
   return (
@@ -23,6 +24,8 @@ const AboutUS = () => {
         <AboutUsHero/>
 
         <OurValue/>
+
+        <Mission/>
     
     </div>
   )
