@@ -31,7 +31,7 @@ const Navbar = () => {
     // console.log(ishover)
     
   return (
-    <div className={`w-full flex justify-between lg:justify-around items-center ${color} opacity-95  text-white   px-4  py-5 `}  >
+    <div className={`w-full flex justify-between lg:justify-around items-center ${color} opacity-95  text-white   px-4  py-5  `}  >
     
     <div>
     <NavLink  to={'/'}>
