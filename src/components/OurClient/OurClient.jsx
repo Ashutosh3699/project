@@ -51,9 +51,10 @@ const OurClient = () => {
             <div className='flex flex-wrap gap-x-6 w-2/3 justify-center  mt-2 mb-4 gap-y-4'>
                 <h2 className='text-xl text-slate-400  font-bold'>Reviews</h2>
 
-                <div>
+
                     <Review/>
-                </div>
+
+            
             </div>
 
         </div>

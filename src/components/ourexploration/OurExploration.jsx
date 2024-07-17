@@ -1,7 +1,7 @@
 import React from 'react';
-import bgImage1 from  '../../assets/outexp1.png';
-import bgImage2 from  '../../assets/outexp2.png';
-import bgImage3 from  '../../assets/outexp3.png';
+import bgImage1 from  '../../assets/outexp6.png';
+import bgImage2 from  '../../assets/outexp4.png';
+import bgImage3 from  '../../assets/outexp5.png';
 import { FaChevronRight } from "react-icons/fa";
 
 const OurExploration = () => {
