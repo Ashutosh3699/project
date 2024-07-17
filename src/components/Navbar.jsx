@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react'
+import React,{useState} from 'react'
 import { NavLink } from 'react-router-dom';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaRegUser } from "react-icons/fa";
@@ -33,7 +33,7 @@ const Navbar = () => {
     // console.log(ishover)
     
   return (
-    <div className={`w-full flex justify-between lg:justify-around items-center ${color} opacity-95  text-white   px-4  py-5  `}  >
+    <div className={`w-full flex justify-between lg:justify-around items-center ${color}   text-white   px-4  py-5  `}  >
     
     <div>
     <NavLink  to={'/'}>
