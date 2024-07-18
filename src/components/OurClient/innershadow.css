@@ -2,3 +2,10 @@
 
     box-shadow: inset gray 0px 0px 30px -15px; 
   }
+
+  #slider::-webkit-scrollbar {
+    width: 2px;
+    display: none;
+  }
+   
+

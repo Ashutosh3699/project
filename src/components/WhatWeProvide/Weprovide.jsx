@@ -1,5 +1,6 @@
 import React from 'react';
-import bgImage from "../../assets/blackBg.png"
+import bgImage from "../../assets/blackBg.png";
+
 
 const Weprovide = () => {
   return (
@@ -10,60 +11,60 @@ const Weprovide = () => {
 
             <div className='w-[50px] h-[7px]  bg-gradient-to-r from-cyan-500 to-blue-500  mx-auto mt-2' ></div>
 
-            <div className='flex flex-wrap gap-7 justify-around  mx-20  mt-8  py-6'>
-                <div className='w-[250px]  h-[150px] bg-slate-800  overflow-hidden rounded-lg'>
-                    <img  src='' alt='image1'/>
-                    <div className='w-[60%] text-sm  font-light mx-auto '>
+            <div className='flex flex-wrap gap-7 justify-around mx-5  md:mx-20  mt-8  py-6'>
+                <div className='w-[250px]  h-[150px]  bg-black opacity-60  overflow-hidden rounded-lg'>
+                    <img  src="" alt='image1'/>
+                    <div className='w-full md:w-[60%] text-sm  font-light mx-auto '>
                             Design, Manufacturing & Assembly of Ready to Fly Drones
                     </div>
 
                 </div>
-                <div className='w-[250px]  h-[150px] bg-slate-800  overflow-hidden rounded-lg'>
+                <div className='w-[250px]  h-[150px] bg-black opacity-60  overflow-hidden rounded-lg'>
                     <img  src='' alt='image1'/>
                     <div className='w-[60%] text-sm  font-light mx-auto '>
-                            Design, Manufacturing & Assembly of Ready to Fly Drones
+                     LiDAR (Light Detection and Ranging Services)
                     </div>
 
                 </div>
-                <div className='w-[250px]  h-[150px] bg-slate-800  overflow-hidden rounded-lg'>
+                <div className='w-[250px]  h-[150px] bg-black opacity-60  overflow-hidden rounded-lg'>
                     <img  src='' alt='image1'/>
                     <div className='w-[60%] text-sm  font-light mx-auto '>
-                            Design, Manufacturing & Assembly of Ready to Fly Drones
+                    Cutting Edge UAV Imagery Processing
                     </div>
 
                 </div>
-                <div className='w-[250px]  h-[150px] bg-slate-800  overflow-hidden rounded-lg'>
+                <div className='w-[250px]  h-[150px] bg-black opacity-60  overflow-hidden rounded-lg'>
                     <img  src='' alt='image1'/>
                     <div className='w-[60%] text-sm  font-light mx-auto '>
-                            Design, Manufacturing & Assembly of Ready to Fly Drones
+                    Extremely Accurate Land Survey Services
                     </div>
 
                 </div>
-                <div className='w-[250px]  h-[150px] bg-slate-800  overflow-hidden rounded-lg'>
+                <div className='w-[250px]  h-[150px] bg-black opacity-60  overflow-hidden rounded-lg'>
                     <img  src='' alt='image1'/>
                     <div className='w-[60%] text-sm  font-light mx-auto '>
-                            Design, Manufacturing & Assembly of Ready to Fly Drones
+                    Industry Leading Photogrammetric Services
                     </div>
 
                 </div>
-                <div className='w-[250px]  h-[150px] bg-slate-800  overflow-hidden rounded-lg'>
+                <div className='w-[250px]  h-[150px] bg-black opacity-60  overflow-hidden rounded-lg'>
                     <img  src='' alt='image1'/>
                     <div className='w-[60%] text-sm  font-light mx-auto '>
-                            Design, Manufacturing & Assembly of Ready to Fly Drones
+                    Advanced Architectural Service
                     </div>
 
                 </div>
-                <div className='w-[250px]  h-[150px] bg-slate-800  overflow-hidden rounded-lg'>
+                <div className='w-[250px]  h-[150px] bg-black opacity-60  overflow-hidden rounded-lg'>
                     <img  src='' alt='image1'/>
                     <div className='w-[60%] text-sm  font-light mx-auto '>
-                            Design, Manufacturing & Assembly of Ready to Fly Drones
+                    Geographic Information System
                     </div>
 
                 </div>
-                <div className='w-[250px]  h-[150px] bg-slate-800  overflow-hidden rounded-lg'>
+                <div className='w-[250px]  h-[150px] bg-black opacity-60  overflow-hidden rounded-lg'>
                     <img  src='' alt='image1'/>
                     <div className='w-[60%] text-sm  font-light mx-auto '>
-                            Design, Manufacturing & Assembly of Ready to Fly Drones
+                    Crop Health Analysis
                     </div>
 
                 </div>

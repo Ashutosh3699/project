@@ -146,37 +146,33 @@ const Review = () => {
 
     ];
 
-    const [shift,setShift] = useState(0);
 
     function leftFunc (){
-      if(shift <= 0){
-        setShift(0);
-      }
-      else{
-        setShift(shift-200);
-      }
+      
+      var slider = document.getElementById('slider');
+      slider.scrollLeft = slider.scrollLeft-200;
+
     }
 
     function rightFunc(){
-      if(shift >= 3200){
-        setShift(3200);
-      }
-      else{
-        setShift(shift+200);
-      }
+     
+      var slider = document.getElementById('slider');
+      slider.scrollLeft = slider.scrollLeft+200;
     }
-    console.log(shift);
+
   return (
     
     <div className='w-full relative'>
     
     <div className=' w-full relative  overflow-hidden inner-shadow rounded-lg'>
 
-        <div className= {`w-full  flex gap-4 relative  right-[${shift}px] duration-300`}>
+        <div 
+        id='slider'
+        className= {`w-full  flex gap-4 relative overflow-x-scroll scroll scroll-smooth duration-300  select-none`}>
               {
                     obj.map((person,index) => {
                       return(
-                        <div key={index} className='flex flex-col gap-3 px-4 py-4  '>
+                        <div key={index} className='flex flex-col gap-3 px-4 py-4 border-2 '>
                           <div>{person.name}</div>
                           <div>
                             <img src={person.logo} className='h-[50px] w-[50px] rounded-full'/>
@@ -196,18 +192,15 @@ const Review = () => {
               }
         </div>
 
-      {/* <div  className='absolute z-5 top-0 left-0  cursor-pointer bg-white h-full
-            flex justify-center items-center w-[100px]  text-white '></div>
-      <div  className='absolute z-5   top-0  -right-10  cursor-pointer bg-blue-400   h-full
-            flex justify-center items-center w-[100px]  text-white '> </div> */}
+
     </div>
 
-          <div onClick={leftFunc} className='absolute z-20  text-4xl  top-1/2  -left-20  cursor-pointer bg-black opacity-40 rounded-full 
-            flex justify-center items-center px-3 py-3  text-white '>
+          <div onClick={leftFunc} className='absolute z-20  text-4xl  top-1/2  -left-20  cursor-pointer  
+            flex justify-center items-center  text-gray-600 hover:opacity-50 duration-300  '>
             <FaChevronLeft />
           </div>
-          <div onClick={rightFunc} className='absolute z-10  text-4xl  top-1/2  -right-20  cursor-pointer bg-black opacity-40 rounded-full 
-            flex justify-center items-center px-3 py-3  text-white '>
+          <div onClick={rightFunc} className='absolute z-10  text-4xl  top-1/2  -right-20  cursor-pointer
+            flex justify-center items-center  text-gray-600 hover:opacity-50 duration-300 '>
             <FaChevronRight/> 
           </div>
 
