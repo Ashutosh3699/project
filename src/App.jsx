@@ -29,7 +29,7 @@ function App() {
   return (
   
     <div className="w-full h-screen overflow-x-hidden overflow-y-auto relative">
-    <div  className="w-full  z-10  sticky top-0  "
+    <div  className="w-full  z-50  sticky top-0  "
     //  style={{"backgroundColor":color}}
     >
       <Navbar/>

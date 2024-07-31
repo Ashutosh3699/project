@@ -150,14 +150,14 @@ const Review = () => {
     function leftFunc (){
       
       var slider = document.getElementById('slider');
-      slider.scrollLeft = slider.scrollLeft-200;
+      slider.scrollLeft = slider.scrollLeft-500;
 
     }
 
     function rightFunc(){
      
       var slider = document.getElementById('slider');
-      slider.scrollLeft = slider.scrollLeft+200;
+      slider.scrollLeft = slider.scrollLeft+500;
     }
 
   return (

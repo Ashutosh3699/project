@@ -7,7 +7,7 @@ const OurValue = () => {
 
          <div className='w-full border  flex flex-wrap gap-7  rounded-xl  px-8  py-10 bg-[#F6F6F6]  shadow-inner  justify-center items-center'>
 
-                <div className='w-1/6  rounded-xl  bg-[#606060] flex flex-col px-4  items-center py-8  text-white  shadow-inner shadow-gray-300'>
+                <div className='md:w-[200px]  rounded-xl  bg-[#606060] flex flex-col px-4  items-center py-8  text-white  shadow-inner shadow-gray-300'>
                     <h1  className=' font-semibold text-lg mb-4'>
                     Absolute Reliability
                     </h1>
@@ -17,7 +17,7 @@ const OurValue = () => {
                     </p>
                 </div>
 
-                <div className='w-1/6  rounded-xl  bg-[#606060] flex flex-col px-4  items-center py-8  text-white  shadow-inner shadow-gray-300'>
+                <div className='md:w-[200px]   rounded-xl  bg-[#606060] flex flex-col px-4  items-center py-8  text-white  shadow-inner shadow-gray-300'>
                     <h1  className=' font-semibold text-lg mb-4'>
                     Absolute Reliability
                     </h1>
@@ -27,7 +27,7 @@ const OurValue = () => {
                     </p>
                 </div>
 
-                <div className='w-1/6  rounded-xl  bg-[#606060] flex flex-col px-4  items-center py-8  shadow-inner shadow-gray-300  text-white'>
+                <div className='md:w-[200px]   rounded-xl  bg-[#606060] flex flex-col px-4  items-center py-8  shadow-inner shadow-gray-300  text-white'>
                     <h1  className=' font-semibold text-lg mb-4'>
                     Absolute Reliability
                     </h1>
@@ -37,7 +37,7 @@ const OurValue = () => {
                     </p>
                 </div>
 
-                <div className='w-1/6  rounded-xl  bg-[#606060] flex flex-col px-4  items-center py-8  text-white  shadow-inner shadow-gray-300'>
+                <div className='md:w-[200px]  rounded-xl  bg-[#606060] flex flex-col px-4  items-center py-8  text-white  shadow-inner shadow-gray-300'>
                     <h1  className=' font-semibold text-lg mb-4'>
                     Absolute Reliability
                     </h1>
@@ -47,7 +47,7 @@ const OurValue = () => {
                     </p>
                 </div>
 
-                <div className='w-1/6  rounded-xl  bg-[#606060] flex flex-col px-4  items-center py-8  text-white  shadow-inner shadow-gray-300'>
+                <div className='md:w-[200px]   rounded-xl  bg-[#606060] flex flex-col px-4  items-center py-8  text-white  shadow-inner shadow-gray-300'>
                     <h1  className=' font-semibold text-lg mb-4'>
                     Absolute Reliability
                     </h1>

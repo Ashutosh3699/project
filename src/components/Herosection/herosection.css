@@ -19,3 +19,19 @@
       }
     
 }
+
+.drop-animation{
+   animation-name: drop;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+}
+
+@keyframes drop {
+  0%{
+    transform: translateY(-100px);
+  }
+  100%{
+    transform: translateY(0%);
+  }
+}

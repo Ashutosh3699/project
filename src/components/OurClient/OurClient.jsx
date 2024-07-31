@@ -13,7 +13,7 @@ const OurClient = () => {
 
 
   return (
-    <div className='w-full  py-10 bg-stone-400'>
+    <div className='w-full  py-10 '>
 
         <div id="client-logo" className=' rounded-lg shadow-lg flex flex-col gap-4 items-center px-8  py-10 bg-[#EEEEEE] w-full md:w-3/4 mx-auto '>
             <h6 className='text-3xl text-[#6C6B6B] font-bold'>Our Clients</h6>
@@ -56,7 +56,7 @@ const OurClient = () => {
 
             </div>
 
-            <div className='flex flex-wrap gap-x-6 w-2/3 justify-center  mt-2 mb-4 gap-y-4'>
+            <div className='flex flex-wrap gap-x-6 w-3/4 md:w-2/3 justify-center  mt-2 mb-4 gap-y-4'>
                 <h2 className='text-xl text-slate-400  font-bold'>Reviews</h2>
                 <Review/>
             </div>

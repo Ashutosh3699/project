@@ -33,7 +33,7 @@ const Navbar = () => {
     // console.log(ishover)
     
   return (
-    <div className={`w-full flex justify-between md:justify-around items-center ${color} opacity-90   text-white   px-4  py-5  `}  >
+    <div className={`w-full flex justify-between md:justify-around items-center ${color}    text-white  z-50 `}  >
     
     <div>
     <NavLink  to={'/'}>
@@ -44,44 +44,53 @@ const Navbar = () => {
     
 
     <ul  className='md:flex gap-2 lg:gap-6 text-md lg:text-lg hidden  '>
-        <li className='cursor-pointer'>
+        <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
             <NavLink  to={"/about-us"}>
                 About us
             </NavLink>
+            <div class=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
+            
         </li>
-        <li>
+        <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative text-center'>
             <NavLink  to={"/blogs"}>
                 Blogs
             </NavLink>
+            <div class=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
         </li>
-        <li>
+        <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
             <NavLink  to={"/stores"}>
                 Products
             </NavLink>
+            <div class=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
         </li>
-        <li>
+        <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
             <NavLink  to={"/our-field"}>
                 Our fields
             </NavLink>
+            <div class=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
         </li>
-        <li>
+        <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
             <NavLink  to={"/career"}>
                 Career
             </NavLink>
+            <div class=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
         </li>
-        <li>
+        <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative text-center'>
             <NavLink  to={"/partnership"}>
                 Partnership
             </NavLink>
+            <div class=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
         </li>
-        <li>
+        <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
             <NavLink  to={"/contact-us"}>
                 Contact Us
             </NavLink>
+            <div class=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
         </li>
 
     </ul>
 
+    {/* for mobile */}
     <div className='flex gap-3 items-center '>
 
         <div  className=' flex md:hidden relative'  onClick={showFunction}>
@@ -161,7 +170,6 @@ const Navbar = () => {
             </div>
     </div>
 
-    {/* for mobile */}
 
     </div>
   )

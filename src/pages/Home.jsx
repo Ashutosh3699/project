@@ -49,7 +49,7 @@ const Home = () => {
         </div>
 
         {/* content here left */}
-        <div className='w-full border h-4  flex justify-center items-center py-4'>
+        <div className='w-full border h-4  flex justify-center items-center py-10 bg-black  text-white font-bold text-3xl opacity-60'>
                 Content left here  to do .....
         </div>
 
