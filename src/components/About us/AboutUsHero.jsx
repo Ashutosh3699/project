@@ -1,5 +1,5 @@
 import React from 'react';
-import image1 from "../../assets/image1.png";
+import image1 from "../../assets/bgimage.png";
 import "./animate.css"
 
 const AboutUsHero = () => {

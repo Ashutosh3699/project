@@ -15,7 +15,7 @@ const Weprovide = () => {
     <div className='w-full relative h-full  opacity-90 text-white py-5 ' 
         style={{backgroundImage: `url(${bgImage})`}}
     >
-            <h2 className='flex  justify-center text-3xl pt-4  text-slate-500  font-bold'>Our Services</h2>
+            <h2 className='flex  justify-center text-3xl pt-4  text-slate-500  font-bold'>OUR SERVICES</h2>
 
             <div className='w-[50px] h-[7px]  bg-gradient-to-r from-cyan-500 to-blue-500  mx-auto mt-2' ></div>
 

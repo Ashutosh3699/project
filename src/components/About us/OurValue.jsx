@@ -7,7 +7,7 @@ const OurValue = () => {
 
          <div className='w-full border  flex flex-wrap gap-7  rounded-xl  px-8  py-10 bg-[#F6F6F6]  shadow-inner  justify-center items-center'>
 
-                <div className='md:w-[200px]  rounded-xl  bg-[#606060] flex flex-col px-4  items-center py-8  text-white  shadow-inner shadow-gray-300'>
+                <div className='md:w-[200px]  rounded-xl  bg-[#606060] flex flex-col px-4  items-center py-7  text-white  shadow-inner shadow-gray-300'>
                     <h3  className=' font-semibold text-lg mb-4'>
                     Absolute Reliability
                     </h3>
@@ -17,43 +17,41 @@ const OurValue = () => {
                     </p>
                 </div>
 
-                <div className='md:w-[200px]   rounded-xl  bg-[#606060] flex flex-col px-4  items-center py-8  text-white  shadow-inner shadow-gray-300'>
+                <div className='md:w-[200px]   rounded-xl  bg-[#606060] flex flex-col px-4  items-center py-12  text-white  shadow-inner shadow-gray-300'>
                     <h3  className=' font-semibold text-lg mb-4'>
-                    Absolute Reliability
+                    Innovative Flexibility
                     </h3>
                     <p className='text-sm mb-4'>
-                    We consistently exceed industry standards in delivering our products and 
-                    services through innovative techniques and a dedicated team of experts.
+                    We tailor our Products & Services to meet your particular needs, as we realize each task is one of a kind
                     </p>
                 </div>
 
-                <div className='md:w-[200px]   rounded-xl  bg-[#606060] flex flex-col px-4  items-center py-8  shadow-inner shadow-gray-300  text-white'>
+                <div className='md:w-[200px]   rounded-xl  bg-[#606060] flex flex-col px-4  items-center py-12  shadow-inner shadow-gray-300  text-white'>
                     <h3  className=' font-semibold text-lg mb-4'>
-                    Absolute Reliability
+                    Versatility
                     </h3>
                     <p className='text-sm mb-4'>
-                    We consistently exceed industry standards in delivering our products and 
-                    services through innovative techniques and a dedicated team of experts.
+                    Our Incredible range of Products, as well as Multi skilled and accredited UAV personnel, with the ability to 
+perform
                     </p>
                 </div>
 
-                <div className='md:w-[200px]  rounded-xl  bg-[#606060] flex flex-col px-4  items-center py-8  text-white  shadow-inner shadow-gray-300'>
+                <div className='md:w-[200px]  rounded-xl  bg-[#606060] flex flex-col px-4  items-center py-12  text-white  shadow-inner shadow-gray-300'>
                     <h3  className=' font-semibold text-lg mb-4'>
-                    Absolute Reliability
+                    Complete SAFETY
                     </h3>
                     <p className='text-sm mb-4'>
-                    We consistently exceed industry standards in delivering our products and 
-                    services through innovative techniques and a dedicated team of experts.
+                    Our work is performed to the strictest adherence of all required safety protocols with regards to personnel 
+accreditation
                     </p>
                 </div>
 
-                <div className='md:w-[200px]   rounded-xl  bg-[#606060] flex flex-col px-4  items-center py-8  text-white  shadow-inner shadow-gray-300'>
-                    <h3  className=' font-semibold text-lg mb-4'>
-                    Absolute Reliability
+                <div className='md:w-[200px]   rounded-xl  bg-[#606060] flex flex-col px-3  items-center py-16  text-white  shadow-inner shadow-gray-300'>
+                    <h3  className=' font-semibold text-md mb-4'>
+                    Complete Commitment
                     </h3>
                     <p className='text-sm mb-4'>
-                    We consistently exceed industry standards in delivering our products and 
-                    services through innovative techniques and a dedicated team of experts.
+                    From project inception through to subsequent data acquisition and delivery – 100% ON TIME, EVERY TIME
                     </p>
                 </div>
 

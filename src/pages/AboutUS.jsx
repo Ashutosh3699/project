@@ -1,5 +1,5 @@
 import React from 'react';
-import video_url from "../assets/m.mp4";
+import video_url from "../assets/video.mp4";
 
 import AboutUsHero from '../components/About us/AboutUsHero';
 import OurValue from '../components/About us/OurValue';
@@ -8,7 +8,7 @@ import Mission from '../components/About us/Mission';
 const AboutUS = () => {
   return (
     <div>
-        <div className='flex flex-wrap gap-8 w-full md:w-3/4 mx-auto  py-8'>
+        <div className='flex flex-wrap gap-8 w-full md:w-3/4 mx-auto py-8'>
           {/* video over here */}
           <video width="420"  loop  autoPlay muted className='rounded-3xl overflow-hidden mx-4 md:mx-0'>
           <source src={video_url}   width="320" height="500" />
