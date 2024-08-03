@@ -10,7 +10,7 @@ const Mission = () => {
 
         <div className='flex flex-wrap w-full gap-5 '>
 
-            <div className='px-5 py-4  bg-[#D9D9D9] w-full  md:w-3/4'>
+            <div className='px-5 py-4  bg-[#606060] w-full  md:w-3/4'>
                 <h2 className='text-xl md:text-2xl text-white font-bold'>Our Mission</h2>
                 <p className=' text-md md:text-lg font-semibold text-white'>
                     Our mission is to leverage advanced drone technology to enhance efficiency, sustainability, and 
@@ -30,7 +30,7 @@ const Mission = () => {
                 <img src={vissionimage} alt='mission'  className=' scale-150' />
             </div>
 
-            <div className='px-5 py-4  bg-[#D9D9D9]   w-full  md:w-3/4'>
+            <div className='px-5 py-4  bg-[#606060]   w-full  md:w-3/4'>
                 <h2 className='text-xl md:text-2xl text-white font-bold'>Our Vision</h2>
                 <p className='text-md md:text-lg font-semibold text-white'>
                 To revolutionize industries through the unparalleled power of drone technology, creating a world where 

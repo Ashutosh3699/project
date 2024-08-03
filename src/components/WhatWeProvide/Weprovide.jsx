@@ -25,7 +25,7 @@ const Weprovide = () => {
 
                      <img  src={image1} alt='image1' className='w-1/3  mx-auto rounded-full object-center'/>
                   
-                    <div className='w-full md:w-[75%] text-sm  font-semibold mx-auto  align-middle pb-6'>
+                    <div className='w-full md:w-[75%] text-sm  font-semibold px-2 md:px-0 md:mx-auto  align-middle pb-6'>
                             Design, Manufacturing & Assembly of Ready to Fly Drones
                     </div>
 
@@ -35,7 +35,7 @@ const Weprovide = () => {
 
                     <img  src={image2} alt='image1' className='w-1/2 mx-auto rounded-full object-center ' />
 
-                    <div className='w-full md:w-[75%] text-sm  font-semibold mx-auto  align-middle pb-4'>
+                    <div className='w-full md:w-[75%] text-sm  font-semibold mx-auto px-2 md:px-0  align-middle pb-4'>
                      LiDAR (Light Detection and Ranging Services)
                     </div>
 
@@ -43,7 +43,7 @@ const Weprovide = () => {
                 <div className='w-[250px]  h-[150px] bg-white   overflow-hidden rounded-lg  text-black flex flex-col 
                 justify-around items-center  border border-cyan-300  shadow-md shadow-cyan-500 '>
                     <img  src={image3} alt='image1' className='w-1/3 mx-auto rounded-full object-center '/>
-                    <div className='w-full md:w-[75%] text-sm  font-semibold mx-auto  align-middle pb-4'>
+                    <div className='w-full md:w-[75%] text-sm  font-semibold mx-auto px-2 md:px-0  align-middle pb-4'>
                     Cutting Edge UAV Imagery Processing
                     </div>
 
@@ -51,7 +51,7 @@ const Weprovide = () => {
                 <div className='w-[250px]  h-[150px] bg-white   overflow-hidden rounded-lg  text-black flex flex-col 
                 justify-around items-center  border border-cyan-300 shadow-md shadow-cyan-500'>
                     <img  src={image4} alt='image1'   className='w-1/3 mx-auto rounded-full object-center ' />
-                    <div className='w-full md:w-[75%] text-sm  font-semibold mx-auto  align-middle pb-4'>
+                    <div className='w-full md:w-[75%] text-sm  font-semibold mx-auto px-2 md:px-0  align-middle pb-4'>
                     Extremely Accurate Land Survey Services
                     </div>
 
@@ -59,7 +59,7 @@ const Weprovide = () => {
                 <div className='w-[250px]  h-[150px] bg-white   overflow-hidden rounded-lg  text-black flex flex-col 
                 justify-around items-center  border border-cyan-300 shadow-md shadow-cyan-500'>
                     <img  src={image5} alt='image1'  className='w-1/3 mx-auto rounded-full object-center '/>
-                    <div className='w-full md:w-[75%] text-sm  font-semibold mx-auto  align-middle pb-4'>
+                    <div className='w-full md:w-[75%] text-sm  font-semibold mx-auto  px-2 md:px-0  align-middle pb-4'>
                     Industry Leading Photogrammetric Services
                     </div>
 
@@ -67,7 +67,7 @@ const Weprovide = () => {
                 <div className='w-[250px]  h-[150px] bg-white   overflow-hidden rounded-lg  text-black flex flex-col 
                 justify-around items-center  border border-cyan-300 shadow-md shadow-cyan-500'>
                     <img  src={image6} alt='image1'   className='w-1/4 mx-auto rounded-full object-center mt-2 ' />
-                    <div className='w-full md:w-[75%] text-sm  font-semibold mx-auto  align-middle pb-4'>
+                    <div className='w-full md:w-[75%] text-sm  font-semibold mx-auto px-2 md:px-0  align-middle pb-4'>
                     Advanced Architectural Service
                     </div>
 
@@ -75,7 +75,7 @@ const Weprovide = () => {
                 <div className='w-[250px]  h-[150px] bg-white   overflow-hidden rounded-lg  text-black flex flex-col 
                 justify-around items-center  border border-cyan-300 shadow-md shadow-cyan-500 '>
                     <img  src={image7} alt='image1'   className='w-1/3 mx-auto rounded-full object-center ' />
-                    <div className='w-full md:w-[75%] text-sm  font-semibold mx-auto  align-middle pb-4'>
+                    <div className='w-full md:w-[75%] text-sm  font-semibold mx-auto px-2 md:px-0  align-middle pb-4'>
                     Geographic Information System
                     </div>
 
@@ -83,7 +83,7 @@ const Weprovide = () => {
                 <div className='w-[250px]  h-[150px] bg-white   overflow-hidden rounded-lg  text-black flex flex-col 
                 justify-around items-center  border border-cyan-300 shadow-md shadow-cyan-500 '>
                     <img  src={image8} alt='image1'  className='w-1/3 mx-auto rounded-full object-center ' />
-                    <div className='w-full md:w-[75%] text-sm  font-semibold mx-auto  align-middle pb-4'>
+                    <div className='w-full md:w-[75%] text-sm  font-semibold mx-auto px-2 md:px-0 align-middle pb-4'>
                     Crop Health Analysis
                     </div>
 

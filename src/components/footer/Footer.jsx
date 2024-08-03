@@ -1,13 +1,16 @@
 import React from 'react';
 import { FaLinkedin,FaInstagram,FaFacebook   } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import  {NavLink} from "react-router-dom"
+import  {NavLink} from "react-router-dom";
+import logo from "../../assets/mainlogo.png"
 
 const Footer = () => {
   return (
     <div  className='flex flex-col py-5 px-6 md:px-40  bg-black opacity-70  text-white  gap-10  pt-9'>
         <div  className='flex  justify-between  items-baseline'>
-                <div className='select-none hidden lg:flex'>Logo</div>
+                <div className='select-none hidden lg:flex   '>
+                <img src={logo}  alt='image1'  className='w-[100px]' />
+                </div>
 
                 <div className='flex  flex-wrap justify-between  items-baseline  gap-10  '>
 
