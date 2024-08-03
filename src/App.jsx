@@ -24,7 +24,7 @@ function App() {
     
   // });
   
-  console.log(window);
+  // console.log(window);
 
   return (
   

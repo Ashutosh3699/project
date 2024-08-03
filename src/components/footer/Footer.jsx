@@ -7,9 +7,9 @@ import logo from "../../assets/mainlogo.png"
 const Footer = () => {
   return (
     <div  className='flex flex-col py-5 px-6 md:px-40  bg-black opacity-70  text-white  gap-10  pt-9'>
-        <div  className='flex  justify-between  items-baseline'>
-                <div className='select-none hidden lg:flex   '>
-                <img src={logo}  alt='image1'  className='w-[100px]' />
+        <div  className='flex  justify-between  '>
+                <div className='select-none hidden md:flex  w-[100px]  h-[70px]'>
+                 <img src={logo}  alt='image1'  className='w-full ' />
                 </div>
 
                 <div className='flex  flex-wrap justify-between  items-baseline  gap-10  '>
@@ -82,6 +82,26 @@ const Footer = () => {
 
                     <div>
                         <div className='text-lg cursor-pointer mb-4 select-none'>
+                            Sources
+                        </div>
+                        <ul className='text-sm px-2 text-gray-400 space-y-4 select-none'>
+                            <li className='cursor-pointer hover:underline'>
+                                <a href='https://www.dgca.gov.in/digigov-portal/' target="_blank">
+                                DGCA
+                                </a>
+                            </li>
+                            <li className='cursor-pointer hover:underline' >
+                                <a  href='https://casrrpto.com/' target="_blank">
+                                CASR RPTO
+                                </a>
+                            </li>
+                            
+                        </ul>
+                        
+                    </div>
+
+                    <div>
+                        <div className='text-lg cursor-pointer mb-4 select-none'>
                             Legal
                         </div>
                         <ul className='text-sm px-2 text-gray-400 space-y-4 select-none'>
@@ -92,6 +112,8 @@ const Footer = () => {
                         </ul>
                         
                     </div>
+
+
 
                 </div>
                
@@ -104,16 +126,24 @@ const Footer = () => {
             <p className=' text-gray-400 font-extrabold select-none '>Follow us on </p>
             <div>
             {/* anchor tag with the links */}
+            <a href='https://www.linkedin.com/company/aeromat-creative-labs-pvt-ltd/mycompany/' target="_blank">
                 <FaLinkedin size={25} />
+            </a>
             </div>
             <div>
+            <a href='https://www.instagram.com/aeromat_creative/'  target="_blank">
                 <FaInstagram size={25} />
+            </a>
             </div>
             <div>
+            <a href='https://www.facebook.com/aeromatcl/' target="_blank">
                 <FaFacebook size={25} />
+            </a>
             </div>
             <div>
+            <a href='https://www.instagram.com/aeromat_creative/' target="_blank">
                 <FaXTwitter size={25} />
+            </a>
             </div>
         </div>
 

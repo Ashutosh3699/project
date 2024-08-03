@@ -49,44 +49,44 @@ const Navbar = () => {
             <NavLink  to={"/about-us"}>
                 About us
             </NavLink>
-            <div class=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
+            <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
             
         </li>
         <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative text-center'>
             <NavLink  to={"/"}>
-                Blogs
+                Our Fields
             </NavLink>
-            <div class=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
+            <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
         </li>
         <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
             <NavLink  to={"/"}>
                 Products
             </NavLink>
-            <div class=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
+            <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
         </li>
         <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
             <NavLink  to={"/"}>
-                Our fields
+                Consultancy
             </NavLink>
-            <div class=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
+            <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
         </li>
         <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
             <NavLink  to={"/"}>
                 Career
             </NavLink>
-            <div class=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
+            <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
         </li>
         <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative text-center'>
             <NavLink  to={"/"}>
-                Partnership
+                Blogs
             </NavLink>
-            <div class=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
+            <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
         </li>
         <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
             <NavLink  to={"/"}>
                 Contact Us
             </NavLink>
-            <div class=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
+            <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
         </li>
 
     </ul>
@@ -104,17 +104,17 @@ const Navbar = () => {
             </li>
             <li>
                 <NavLink  to={"/"}>
-                    Blogs
-                </NavLink>
-            </li>
-            <li>
-                <NavLink  to={"/"}>
-                    Stores
-                </NavLink>
-            </li>
-            <li>
-                <NavLink  to={"/"}>
                     Our fields
+                </NavLink>
+            </li>
+            <li>
+                <NavLink  to={"/"}>
+                    Products
+                </NavLink>
+            </li>
+            <li>
+                <NavLink  to={"/"}>
+                    Consultancy
                 </NavLink>
             </li>
             <li>
@@ -124,7 +124,7 @@ const Navbar = () => {
             </li>
             <li>
                 <NavLink  to={"/"}>
-                    Partnership
+                    Blogs
                 </NavLink>
             </li>
             <li>

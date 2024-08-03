@@ -75,7 +75,7 @@ const Weprovide = () => {
                 <div className='w-[250px]  h-[150px] bg-white   overflow-hidden rounded-lg  text-black flex flex-col 
                 justify-around items-center  border border-cyan-300 shadow-md shadow-cyan-500 '>
                     <img  src={image7} alt='image1'   className='w-1/3 mx-auto rounded-full object-center ' />
-                    <div className='w-full md:w-[75%] text-sm  font-semibold mx-auto px-2 md:px-0  align-middle pb-4'>
+                    <div className='w-full md:w-[75%] text-sm  font-semibold mx-auto px-2 md:px-0  align-middle pb-4 flex justify-center'>
                     Geographic Information System
                     </div>
 
@@ -83,7 +83,7 @@ const Weprovide = () => {
                 <div className='w-[250px]  h-[150px] bg-white   overflow-hidden rounded-lg  text-black flex flex-col 
                 justify-around items-center  border border-cyan-300 shadow-md shadow-cyan-500 '>
                     <img  src={image8} alt='image1'  className='w-1/3 mx-auto rounded-full object-center ' />
-                    <div className='w-full md:w-[75%] text-sm  font-semibold mx-auto px-2 md:px-0 align-middle pb-4'>
+                    <div className='w-full md:w-[75%] text-sm  font-semibold mx-auto px-2 md:px-0 align-middle pb-4 flex justify-center'>
                     Crop Health Analysis
                     </div>
 
