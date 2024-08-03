@@ -1,14 +1,14 @@
 import React from 'react';
 import bgImage1 from  './agriculture.png';
 import bgImage3 from  './consumer.png';
-import bgImage2 from  './surveillance.png';
+import bgImage2 from  './surveillance.jpg';
 import { FaChevronRight } from "react-icons/fa";
 
 const OurExploration = () => {
 
   return (
     <div className='w-full relative h-full  opacity-90  py-5 ' >
-            <h3 className='flex  justify-center text-3xl pt-4  font-bold  text-slate-500'>Our Exploration</h3>
+            <h2 className='flex  justify-center text-3xl pt-4  font-bold  text-slate-500'>Our Exploration</h2>
 
             <div className='w-[50px] h-[7px]  bg-gradient-to-r from-cyan-500 to-blue-500  mx-auto mt-2' ></div>
 
@@ -20,10 +20,9 @@ const OurExploration = () => {
                     <div className='flex flex-col gap-4 absolute z-10 text-white top-4  justify-start items-center'>
                         <h3 className='text-xl font-bold'>Agriculture</h3>
 
-                        <p className='text-sm  px-5  align-middle'>Equipped with high-tech 
-                        sensors, the agriculture drone buzzed silently overhead, capturing detailed images to assess crop health.</p>
+                        <p className='text-sm  flex justify-center items-center w-full px-5 align-middle'>Revolutionizing agriculture with precision drone technology for optimal crop management.</p>
 
-                        <div className='mt-24 flex gap-2 items-center'>
+                        <div className=' mt-36 flex gap-2 items-center'>
                             Learn More   <FaChevronRight />
                         </div>
                     </div>
@@ -35,10 +34,9 @@ const OurExploration = () => {
                     <div className='flex flex-col gap-4 absolute z-10 text-white top-4  justify-start items-center'>
                         <h3 className='text-xl font-bold'>Surveillance</h3>
 
-                        <p className='text-sm  px-5  align-middle'>Equipped with high-tech 
-                        sensors, the agriculture drone buzzed silently overhead, capturing detailed images to assess crop health.</p>
+                        <p className='text-sm  flex justify-center items-center w-full px-5 align-middle'>Advanced drone surveillance solutions for enhanced security and monitoring.</p>
 
-                        <div className='mt-24 flex gap-2 items-center'>
+                        <div className='mt-36 flex gap-2 items-center'>
                             Learn More   <FaChevronRight />
                         </div>
                     </div>
@@ -50,10 +48,9 @@ const OurExploration = () => {
                     <div className='flex flex-col gap-4 absolute z-10 text-white top-4  justify-start items-center'>
                         <h3 className='text-xl font-bold'>Consumer</h3>
 
-                        <p className='text-sm  px-5  align-middle'>Equipped with high-tech 
-                        sensors, the agriculture drone buzzed silently overhead, capturing detailed images to assess crop health.</p>
+                        <p className='text-sm  flex justify-center items-center w-full px-5 align-middle'>Innovative drone products designed to elevate your everyday experiences.</p>
 
-                        <div className='mt-24 flex gap-2 items-center'>
+                        <div className='mt-36 flex gap-2 items-center'>
                             Learn More   <FaChevronRight />
                         </div>
                     </div>

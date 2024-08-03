@@ -16,7 +16,7 @@ const OurClient = () => {
     <div className='w-full  py-10 '>
 
         <div id="client-logo" className=' rounded-lg shadow-lg flex flex-col gap-4 items-center px-8  py-10 bg-[#EEEEEE] w-full md:w-3/4 mx-auto '>
-            <h6 className='text-3xl text-[#6C6B6B] font-bold'>Our Clients</h6>
+            <h2 className='text-3xl text-slate-500 font-bold'>Our Clients</h2>
             <div className='w-[50px] h-[7px]  bg-gradient-to-r from-cyan-500 to-blue-500  mx-auto' ></div>
             <p className='text-sm text-slate-700  font-bold opacity-75'>Sunt eossit porest, aut pa quid magnias  imagnient, nihillam necusae ea nonestrum  quidebis est, ut.</p>
 

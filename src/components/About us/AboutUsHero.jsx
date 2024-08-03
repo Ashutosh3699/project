@@ -5,7 +5,7 @@ import "./animate.css"
 const AboutUsHero = () => {
   return (
     <div className='w-full py-8  bg-[#ffffff]'>
-        <h2 className='pl-10 md:pl-60 mb-4 font-bold text-4xl   select-none text-cyan-500'>About us</h2>
+        <h1 className='pl-10 md:pl-60 mb-4 font-bold text-4xl   select-none text-cyan-500'>About us</h1>
 
         <div  className='w-2/3 mx-auto flex flex-wrap gap-5'>
             <div className='flex flex-col lg:w-1/2  gap-4 md:font-semibold text-sm md:text-lg text-gray-400'>

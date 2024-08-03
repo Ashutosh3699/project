@@ -5,7 +5,7 @@ import  {NavLink} from "react-router-dom"
 
 const Footer = () => {
   return (
-    <div  className='flex flex-col py-5 px-2 md:px-40  bg-black opacity-70  text-white  gap-10  pt-9'>
+    <div  className='flex flex-col py-5 px-6 md:px-40  bg-black opacity-70  text-white  gap-10  pt-9'>
         <div  className='flex  justify-between  items-baseline'>
                 <div className='select-none hidden lg:flex'>Logo</div>
 

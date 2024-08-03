@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaRegUser } from "react-icons/fa";
 import { CiShoppingCart } from "react-icons/ci";
+import logo from "../assets/mainlogo.png";
 
 const Navbar = () => {
 
@@ -37,7 +38,7 @@ const Navbar = () => {
     
     <div>
     <NavLink  to={'/'}>
-        <img src='' alt='image'  />
+        <img src={logo} alt='image' className='w-[50px]  md:w-[100px] mx-3  md:mx-0' />
     </NavLink>
     </div>
 
@@ -52,37 +53,37 @@ const Navbar = () => {
             
         </li>
         <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative text-center'>
-            <NavLink  to={"/blogs"}>
+            <NavLink  to={"/"}>
                 Blogs
             </NavLink>
             <div class=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
         </li>
         <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
-            <NavLink  to={"/stores"}>
+            <NavLink  to={"/"}>
                 Products
             </NavLink>
             <div class=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
         </li>
         <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
-            <NavLink  to={"/our-field"}>
+            <NavLink  to={"/"}>
                 Our fields
             </NavLink>
             <div class=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
         </li>
         <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
-            <NavLink  to={"/career"}>
+            <NavLink  to={"/"}>
                 Career
             </NavLink>
             <div class=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
         </li>
         <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative text-center'>
-            <NavLink  to={"/partnership"}>
+            <NavLink  to={"/"}>
                 Partnership
             </NavLink>
             <div class=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
         </li>
         <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
-            <NavLink  to={"/contact-us"}>
+            <NavLink  to={"/"}>
                 Contact Us
             </NavLink>
             <div class=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
@@ -93,41 +94,41 @@ const Navbar = () => {
     {/* for mobile */}
     <div className='flex gap-3 items-center '>
 
-        <div  className=' flex md:hidden relative'  onClick={showFunction}>
+        <div  className=' flex md:hidden relative px-4'  onClick={showFunction} >
             <GiHamburgerMenu />
-            <ul  className={`${show} flex-col  gap-3 absolute top-4 right-0 bg-blue-color  text-md  cursor-pointer`}>
+            <ul  className={`${show} flex-col  gap-3 absolute top-4 right-0 ${color}  text-md  cursor-pointer  w-[110px]  px-3`}>
             <li>
                 <NavLink  to={"/about-us"}>
-                    About-us
+                    About us
                 </NavLink>
             </li>
             <li>
-                <NavLink  to={"/blogs"}>
+                <NavLink  to={"/"}>
                     Blogs
                 </NavLink>
             </li>
             <li>
-                <NavLink  to={"/stores"}>
+                <NavLink  to={"/"}>
                     Stores
                 </NavLink>
             </li>
             <li>
-                <NavLink  to={"/our-field"}>
+                <NavLink  to={"/"}>
                     Our fields
                 </NavLink>
             </li>
             <li>
-                <NavLink  to={"/career"}>
+                <NavLink  to={"/"}>
                     Career
                 </NavLink>
             </li>
             <li>
-                <NavLink  to={"/partnership"}>
+                <NavLink  to={"/"}>
                     Partnership
                 </NavLink>
             </li>
             <li>
-                <NavLink  to={"/contact-us"}>
+                <NavLink  to={"/"}>
                     Contact Us
                 </NavLink>
             </li>
@@ -149,12 +150,12 @@ const Navbar = () => {
                             <ul className="flex-col  gap-3 absolute top-8 -right-1 text-md  cursor-pointer w-24 text-black 
                             bg-white items-center px-4 py-4 space-y-3  ">
                             <li className='hover:underline'>
-                                <NavLink  to={"/login"}>
+                                <NavLink  to={"/"}>
                                     <p>Login</p>
                                 </NavLink>
                             </li>
                             <li className='hover:underline'>
-                                <NavLink  to={"/sign-up"}>
+                                <NavLink  to={"/"}>
                                 <p> Sign up </p> 
                                 </NavLink>
                             </li>

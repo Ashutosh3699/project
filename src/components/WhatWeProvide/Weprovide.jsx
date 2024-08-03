@@ -15,7 +15,7 @@ const Weprovide = () => {
     <div className='w-full relative h-full  opacity-90 text-white py-5 ' 
         style={{backgroundImage: `url(${bgImage})`}}
     >
-            <h3 className='flex  justify-center text-3xl pt-4  text-slate-400  font-bold'>What we Provide</h3>
+            <h2 className='flex  justify-center text-3xl pt-4  text-slate-500  font-bold'>Our Services</h2>
 
             <div className='w-[50px] h-[7px]  bg-gradient-to-r from-cyan-500 to-blue-500  mx-auto mt-2' ></div>
 
@@ -66,7 +66,7 @@ const Weprovide = () => {
                 </div>
                 <div className='w-[250px]  h-[150px] bg-white   overflow-hidden rounded-lg  text-black flex flex-col 
                 justify-around items-center  border border-cyan-300 shadow-md shadow-cyan-500'>
-                    <img  src={image6} alt='image1'   className='w-1/3 mx-auto rounded-full object-center ' />
+                    <img  src={image6} alt='image1'   className='w-1/4 mx-auto rounded-full object-center mt-2 ' />
                     <div className='w-full md:w-[75%] text-sm  font-semibold mx-auto  align-middle pb-4'>
                     Advanced Architectural Service
                     </div>
