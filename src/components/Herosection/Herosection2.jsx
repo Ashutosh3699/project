@@ -1,5 +1,5 @@
 import React from 'react'
-import bgImage from  "./heroimage2.png";
+import bgImage from  "./homepage2.png";
 import "./herosection.css";
 
 const Herosection2 = () => {
