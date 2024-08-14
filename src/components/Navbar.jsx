@@ -77,7 +77,7 @@ const Navbar = () => {
             <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
         </li>
         <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative text-center'>
-            <NavLink  to={"/"}>
+            <NavLink  to={"/blogs"}>
                 Blogs
             </NavLink>
             <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
@@ -123,7 +123,7 @@ const Navbar = () => {
                 </NavLink>
             </li>
             <li>
-                <NavLink  to={"/"}>
+                <NavLink  to={"/blogs"}>
                     Blogs
                 </NavLink>
             </li>
