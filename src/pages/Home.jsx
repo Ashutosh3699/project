@@ -7,6 +7,7 @@ import OurExploration from '../components/ourexploration/OurExploration';
 import Herosection2 from '../components/Herosection/Herosection2';
 import Herosection3 from '../components/Herosection/Herosection3';
 import OurClient from '../components/OurClient/OurClient';
+import Grid from '../components/four_grid/Grid';
 
 const Home = () => {
 
@@ -49,9 +50,14 @@ const Home = () => {
         </div>
 
         {/* content here left */}
-        {/* <div className='w-full border h-4  flex justify-center items-center py-10 bg-black  text-white font-bold text-3xl opacity-60'>
-                Content left here  to do .....
-        </div> */}
+
+        <div className='w-full  space-y-3 my-2'>
+                <h2 className='flex  justify-center text-3xl pt-4  font-bold  text-slate-500'>OUR PRODUCTS</h2>
+                <div className='w-[50px] h-[7px]  bg-gradient-to-r from-cyan-500 to-blue-500  mx-auto mt-2' ></div>
+
+                <Grid/>
+        </div>
+        
 
         {/* Client section */}
         <OurClient/>
