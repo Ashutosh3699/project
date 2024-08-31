@@ -52,11 +52,32 @@ const Navbar = () => {
             <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
             
         </li>
-        <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative text-center'>
+        <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative text-center'
+            //  onMouseOver={MouseOver}
+            //  onMouseOut={MouseOut}
+        >
             <NavLink  to={"/"}>
                 Our Fields
             </NavLink>
             <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
+
+            {/* <div  className= {`bg-transparent px-4 py-4 ${ishover} absolute bg-black `}>
+
+                <ul className="flex-col  gap-3 absolute top-8 -right-1 text-md  cursor-pointer w-24 text-black 
+                bg-white items-center px-4 py-4 space-y-3  ">
+                <li className='hover:underline'>
+                    <NavLink  to={"/"}>
+                        <p>Design</p>
+                    </NavLink>
+                </li>
+                <li className='hover:underline'>
+                    <NavLink  to={"/"}>
+                    <p> LiDAR </p> 
+                    </NavLink>
+                </li>
+                </ul>
+
+            </div> */}
         </li>
         <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
             <NavLink  to={"/"}>
