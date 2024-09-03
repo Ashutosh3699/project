@@ -19,9 +19,6 @@ const Navbar = () => {
             setShow("hidden");
         }
     }
-
-
-
     const [ishover,sethover]=useState("hidden");
 
     function MouseOver() {
@@ -30,8 +27,6 @@ const Navbar = () => {
     function MouseOut() {
         sethover("hidden");
     }
-
-    // console.log(ishover)
     
   return (
     <div className={`w-full flex justify-between md:justify-around items-center ${color}    text-white  z-50 `}  >
