@@ -1,0 +1,15 @@
+.animation{
+    animation-name: popleft;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+@keyframes popleft {
+    0% {
+        transform: translateX(-100px);
+      }
+      100%{
+        transform: translateX(0px);
+      }
+    
+}

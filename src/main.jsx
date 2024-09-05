@@ -5,7 +5,6 @@ import './index.css'
 import AboutUS from './pages/AboutUS.jsx'
 import Home from './pages/Home.jsx'
 import Blogs from './pages/Blogs.jsx'
-import ContactUs from './pages/ContactUs.jsx'
 import Career from './pages/Career.jsx'
 import Partnership from './pages/Partnership.jsx'
 import Stores from './pages/Stores.jsx'
@@ -14,6 +13,7 @@ import SignUp from './pages/SignUp.jsx'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import IndividualBlog from './components/Blogs/IndividualBlog.jsx'
 import OurServices from './pages/OurServices.jsx'
+import Consultancy from './pages/Consultancy.jsx'
 
 const router = createBrowserRouter([
 
@@ -38,8 +38,8 @@ const router = createBrowserRouter([
           element: <IndividualBlog/>
       },
       {
-        path: "/contact-us",
-        element: <ContactUs/>
+        path: "/consultancy",
+        element: <Consultancy/>
       },
       {
         path: "/career",

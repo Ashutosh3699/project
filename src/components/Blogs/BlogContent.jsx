@@ -2,6 +2,8 @@ import blog1 from "../Blogs/images/blog1.jpg";
 import blog2 from "../Blogs/images/blog2.jpg";
 import blog3 from "../Blogs/images/blog3.jpg";
 import blog4 from "../Blogs/images/blog4.jpg";
+import blog5 from "../Blogs/images/blog5.jpg";
+
 
 export const blogObject = {
     mainBlog : {
@@ -185,49 +187,33 @@ export const blogObject = {
 
         {
           id: "aqqasfwe123fsd434532",
-          name: "Combat Drones: Changing the Dynamics of Aerial Warfare",
+          name: "CROP HEALTH ANALYSIS USING DRONE TECHNOLOGY: A TECHNICAL OVERVIEW",
           author: "Aeromat",
-          image:  blog2,
-          Date: "11 August, 2024",
+          image:  blog5,
+          Date: "20 August, 2024",
          content: [{
                  question: "",
-                 answer:  "Combat drones are playing a crucial role in  transforming aerial warfare with their advanced capabilities, including precision strikes, real-time ISR, extended range and stealth features. These unmanned aerial vehicles have enhanced operational flexibility and act as force multipliers, offering reduced risk to human life and cost efficiency compared to manned aircraft. Equipped with autonomous and semi-autonomous systems, drones provide rapid and adaptable responses to emerging threats.",
+                 answer:  "Addition of drone technology in the field of agriculture leverages farmers with precise and real time insights in crop conditions.Agricultural problems such as crop infestation, soil erosion, weed, pests and fungi if undetected for a long period can lead to severe crop damage.Integrating high resolution multispectral imaging, advanced data analytics, and machine learning algorithms, we can empower agricultural professionals to make informed decisions that enhance yield, optimize production, and reduce environmental impact.",
           },
             {
-                 question: "",
-                 answer:  " In recent times, combat drones have revolutionized aerial warfare by introducing unprecedented capabilities and altering traditional military strategies. These unmanned aerial vehicles play an integral role in modern combat operations, offering a blend of precision, versatility, and tactical advantages.",
+                 question: "Drone Platform and Payload:",
+                 answer:  " The drones total weight consists of airframe, payload, avionics and additional accessories. Agriculture drones consist of state of art cameras that can capture high resolution imagery. ",
             },
             {
-                 question: "Precision Strikes",
-                 answer:  "Combat drones are equipped with advanced targeting systems and precision-guided weapons, allowing for highly accurate strikes on specific targets.These drones are equipped with high-resolution cameras, infrared sensors, and laser targeting systems which can identify and engage targets with minimal collateral damage. This precision reduces the risk of civilian casualties and ensures more effective neutralization of high-value targets.",
+                 question: "Data Acquisition and Image Processing:",
+                 answer:  "In each flight, the drone captures more than 1000 images for investigation. These are geottaged and further stored for post processing.The captured data is further calibrated using photographic softwares resulting these images to be stitched together to create orthomosaics high-resolution, georeferenced maps of the entire crop field. ",
             },
             {
                  question: "Real-Time Intelligence, Surveillance, and Reconnaissance (ISR)",
                  answer:  " Modern combat drones provide real time ISR capabilities, which are critical for gathering actionable intelligence and making informed tactical decisions. Drones equipped with electro optical and infrared sensors offer continuous monitoring and surveillance, feeding live video and data back to command centers. This information is used for battlefield assessment, mission planning, and threat identification.",
             },
             {
-                 question: "Extended Range and Endurance",
-                 answer:  " Combat drones possess extended operational ranges and endurance compared to traditional manned aircraft. Advanced propulsion systems and efficient energy management enable these UAVs to conduct long-duration missions over vast areas. This comparatively extended range allows for persistent surveillance and strike capabilities, providing a strategic advantage in both offensive and defensive operations.",
+                 question: "Machine Learning and Predictive Analytics:",
+                 answer:  "Drones consist of technologically advanced Machine learning algorithms. These algorithms study historical as well as real time data, further correlating it with different parameters which might be missed by traditional methods.These algorithms can detect early signs of crop stress, disease outbreaks, and pest infestations, allowing for timely investigation.",
             },
             {
-                 question: "Low-Observable Characteristics",
-                 answer:  "Most of the combat drones are designed with stealth features which minimize detection and enhance survivability , including reduced radar cross-sections and noise suppression technologies. These low observable characteristics make them harder to detect and track by enemy radar systems, enhancing their survivability in contested environments. Stealth capabilities enable drones to penetrate heavily defended airspace and execute high-risk missions with reduced likelihood of interception.",
-            },
-            {
-                 question: "Autonomous and Semi-Autonomous Operations",
-                 answer:  " Combat drones are increasingly incorporating autonomous and semi-autonomous features, they are powered by advanced artificial intelligence and machine learning algorithms. These capabilities enable drones to perform complex tasks such as target recognition, threat assessment, and mission execution with minimal human intervention. Autonomous operations enhance mission efficiency and allow for rapid responses to emerging threats.",
-            },
-            {
-                 question: "Reduced Risk to Human Life",
-                 answer:  "Drones can be used for high-risk missions and  military forces.With the help of drones the risk to human life can be mitigated. Drones can be used for dangerous surveillance missions, precision strikes in hostile environments, and electronic warfare operations, all while minimizing exposure of human operators to potential threats.",
-            },
-            {
-                 question: "Cost Efficiency",
-                 answer:  "Even though the initial investment in combat drone technology can be significant, the long term cost efficiency is evident. Drones often have lower operational and maintenance costs compared to manned aircraft, and their reduced risk to human operators translates into lower costs associated with person and training.",
-            },
-            {
-                 question: "Enhanced Operational Flexibility",
-                 answer:  "Combat drones offer unparalleled operational flexibility by enabling rapid deployment and adaptation to changing battlefield conditions. Their ability to be rapidly reconfigured for different mission profiles such as surveillance, electronic warfare, or precision strike makes drones suitable for dynamic responses that involve threats and risk to human life.",
+                 question: "Real-Time Monitoring and Reporting:",
+                 answer:  "The processed data given by the algorithm is saved in a user friendly cloud interface that can be viewed and studied during real time drone flight.Crop health map, zooming on areas of interest, and additional layers such as weather and soil erosion can be studied during real time flight.Customised reports can be generated highlighting areas of concern leading to proactive management and decision making.",
             },
        ]
           },

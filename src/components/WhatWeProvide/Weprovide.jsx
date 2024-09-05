@@ -21,8 +21,8 @@ const Weprovide = () => {
               {
                     services.map((item,index)=>{
                         return (
-                           <Link to={`/our-services/${item.id}`}  className='hover:scale-95 transition-all duration-200'>
-                            <div  key={index}  
+                           <Link to={`/our-services/${item.id}`}  className='hover:scale-95 transition-all duration-200' key={index}  >
+                            <div  
                                 className='w-[250px]  h-[150px] bg-white  overflow-hidden rounded-lg  text-black flex 
                                     flex-col  justify-around  items-center border border-cyan-300  shadow-md shadow-cyan-500 cursor-pointer'>
 

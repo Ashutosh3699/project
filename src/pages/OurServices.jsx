@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { services } from '../components/WhatWeProvide/services/first';
+import "../components/WhatWeProvide/service.css"
 
 const OurServices = () => {
 
@@ -27,8 +28,10 @@ const OurServices = () => {
                         <h1  className='text-2xl  text-gray-500  font-bold'>{info.name}</h1>
 
                         <div className='flex gap-2 justify-between my-3 items-center flex-wrap lg:flex-nowrap'>
-                          <img src={info.image}  className='lg:w-[350px]  ' />
-                          <p className='text-md md:text-lg text-zinc-500 font-sans mb-4'>{info.intro}</p>
+                          <img src={info.image}  className='lg:w-[350px]  animation '/>
+                          <p className='text-md md:text-lg text-zinc-500 font-sans mb-4'>
+                            {info.intro}
+                          </p>
 
                         </div>
                         <div>
@@ -36,11 +39,13 @@ const OurServices = () => {
                             info.content.map((item,index) => {
 
                                   return <div key={index} >
-                                          <div className=' text-xl md:text-3xl text-zinc-600 font-bold mb-3'>
-                                              { item.question}
+                                          <div className=' text-xl md:text-3xl text-zinc-600 font-bold mb-3'> 
+                                          {
+                                            item.question 
+                                          }
                                           </div>
                                           <div className='text-md md:text-lg text-zinc-500 font-sans mb-4'>
-                                              {item.answer}
+                                          { item.answer}
                                           </div>
                                   </div>
                                   })
@@ -49,7 +54,9 @@ const OurServices = () => {
 
                         <div className='flex  md:flex-row-reverse gap-2 justify-between mb-3 items-center flex-wrap  lg:flex-nowrap'>
                           <img src={info.image_2}  className='lg:w-[250px]  ' />
-                          <p className='text-md md:text-lg text-zinc-500 font-sans mb-4'>{info.lastContent}</p>
+                          <p className='text-md md:text-lg text-zinc-500 font-sans mb-4'>
+                            {info.lastContent}
+                          </p>
 
                         </div>
                       

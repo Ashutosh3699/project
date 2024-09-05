@@ -25,8 +25,8 @@ const ServicesContent = () => {
     {
                     services.map((item,index)=>{
                         return (
-                           <Link to={`/our-services/${item.id}`}  className='hover:scale-95 transition-all duration-200'>
-                            <animated.div style={props} key={index}  ref={divRef}
+                           <Link to={`/our-services/${item.id}`}  className='hover:scale-95 transition-all duration-200' key={index} >
+                            <animated.div style={props}  ref={divRef}
                                 className='w-[250px]  h-[150px] bg-white  overflow-hidden rounded-lg  text-black flex 
                                     flex-col  justify-around  items-center border border-cyan-300  shadow-md shadow-cyan-500 cursor-pointer'>
 
