@@ -48,7 +48,8 @@ const Navbar = () => {
             </NavLink>
             <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
 
-            <div  className= {`bg-transparent px-4 py-4  invisible  group-hover:visible transition-all  duration-300 top-5  absolute bg-black `}>
+{/* commented the service part */}
+            {/* <div  className= {`bg-transparent px-4 py-4  invisible  group-hover:visible transition-all  duration-300 top-5  absolute bg-black `}>
 
                 <ul className="flex-col  gap-3 absolute top-16 -right-20 text-md w-[200px] cursor-pointer  text-black rounded-lg 
                 bg-white items-center px-4 py-4 space-y-3 duration-200 transition-all ">
@@ -65,7 +66,7 @@ const Navbar = () => {
                    
                 </ul>
 
-            </div>
+            </div> */}
         </li>
         <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
             <NavLink  to={"/"}>

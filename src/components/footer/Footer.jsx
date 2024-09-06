@@ -90,11 +90,6 @@ const Footer = () => {
                                 DGCA
                                 </a>
                             </li>
-                            <li className='cursor-pointer hover:underline' >
-                                <a  href='https://casrrpto.com/' target="_blank">
-                                CASR RPTO
-                                </a>
-                            </li>
                             
                         </ul>
                         
