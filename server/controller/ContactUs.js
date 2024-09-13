@@ -1,4 +1,5 @@
-const mailsender = require("./mailsender");
+const mailsender = require("../utils/mailsender");
+const ContactUsForm = require("../mail/ContactUsFormat")
 
 require("dotenv").config();
 
@@ -6,6 +7,7 @@ exports.contactUs = async(req,res)=>{
 
     try {
         const {firstName, lastName, email,phoneNumber, message} = req.body;
+        console.log("body is: ", req.body);
 
         // validate karna hai toh karle
         if(!firstName || !lastName || !email || !phoneNumber || !message){
@@ -15,9 +17,11 @@ exports.contactUs = async(req,res)=>{
             })
         }
         // send  mail to admin
-        const senToAdmin = await mailsender(process.env.MAIL_EMAIL, `User have entered name:${firstName} ${lastName}`,  `message is ${message}`);
+        const senToAdmin = await mailsender(process.env.MAIL_EMAIL, `User have entered name:${firstName} ${lastName}`,  ContactUsForm(message));
         // send mail to user
-        const sentToUser = await mailsender(email, "Noreply mail", `your data has been recieved`);
+        console.log("sending to admin is here");
+        
+        const sentToUser = await mailsender(email, "Noreply mail", ContactUsForm('your data has been recieved'));
         // return response
         return res.status(200).json({
             success:true,

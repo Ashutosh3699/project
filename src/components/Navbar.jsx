@@ -43,7 +43,7 @@ const Navbar = () => {
             
         </li>
         <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative text-center group' >
-            <NavLink  to={"/"}>
+            <NavLink >
                 Our Fields
             </NavLink>
             <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>

@@ -10,8 +10,9 @@ app.use(
 
 // body parser
 app.use(express.json());
+require("dotenv").config();
 
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 // routing setup
 const routes = require("./router/route");
