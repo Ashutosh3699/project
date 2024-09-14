@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { IoIosChatboxes } from "react-icons/io";
 import { BsGlobeCentralSouthAsia } from "react-icons/bs";
 import { IoCallSharp } from "react-icons/io5";
+import { apiConnector } from '../../services/apiConnector';
+import {contact_us} from "../../services/apis"
+import toast from 'react-hot-toast';
 
 const ContactUsForm = () => {
 
@@ -12,8 +15,6 @@ const ContactUsForm = () => {
         phoneNumber:"",
         message:""
       });
-      const url = import.meta.env.VITE_BASE_URL;
-      console.log(" url is : ", url);
     
       const changeHandler= (e)=>{
     
@@ -22,24 +23,21 @@ const ContactUsForm = () => {
           [e.target.name] : e.target.value
         }))
       }
+
+      const {CONTACT_US_API} = contact_us
     
       const submitHandler= async(e)=>{
     
         e.preventDefault();
     
         console.log("formData is : ", formData);
-        console.log("url is:", url);
+        // console.log("url is:", url);
         try {
-           await fetch(
-            `${url}/contactUs`,
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ ...formData }),
-            }
-          );
+          const toastId = toast.loading("loading");
+          await apiConnector("POST", CONTACT_US_API, formData);
+          toast.dismiss(toastId);
+          toast.success("form sent successfully");
+
         } catch (error) {
           console.log("error at sending the email", error);
         }

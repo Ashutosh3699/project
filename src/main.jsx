@@ -13,7 +13,8 @@ import SignUp from './pages/SignUp.jsx'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import IndividualBlog from './components/Blogs/IndividualBlog.jsx'
 import OurServices from './pages/OurServices.jsx'
-import Consultancy from './pages/Consultancy.jsx'
+import Consultancy from './pages/Consultancy.jsx';
+import  { Toaster } from 'react-hot-toast';
 
 const router = createBrowserRouter([
 
@@ -72,6 +73,9 @@ const router = createBrowserRouter([
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
 
-  <RouterProvider  router={router}   />
+     <RouterProvider  router={router}   />
+     <Toaster />
+  </React.StrictMode>
 )
