@@ -15,6 +15,15 @@ import IndividualBlog from './components/Blogs/IndividualBlog.jsx'
 import OurServices from './pages/OurServices.jsx'
 import Consultancy from './pages/Consultancy.jsx';
 import  { Toaster } from 'react-hot-toast';
+import { Provider } from "react-redux";
+import { configureStore } from "@reduxjs/toolkit";
+import rootReducer from "./app/index";
+
+
+const store= configureStore({
+  reducer:rootReducer
+})
+
 
 const router = createBrowserRouter([
 
@@ -74,8 +83,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-
-     <RouterProvider  router={router}   />
-     <Toaster />
+      <Provider store={store}>
+        <RouterProvider  router={router}   />
+        <Toaster />
+     </Provider>
   </React.StrictMode>
 )
