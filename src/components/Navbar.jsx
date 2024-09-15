@@ -148,12 +148,12 @@ const Navbar = () => {
                             <ul className="flex-col  gap-3 absolute top-8 -right-1 text-md  cursor-pointer w-24 text-black rounded-lg 
                             bg-white items-center px-4 py-4 space-y-3  ">
                                 <li className='hover:underline'>
-                                    <NavLink  to={"/"}>
+                                    <NavLink  to={"/login"}>
                                         <p>Login</p>
                                     </NavLink>
                                 </li>
                                 <li className='hover:underline'>
-                                    <NavLink  to={"/"}>
+                                    <NavLink  to={"/sign-up"}>
                                     <p> Sign up </p> 
                                     </NavLink>
                                 </li>

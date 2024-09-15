@@ -6,7 +6,6 @@ import AboutUS from './pages/AboutUS.jsx'
 import Home from './pages/Home.jsx'
 import Blogs from './pages/Blogs.jsx'
 import Career from './pages/Career.jsx'
-import Partnership from './pages/Partnership.jsx'
 import Stores from './pages/Stores.jsx'
 import Login from './pages/Login.jsx'
 import SignUp from './pages/SignUp.jsx'
@@ -18,6 +17,7 @@ import  { Toaster } from 'react-hot-toast';
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import rootReducer from "./app/index";
+import VerifyEmail from './components/Authentication/signup/VerifyEmail.jsx'
 
 
 const store= configureStore({
@@ -60,10 +60,6 @@ const router = createBrowserRouter([
         element: <OurServices/>
       },
       {
-        path: "/partnership",
-        element: <Partnership/>
-      },
-      {
         path: "/stores",
         element: <Stores/>
       },
@@ -74,6 +70,10 @@ const router = createBrowserRouter([
       {
         path: "/sign-up",
         element: <SignUp/>
+      },
+      {
+        path: "/verify-email",
+        element: <VerifyEmail/>
       }
     ],
   },
