@@ -22,6 +22,10 @@ import Error from './pages/Error.jsx'
 import ForgotPassword from './components/Authentication/login/ForgotPassword.jsx'
 import UpdatePassword from './components/Authentication/login/UpdatePassword.jsx'
 import ResetComplete from './components/Authentication/login/ResetComplete.jsx'
+import OpenRoute from './components/Authentication/OpenRoute.js'
+import PrivateRoute from './components/Authentication/PrivateRoute.js'
+import Dashboard from './components/Authentication/Dashboard/Dashboard.jsx'
+import MyProfile from './components/Authentication/Dashboard/MyProfile.jsx'
 
 
 const store= configureStore({
@@ -69,28 +73,56 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <Login/>
+        element:(<OpenRoute>
+          <Login/>
+        </OpenRoute>)
       },
       {
         path: "/sign-up",
-        element: <SignUp/>
+        element: (<OpenRoute>
+            <SignUp/>
+          </OpenRoute>)
       },
       {
         path: "/verify-email",
-        element: <VerifyEmail/>
+        element: (<OpenRoute>
+            <VerifyEmail/>
+          </OpenRoute>)
       },
       {
         path:"/forgotPassword",
-        element:<ForgotPassword/>
+        element: <OpenRoute>
+          <ForgotPassword/>
+        </OpenRoute>
       },
       {
         path:"/update-password/:id",
-        element:<UpdatePassword/>
+        element: <OpenRoute>
+           <UpdatePassword/>
+        </OpenRoute>
       },
       {
         path:"/reset-completed",
-        element:<ResetComplete/>
+        element: (<OpenRoute>
+            <ResetComplete/>
+          </OpenRoute>)
+      },
+      {
+        element:(
+          <PrivateRoute>
+            <Dashboard/>
+          </PrivateRoute>
+        ),
+        children:[
+          {
+            path:"/dashboard/my-profile",
+            element:(
+              <MyProfile/>
+            )
+          }
+        ]
       }
+      
     ],
   },
   {

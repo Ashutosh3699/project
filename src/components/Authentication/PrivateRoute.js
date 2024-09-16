@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const PrivateRoute = ({children}) => {
 
@@ -10,7 +10,7 @@ const PrivateRoute = ({children}) => {
         return children;
     }
     else
-        return <Navigate to={"/login"}/>
+        return useNavigate("/login");
 }
 
 export default PrivateRoute
