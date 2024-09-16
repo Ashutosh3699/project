@@ -6,8 +6,13 @@ import { CiShoppingCart } from "react-icons/ci";
 import logo from "../assets/mainlogo.png";
 import useOutsideClick from '../customHook/useOutsideClick';
 import { services } from './WhatWeProvide/services/first';
+import { useSelector } from 'react-redux';
+import ProfileDropDown from './Authentication/Profile/ProfileDropDown';
 
 const Navbar = () => {
+
+    const {token} = useSelector((state)=>state.auth);
+    const cart = useSelector((state)=>state.cart);
 
     const [attributeclass,setattributeClass] = useState("invisible opacity-0");
     const divref = useRef(null);
@@ -95,77 +100,95 @@ const Navbar = () => {
 
     </ul>
 
-    {/* for mobile */}
     <div className='flex gap-3 items-center '>
 
+        {/* for mobile */}
         <div  className=' flex md:hidden relative px-4'  onClick={clickHandler} ref={divref} >
             <GiHamburgerMenu />
             <ul  className={`${attributeclass} flex-col rounded-md  gap-4 absolute top-7 right-0  bg-white text-blue-color font-medium  
             text-md  cursor-pointer  w-[120px]  px-4 py-3 transition-all duration-200  translate-x-20`}>
-            <li  className=' hover:bg-gray-400 rounded-md w-full text-center hover:text-white'>
-                <NavLink  to={"/about-us"}>
-                    About us
-                </NavLink>
-            </li>
-            <li className=' hover:bg-gray-400 rounded-md w-full text-center hover:text-white'>
-                <NavLink  to={"/"}>
-                    Our fields
-                </NavLink>
-            </li>
-            <li className=' hover:bg-gray-400 rounded-md w-full text-center hover:text-white'>
-                <NavLink  to={"/"}>
-                    Products
-                </NavLink>
-            </li>
-            <li className=' hover:bg-gray-400 rounded-md w-full text-center hover:text-white'> 
-                <NavLink  to={"/"}>
-                    Consultancy
-                </NavLink>
-            </li>
-            <li className=' hover:bg-gray-400 rounded-md w-full text-center hover:text-white'>
-                <NavLink  to={"/"}>
-                    Career
-                </NavLink>
-            </li>
-            <li className=' hover:bg-gray-400 rounded-md w-full text-center hover:text-white'>
-                <NavLink  to={"/blogs"}>
-                    Blogs
-                </NavLink>
-            </li>
+                <li  className=' hover:bg-gray-400 rounded-md w-full text-center hover:text-white'>
+                    <NavLink  to={"/about-us"}>
+                        About us
+                    </NavLink>
+                </li>
+                <li className=' hover:bg-gray-400 rounded-md w-full text-center hover:text-white'>
+                    <NavLink  to={"/"}>
+                        Our fields
+                    </NavLink>
+                </li>
+                <li className=' hover:bg-gray-400 rounded-md w-full text-center hover:text-white'>
+                    <NavLink  to={"/"}>
+                        Products
+                    </NavLink>
+                </li>
+                <li className=' hover:bg-gray-400 rounded-md w-full text-center hover:text-white'> 
+                    <NavLink  to={"/"}>
+                        Consultancy
+                    </NavLink>
+                </li>
+                <li className=' hover:bg-gray-400 rounded-md w-full text-center hover:text-white'>
+                    <NavLink  to={"/"}>
+                        Career
+                    </NavLink>
+                </li>
+                <li className=' hover:bg-gray-400 rounded-md w-full text-center hover:text-white'>
+                    <NavLink  to={"/blogs"}>
+                        Blogs
+                    </NavLink>
+                </li>
 
              </ul>
         </div>
 
         {/* login and sign-up */}
             <div className='flex justify-between items-center gap-2 md:gap-4 ' >
-                <div className='flex flex-col relative cursor-pointer  hover:bg-black rounded-full 
-                        justify-center items-center px-3 py-3  text-white  duration-500 group' 
-                >
-                    <FaRegUser className='md:text-xl' />
 
-                        <div  className= {`bg-transparent px-4 py-4  invisible  group-hover:visible  duration-500 top-5  absolute bg-black `}>
-
-                            <ul className="flex-col  gap-3 absolute top-8 -right-1 text-md  cursor-pointer w-24 text-black rounded-lg 
-                            bg-white items-center px-4 py-4 space-y-3  ">
-                                <li className='hover:underline'>
-                                    <NavLink  to={"/login"}>
-                                        <p>Login</p>
-                                    </NavLink>
-                                </li>
-                                <li className='hover:underline'>
-                                    <NavLink  to={"/sign-up"}>
-                                    <p> Sign up </p> 
-                                    </NavLink>
-                                </li>
-                        </ul>
-
-                        </div>
-                    
-                </div>
-
-                <div >
+            <div className='relative  flex flex-row gap-1  items-center'>
                         <CiShoppingCart className='text-xl md:text-3xl' />
-                </div>
+                        <div>{cart.totalItems}</div>
+             </div>
+            {/* login and signup wala div */}
+            {
+                token === null && (
+                    <div className='flex flex-col relative cursor-pointer  hover:bg-black rounded-full 
+                        justify-center items-center px-3 py-3  text-white  duration-500 group' 
+                        >
+                            <FaRegUser className='md:text-xl' />
+
+                                <div  className= {`bg-transparent px-4 py-4  invisible  group-hover:visible  duration-500 top-5  absolute bg-black `}>
+
+                                    <ul className="flex-col  gap-3 absolute top-8 -right-1 text-md  cursor-pointer w-24 text-black rounded-lg 
+                                    bg-white items-center px-4 py-4 space-y-3  ">
+                                        <li className='hover:underline'>
+                                            <NavLink  to={"/login"}>
+                                                <p>Login</p>
+                                            </NavLink>
+                                        </li>
+                                        <li className='hover:underline'>
+                                            <NavLink  to={"/sign-up"}>
+                                            <p> Sign up </p> 
+                                            </NavLink>
+                                        </li>
+                                </ul>
+
+                                </div>
+                            
+                        </div>
+                )
+            }
+            {/* profile dropdown */}
+            {
+                token !== null && (
+                    <div>
+                       <ProfileDropDown/>
+                    </div>
+                )
+            }
+
+            
+
+
             </div>
     </div>
 

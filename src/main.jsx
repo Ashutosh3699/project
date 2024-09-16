@@ -18,6 +18,10 @@ import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import rootReducer from "./app/index";
 import VerifyEmail from './components/Authentication/signup/VerifyEmail.jsx'
+import Error from './pages/Error.jsx'
+import ForgotPassword from './components/Authentication/login/ForgotPassword.jsx'
+import UpdatePassword from './components/Authentication/login/UpdatePassword.jsx'
+import ResetComplete from './components/Authentication/login/ResetComplete.jsx'
 
 
 const store= configureStore({
@@ -74,9 +78,25 @@ const router = createBrowserRouter([
       {
         path: "/verify-email",
         element: <VerifyEmail/>
+      },
+      {
+        path:"/forgotPassword",
+        element:<ForgotPassword/>
+      },
+      {
+        path:"/update-password/:id",
+        element:<UpdatePassword/>
+      },
+      {
+        path:"/reset-completed",
+        element:<ResetComplete/>
       }
     ],
   },
+  {
+    path:"*",
+    element:<Error/>
+  }
 
 ])
 
