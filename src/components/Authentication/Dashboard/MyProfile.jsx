@@ -7,7 +7,7 @@ const MyProfile = () => {
 
   const {user} = useSelector((state)=>state.profile);
   console.log(user);
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <div className='bg-regal-blue text-gray-50'>
@@ -17,7 +17,7 @@ const MyProfile = () => {
         <div className='flex flex-col gap-8 items-start w-11/12 mx-auto'>
 
           {/* section 1 */}
-            <div className=' flex flex-row  w-[80%] justify-between  pr-4  pl-8 items-start  py-8  bg-blue-900 rounded-lg border border-blue-700'>
+            <div className=' flex flex-row  w-[80%] justify-between  pr-4  pl-8 items-start  py-8  bg-gray-900 rounded-lg border border-gray-700'>
 
                <div className='flex gap-6 flex-row  items-center'>
                 <div className='w-20 h-20 rounded-full overflow-hidden'>
@@ -40,14 +40,14 @@ const MyProfile = () => {
 
             </div>
                   {/* secction 2 */}
-            <div className=' flex flex-row  w-[80%] justify-between  pr-4  pl-8 items-start   py-8   bg-blue-900 rounded-lg border border-blue-700'>
+            <div className=' flex flex-row  w-[80%] justify-between  pr-4  pl-8 items-start   py-8   bg-gray-900 rounded-lg border border-gray-700'>
                
                <div className='flex gap-6 flex-col  items-start'>
 
-                       <h2 className='text-2xl text-gray-50 font-bold '>About</h2>
+                       <h2 className='text-2xl text-gray-50 font-bold '>Address</h2>
 
                       <p>{
-                        user?.accountDetails?.aboutUser ? (user?.accountDetails?.aboutUser) : (<span>Write anything about yourself</span>)
+                        user?.accountDetails?.address ? (user?.accountDetails?.address) : (<span>Please add your address</span>)
                       }
                         </p>
                </div>
@@ -62,7 +62,7 @@ const MyProfile = () => {
 
             </div>
                   {/* section3 */}
-            <div className=' flex flex-row  w-[80%] justify-between  pr-4  pl-8 items-start   py-8   bg-blue-900 rounded-lg border border-blue-700'>
+            <div className=' flex flex-row  w-[80%] justify-between  pr-4  pl-8 items-start   py-8   bg-gray-900 rounded-lg border border-gray-700'>
 
                  <div className='flex gap-6 flex-col  items-start w-[70%]'>
 

@@ -25,7 +25,7 @@ export function updateProfile(data,token){
 
             // working here
             dispatch(setUser(response.data.data));
-            toast.success("Upload of image is successfully done");
+            toast.success("Upload of profile is successfully done");
 
         } catch (error) {
             toast.error("update of profile is failed while process..");

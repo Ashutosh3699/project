@@ -12,7 +12,7 @@ const ResetComplete = () => {
         <p className='text-lg font-medium text-gray-200 text-center font-edu-sa  my-2'>
             All done! We have sent an email to  ***********@gmail.com to confirm
         </p>
-        <Link  to={"/login"}>
+        <Link  to={"/login"} className='text-md italic text-blue-400'>
             Return to login
         </Link>
     </div>

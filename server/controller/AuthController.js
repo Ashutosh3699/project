@@ -47,7 +47,7 @@ exports.sendOtp = async(req,res)=>{
             })
             result = await OTP.findOne({otp});
         }
-        // create the otp data in databse and before saving the otp will be send to user
+        // create the otp data in database and before saving the otp will be send to user
 
         const data = await OTP.create({
             email,

@@ -25,7 +25,8 @@ import ResetComplete from './components/Authentication/login/ResetComplete.jsx'
 import OpenRoute from './components/Authentication/OpenRoute.js'
 import PrivateRoute from './components/Authentication/PrivateRoute.js'
 import Dashboard from './components/Authentication/Dashboard/Dashboard.jsx'
-import MyProfile from './components/Authentication/Dashboard/MyProfile.jsx'
+import MyProfile from './components/Authentication/Dashboard/MyProfile.jsx';
+import Settings from './components/Authentication/Dashboard/settings/Settings.jsx'
 
 
 const store= configureStore({
@@ -117,8 +118,12 @@ const router = createBrowserRouter([
           {
             path:"/dashboard/my-profile",
             element:(
-              <MyProfile/>
+               <MyProfile/>
             )
+          },
+          {
+            path:"/dashboard/settings",
+            element: <Settings/>
           }
         ]
       }
