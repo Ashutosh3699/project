@@ -27,6 +27,7 @@ import PrivateRoute from './components/Authentication/PrivateRoute.js'
 import Dashboard from './components/Authentication/Dashboard/Dashboard.jsx'
 import MyProfile from './components/Authentication/Dashboard/MyProfile.jsx';
 import Settings from './components/Authentication/Dashboard/settings/Settings.jsx'
+import Product from './components/Product/Product.jsx'
 
 
 const store= configureStore({
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
       {
         path: "/career",
         element: <Career/>
+      },
+      {
+        path: "/product",
+        element: <Product/>
       },
       {
         path: "/our-services/:serviceId",

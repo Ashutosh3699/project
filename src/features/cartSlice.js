@@ -26,19 +26,20 @@ export const cartslice = createSlice({
         addItems: (state, action) =>{
 
             const course = action.payload;
-            const index = state.carts.findIndex((item) => item._id === course._id);
+            console.log("course at add item is: ", course[0]);
 
+            const index = state.carts.findIndex((item) =>( item._id === course[0]._id));
+            // console.log("index is: ", index);
             if (index >= 0) {
-                // If the course is already in the cart, do not modify the quantity
                 toast.error("Course already in cart")
                 return
               }
 
-            state.carts.push(course);
+            state.carts.push(course[0]);
 
             // Update the total quantity and price
             state.totalItems++
-            state.total += course.price
+            state.total += parseInt(course[0].price);
             // Update to localstorage
             localStorage.setItem("cart", JSON.stringify(state.carts))
             localStorage.setItem("total", JSON.stringify(state.total))

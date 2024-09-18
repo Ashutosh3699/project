@@ -47,6 +47,10 @@ app.use("/api/v1/contactUs", contactUs);
 const profile = require("./router/Profile");
 app.use("/api/v1/profile", profile);
 
+// routers for product router
+const productRouter = require("./router/productRouter");
+app.use("/api/v1/productRouter", productRouter);
+
 // listen to server
 app.listen(port, ()=>{
   console.log(`server is live at port number ${port}`)
