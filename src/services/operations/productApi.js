@@ -52,7 +52,8 @@ export const fetchProductDetail= async(productId)=>{
     const toastId = toast.loading("Loading...")
     let result = null;
     try {
-        const response  = await apiConnector("GET", GET_PRODUCT_DETAIL_API,{productId});
+
+        const response = await apiConnector("POST", GET_PRODUCT_DETAIL_API, {productId});
 
         if(!response.data.success){
             throw new Error("Could Not Fetch product by productID")

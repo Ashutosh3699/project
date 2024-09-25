@@ -1,7 +1,8 @@
 import React,{useEffect, useState} from 'react';
-import {getAllProducts} from "../../services/operations/productApi"
+import { getAllProducts} from "../../services/operations/productApi"
 import { useDispatch, useSelector } from 'react-redux';
 import {addItems} from "../../features/cartSlice"
+import { useNavigate } from 'react-router-dom';
 
 const Product = () => {
 
@@ -9,6 +10,7 @@ const Product = () => {
     const [loading, setLoading] = useState(false);
     const {totalItems,total,carts} = useSelector((state)=>state.cart)
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     useEffect(()=>{
         
@@ -27,12 +29,18 @@ const Product = () => {
     const addToCart=(index)=>{
         const selectproduct = showProduct.filter((item)=>item._id === index);
         dispatch(addItems(selectproduct));
-        
+        console.log("add to cart: ",carts );
+        console.log("add to totalItem: ",totalItems );
+        console.log("total is:", total);
     }
 
-    console.log("add to cart: ",carts );
-    console.log("add to totalItem: ",totalItems );
-    console.log("total is:", total);
+    const getProductdetail= async(index)=>{
+        
+        const selectproduct = showProduct.filter((item)=>item._id === index);
+        navigate(`/product/${selectproduct[0]._id}`);
+    }
+
+    
 
   return (
     <div className='bg-regal-blue py-16 px-10 text-white'>
@@ -44,7 +52,7 @@ const Product = () => {
                         <div key={element._id} className='flex flex-col items-center gap-3 bg-gray-900 rounded-xl overflow-hidden border border-gray-500'>
 
                             <img  src={element.thumbnail} alt={`product-image-${element.productName}`} className='lg:w-[300px]  ' />
-                            <h3>{element.productName}</h3>
+                            <h3 onClick={()=>getProductdetail(element._id)}  >{element.productName}</h3>
                             <p>
                                 {element.productDetail}
                             </p>

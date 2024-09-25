@@ -4,6 +4,7 @@ import authReducer from "../features/authSlice";
 import profileReducer from "../features/profileSlice";
 import cartReducer from "../features/cartSlice";
 import productReducer from "../features/productSlice";
+import viewProductReducer from "../features/viewProduct";
 
 const rootReducer = combineReducers({
 
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
     profile: profileReducer,
     cart: cartReducer,
     product: productReducer,
+    viewProduct: viewProductReducer
     
 });
 

@@ -28,6 +28,7 @@ import Dashboard from './components/Authentication/Dashboard/Dashboard.jsx'
 import MyProfile from './components/Authentication/Dashboard/MyProfile.jsx';
 import Settings from './components/Authentication/Dashboard/settings/Settings.jsx'
 import Product from './components/Product/Product.jsx'
+import ViewProduct from './components/Product/ViewProduct.jsx'
 
 
 const store= configureStore({
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
       {
         path: "/product",
         element: <Product/>
+      },
+      {
+        path:"/product/:product_id",
+        element: <ViewProduct/>
       },
       {
         path: "/our-services/:serviceId",

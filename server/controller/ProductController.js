@@ -67,14 +67,7 @@ exports.createProduct= async (req,res) =>{
 exports.getAllproducts = async(req,res) =>{
     try {
         // fetching the data from db and try another method
-        const resposne = await Products.find({},
-            {
-				productName: true,
-                productDetail:true,
-				price: true,
-				thumbnail: true,
-			}
-        );
+        const resposne = await Products.find({}).populate("image").exec();
         // populate and exec wala part baki hai
         return res.status(200).json({
             success:true,
@@ -93,11 +86,12 @@ exports.getAllproducts = async(req,res) =>{
 }
 
 // get course details
-exports.getProductDetails = async(req,res)=>{
+exports.getProductDetail = async(req,res)=>{
     try {
         // fetch the courseid and if any thing is required
+        // console.log("body is: ", req.body);
         const {productId} = req.body;
-        console.log("productId: ",productId)
+        // console.log("productId: ",productId)
         
         // db call and get the detail 
         const response = await  Products.findOne({_id:productId}).populate("image").exec();

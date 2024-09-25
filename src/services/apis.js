@@ -31,9 +31,9 @@ export const contact_us={
 export const products = {
 
     GET_ALL_PRODUCT_API : BASE_URL+ "/productRouter/getAllproducts",
-    GET_PRODUCT_DETAIL_API : BASE_URL+ "/productRouter/getProductDetails",
     CREATE_PRODUCT_API : BASE_URL+ "/productRouter/createProduct",
     CREATE_PRODUCT_IMAGE_API : BASE_URL+ "/productRouter/createProductImage",
     DELETE_PRODUCT_IMAGE_API : BASE_URL+ "/productRouter/deleteProductImage",
+    GET_PRODUCT_DETAIL_API: BASE_URL + "/productRouter/getProductDetail"
 
 }
