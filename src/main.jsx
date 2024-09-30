@@ -14,7 +14,7 @@ import IndividualBlog from './components/Blogs/IndividualBlog.jsx'
 import OurServices from './pages/OurServices.jsx'
 import Consultancy from './pages/Consultancy.jsx';
 import  { Toaster } from 'react-hot-toast';
-import { Provider } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import rootReducer from "./app/index";
 import VerifyEmail from './components/Authentication/signup/VerifyEmail.jsx'
@@ -29,12 +29,13 @@ import MyProfile from './components/Authentication/Dashboard/MyProfile.jsx';
 import Settings from './components/Authentication/Dashboard/settings/Settings.jsx'
 import Product from './components/Product/Product.jsx'
 import ViewProduct from './components/Product/ViewProduct.jsx'
+import CategorySection from './components/Product/Categories/CategorySection.jsx'
+import InstructorRoute from './components/Authentication/InstructorRoute.js'
 
 
 const store= configureStore({
   reducer:rootReducer
 })
-
 
 const router = createBrowserRouter([
 
@@ -134,7 +135,14 @@ const router = createBrowserRouter([
           {
             path:"/dashboard/settings",
             element: <Settings/>
+          },
+          {
+            path: "/dashboard/categories",
+            element:  <InstructorRoute>
+              <CategorySection/>
+            </InstructorRoute>
           }
+          
         ]
       }
       

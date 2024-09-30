@@ -37,3 +37,14 @@ export const products = {
     GET_PRODUCT_DETAIL_API: BASE_URL + "/productRouter/getProductDetail"
 
 }
+
+export const categoryEndpoint={
+
+    CREATE_CATEGORY_API: BASE_URL + "/productRouter/createCategories",
+    UPDATE_CATEGORY_API: BASE_URL + "/productRouter/updateCategory",
+
+    GET_ALL_CATEGORY_API: BASE_URL + "/productRouter/getAllCategories",
+    GET_CATEGORY_PRODUCT_API: BASE_URL + "/productRouter/getCategoryProducts",
+    GET_TAG_PRODUCT_API: BASE_URL + "/productRouter/getTagsProducts",
+
+}
