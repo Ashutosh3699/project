@@ -25,13 +25,20 @@ export const sidebarLinks = [
     name: "Add Product",
     path: "/dashboard/add-product",
     type: ACCOUNT_TYPE.ADMIN,
-    icon: "VscAdd",
+    icon: "VscVm",
   },
   {
     id: 5,
+    name: "Add Category",
+    path: "/dashboard/categories",
+    type: ACCOUNT_TYPE.ADMIN,
+    icon: "VscAdd",
+  },
+  {
+    id: 6,
     name: "Dashboard",
     path: "/dashboard/informationForAdmin",
     type: ACCOUNT_TYPE.ADMIN,
-    icon: "VscAdd",
+    icon: "VscDashboard",
   }
 ];

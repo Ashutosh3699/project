@@ -26,14 +26,19 @@ const productSchema = new  mongoose.Schema({
     type:String,
     trim:true
   },
-clientBrought: [{
+  clientBrought: [{
+      type:mongoose.Schema.Types.ObjectId,
+      ref:"User",
+      required:true
+  }],
+  instructions: {
+    type: [String],
+  },
+  tags:{
     type:mongoose.Schema.Types.ObjectId,
-    ref:"User",
-    required:true
-}],
-instructions: {
-	type: [String],
-},
+    ref: "Tags",
+    required:true,
+  }
 
 })
 

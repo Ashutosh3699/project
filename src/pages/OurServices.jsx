@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import { services } from '../components/WhatWeProvide/services/first';
-import "../components/WhatWeProvide/service.css"
+import { services } from '../components/HomePage/WhatWeProvide/services/first';
+import "../components/HomePage/WhatWeProvide/service.css"
 
 const OurServices = () => {
 

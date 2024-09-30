@@ -1,5 +1,5 @@
 import React from 'react';
-import bgImage from "../../assets/whiteBg.png";
+import bgImage from "../../../assets/whiteBg.png";
 import ServicesContent from './ServicesContent';
 import { services } from './services/first';
 import { Link } from 'react-router-dom';

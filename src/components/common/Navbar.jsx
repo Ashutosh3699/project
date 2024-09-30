@@ -3,11 +3,11 @@ import { NavLink } from 'react-router-dom';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaRegUser } from "react-icons/fa";
 import { CiShoppingCart } from "react-icons/ci";
-import logo from "../assets/mainlogo.png";
-import useOutsideClick from '../customHook/useOutsideClick';
-import { services } from './WhatWeProvide/services/first';
+import logo from "../../assets/mainlogo.png";
+import useOutsideClick from '../../customHook/useOutsideClick';
+import { services } from '../HomePage/WhatWeProvide/services/first';
 import { useSelector } from 'react-redux';
-import ProfileDropDown from './Authentication/Profile/ProfileDropDown';
+import ProfileDropDown from '../Authentication/Profile/ProfileDropDown';
 
 const Navbar = () => {
 

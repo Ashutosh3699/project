@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FaStar } from "react-icons/fa";
 import ReviewContent from './ReviewContent';
 import { FaChevronRight } from "react-icons/fa";

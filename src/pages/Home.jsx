@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
-import Herosection1 from '../components/Herosection/Herosection1';
+import Herosection1 from '../components/HomePage/Herosection/Herosection1';
 import { FaChevronRight } from "react-icons/fa";
 import { FaChevronLeft } from "react-icons/fa";
-import Weprovide from '../components/WhatWeProvide/Weprovide';
-import OurExploration from '../components/ourexploration/OurExploration';
-import Herosection2 from '../components/Herosection/Herosection2';
-import Herosection3 from '../components/Herosection/Herosection3';
-import OurClient from '../components/OurClient/OurClient';
-import Grid from '../components/four_grid/Grid';
+import Weprovide from '../components/HomePage/WhatWeProvide/Weprovide';
+import OurExploration from '../components/HomePage/ourexploration/OurExploration';
+import Herosection2 from '../components/HomePage/Herosection/Herosection2';
+import Herosection3 from '../components/HomePage/Herosection/Herosection3';
+import OurClient from '../components/HomePage/OurClient/OurClient';
+import Grid from '../components/HomePage/four_grid/Grid';
 
 const Home = () => {
 
