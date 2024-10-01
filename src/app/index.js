@@ -5,6 +5,7 @@ import profileReducer from "../features/profileSlice";
 import cartReducer from "../features/cartSlice";
 import productReducer from "../features/productSlice";
 import viewProductReducer from "../features/viewProduct";
+import categoryReducer from "../features/CategorySlice";
 
 const rootReducer = combineReducers({
 
@@ -12,8 +13,8 @@ const rootReducer = combineReducers({
     profile: profileReducer,
     cart: cartReducer,
     product: productReducer,
-    viewProduct: viewProductReducer
-    
+    viewProduct: viewProductReducer,
+    category: categoryReducer
 });
 
 export default rootReducer;

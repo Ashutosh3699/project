@@ -15,6 +15,13 @@ exports.createCategories=async(req,res)=>{
                 message:"Please put all the data",
             })
         }
+        const alreadyExist = await Category.findOne({categoryName});
+        if(alreadyExist){
+            return res.status(400).json({
+                success:false,
+                message:"already exist"
+            })
+        }
         // enter the category in database
         const categoryRes = await Category.create({
             categoryName
@@ -29,15 +36,16 @@ exports.createCategories=async(req,res)=>{
 
         const response = await Category.findByIdAndUpdate(categoryRes._id,{
             $push:{
-                subCategory:tagRes         
+                subCategory:tagRes._id         
               }
         },{new:true})
         console.log("final response is: ", response);
+        const allCategory = await Category.find({});
 
         return res.status(200).json({
             success:true,
             message:"Category and tag inserted in it successfully",
-            data:response
+            data:allCategory
         })
         
     } catch (error) {
@@ -71,7 +79,9 @@ exports.updateCategory=async(req,res)=>{
         console.log("tag response is: ", tagRes);
 
         const response = await Category.findByIdAndUpdate(categoryId,{
-            $push:tagRes
+            $push:{
+                subCategory:tagRes._id
+            }
         })
         console.log("final response is: ", response);
 

@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { getAllCategories, updateCategory } from '../../../services/operations/categoryApi';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addCategory } from '../../../features/CategorySlice';
 
 const UpdateCategory = () => {
 
     const [loading, setLoading] = useState(true);
-    const [categoryList, setCategoryList] = useState([]);
+    const {category} = useSelector((state)=>state.category);
     const {token} = useSelector((state)=>state.auth);
+    const dispatch = useDispatch();
 
     const {
         register,
@@ -22,9 +24,9 @@ const UpdateCategory = () => {
         const fetchCategory=async()=>{
             setLoading(true);
             const res = await getAllCategories();
-            console.log("res is: ", res);
+            // console.log("res is: ", res);
             if(res){
-                setCategoryList(res);
+                dispatch(addCategory(res));
             }
             setLoading(false);
         }
@@ -33,7 +35,7 @@ const UpdateCategory = () => {
 
     const onsubmit= async(data)=>{
 
-        console.log("data is:", data);
+        // console.log("data is:", data);
         const response = await updateCategory(token,data);
         if(response){
             console.log("response is: ", response);
@@ -61,7 +63,7 @@ const UpdateCategory = () => {
                             className='text-lg bg-gray-900  text-gray-100'
                             >
                                 <option value=""  disabled>Choose a Category</option>
-                                {!loading && categoryList.map((category, index) => (
+                                {!loading && category.map((category, index) => (
                                 <option key={index} value={category?._id} >
                                     {category?.categoryName}
                                 </option>

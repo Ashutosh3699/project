@@ -15,6 +15,7 @@ const CategorySection = () => {
         <div className='flex flex-col gap-6 pl-8 '>
             <AddCategory/>
             <UpdateCategory/>
+            {/* delete tag  */}
         </div>
     
     </div>

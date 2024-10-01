@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { createCategory } from '../../../services/operations/categoryApi';
+import { addCategory } from '../../../features/CategorySlice';
 
 export const AddCategory = () => {
 
     const [confirmModal, setConfirmModal] = useState(null);
     const {token} = useSelector((state)=>state.auth);
+    const dispatch = useDispatch();
 
     const {
         register,
@@ -22,6 +24,7 @@ export const AddCategory = () => {
 
         if(response){
             console.log("response is: ", response);
+            dispatch(addCategory(response));
         }
         setValue("categoryName", "");
         setValue("tagName", "");
