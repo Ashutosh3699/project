@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
-import { updateCategory } from '../../../services/operations/categoryApi';
+import { getAllCategories, updateCategory } from '../../../services/operations/categoryApi';
 import { useSelector } from 'react-redux';
 
 const UpdateCategory = () => {
@@ -19,10 +19,16 @@ const UpdateCategory = () => {
     useEffect(()=>{
 
         // fetch the category and load it inside categoryList
-        setLoading(true);
-
-
-        setLoading(false);
+        const fetchCategory=async()=>{
+            setLoading(true);
+            const res = await getAllCategories();
+            console.log("res is: ", res);
+            if(res){
+                setCategoryList(res);
+            }
+            setLoading(false);
+        }
+        fetchCategory();
     },[]);
 
     const onsubmit= async(data)=>{
@@ -54,15 +60,13 @@ const UpdateCategory = () => {
                             {...register("categoryId", { required: true })}
                             className='text-lg bg-gray-900  text-gray-100'
                             >
-                            <option value=""  disabled>Choose a Category</option>
-                            {!loading && categoryList.map((category, index) => (
-                            <option key={index} value={category?._id} >
-                                {category?.categoryName}
-                            </option>
-                            ))}
-
+                                <option value=""  disabled>Choose a Category</option>
+                                {!loading && categoryList.map((category, index) => (
+                                <option key={index} value={category?._id} >
+                                    {category?.categoryName}
+                                </option>
+                                ))}
                             </select>
-                            
                             {errors.category && (<span>please enter a category</span>)}
                     </div>
                     <div className='flex flex-col gap-2 items-center'>

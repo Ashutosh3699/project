@@ -29,7 +29,8 @@ exports.createCategories=async(req,res)=>{
 
         const response = await Category.findByIdAndUpdate(categoryRes._id,{
             $push:{
-                subCategory:tagRes           }
+                subCategory:tagRes         
+              }
         },{new:true})
         console.log("final response is: ", response);
 

@@ -57,6 +57,27 @@ export async function updateCategory(token,data){
     toast.dismiss(toastId);
     return result;
 }
+// fetch all the categories
+export async function  getAllCategories(){
+    const toastId = toast.loading("...loading");
+    let result = [];
+
+    try {
+        const response = await apiConnector("GET",GET_ALL_CATEGORY_API);
+
+          console.log("response at get in category is: ", response?.data?.data);
+        if(!response.data.success){
+            throw new Error("Could not getting any category")
+        }
+        result = response?.data?.data;
+        toast.success("get category successfully");
+    } catch (error) {
+        console.log("GET_ALL_CATEGORY_API API ERROR............", error)
+        toast.error(error.message)
+    }
+    toast.dismiss(toastId);
+    return result;
+}
 
 
 
