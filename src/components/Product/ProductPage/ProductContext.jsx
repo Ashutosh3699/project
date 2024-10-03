@@ -44,10 +44,10 @@ const ProductContext = () => {
 
 
   return (
-    <div>
+    <div className=' flex gap-4 flex-wrap w-[80%] mx-auto'>
         {
             showProduct.map((element)=>(
-                <div key={element._id} className='flex flex-col items-center gap-3 bg-gray-900 rounded-xl overflow-hidden border border-gray-500'>
+                <div key={element._id} className='flex flex-col w-[300px] items-center gap-3 bg-gray-900 rounded-xl overflow-hidden border border-gray-500'>
 
                     <img  src={element.thumbnail} alt={`product-image-${element.productName}`} className='lg:w-[300px]  ' />
                     <h3 onClick={()=>getProductdetail(element._id)}  >{element.productName}</h3>
