@@ -100,7 +100,7 @@ exports.getAllCategories = async(req,res)=>{
         
         // fetch all the categories and tags
         const response = await Category.find({}).populate("subCategory").exec();
-        console.log("response of geting all the categories : ", response);
+        // console.log("response of geting all the categories : ", response);
         if(!response){
 
             return res.status(404).json({

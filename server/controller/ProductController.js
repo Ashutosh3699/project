@@ -1,18 +1,20 @@
 const Products = require("../models/Products");
 const ProductImage = require("../models/ProductImages");
 const {fileAndImageUploader}   = require("../utils/imageUploader");
+const Tags = require("../models/Tags");
 
 require("dotenv").config();
 
 exports.createProduct= async (req,res) =>{
     try {
         // fetch file and data
-        let  {productName, productDetail, price, whatWeWillget,instructions} = req.body;
+        let  {productName, productDetail, price, whatWeWillget,_instructions, tags} = req.body;
 
         const  thumbnail = req.files.thumbnail;
-        console.log(req.body);
-        console.log(thumbnail);
-        if(!productName || !productDetail || !price || !whatWeWillget || !thumbnail ){
+
+        console.log("body is : ",req.body);
+        console.log("thumbnail is: ",thumbnail);
+        if(!productName || !productDetail || !price || !whatWeWillget || !thumbnail  || !tags){
             return res.status(400).json({
                 success:false,
                 message: "Enter all the details",
@@ -41,15 +43,24 @@ exports.createProduct= async (req,res) =>{
             whatWeWillget,
             price,
             thumbnail:imageURL.secure_url,
-			instructions: instructions,
+			instructions: _instructions,
+            tags
         });
 
         console.log("Product created: ", response);
+        // insert the product into tag
+        const tagRes = await Tags.findByIdAndUpdate(tags,{
+            $push:{
+                product:response._id,
+            }
+        },{new:true})
         // take the output or not check here
         
         return res.status(200).json({
             success:true,
-            data: response,
+            data: {response,
+                tagRes
+            },
             message: "Product is created successfully",
         })
         

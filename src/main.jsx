@@ -31,6 +31,7 @@ import Product from './components/Product/Product.jsx'
 import ViewProduct from './components/Product/ViewProduct.jsx'
 import CategorySection from './components/Product/Categories/CategorySection.jsx'
 import InstructorRoute from './components/Authentication/InstructorRoute.js'
+import AddProduct from './components/Product/CreateProduct/AddProduct.jsx'
 
 
 const store= configureStore({
@@ -140,6 +141,12 @@ const router = createBrowserRouter([
             path: "/dashboard/categories",
             element:  <InstructorRoute>
               <CategorySection/>
+            </InstructorRoute>
+          },
+          {
+            path:"/dashboard/add-product",
+            element: <InstructorRoute>
+              <AddProduct/>
             </InstructorRoute>
           }
           

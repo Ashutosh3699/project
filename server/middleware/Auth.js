@@ -4,7 +4,7 @@ require("dotenv").config();
 exports.isAuth = async(req,res,next) =>{
     try {
         const token =  req.cookies.token || req.body.token ||  req.header("Authorization").replace("Bearer ", "");
-
+        console.log("token is okay");
         if(!token || token===undefined){
 
             res.status(401).json({
@@ -17,6 +17,7 @@ exports.isAuth = async(req,res,next) =>{
             const payload =  jwt.decode(token,process.env.JWT_SECRET);
 
             req.user = payload;
+            console.log("req.user is: ", req.user);
 
         } catch (error) {
             
@@ -67,6 +68,7 @@ exports.isAdmin = async(req,res,next) =>{
     try {
         
         const {accountType} = req.user;
+        console.log("acctount : ", accountType);
 
         if(accountType !== "Admin"){
             res.status(401).json({
