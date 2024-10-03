@@ -3,7 +3,8 @@ import {apiConnector} from "../apiConnector";
 import {products} from "../apis"
 
 const {GET_ALL_PRODUCT_API,GET_PRODUCT_DETAIL_API,DELETE_PRODUCT_IMAGE_API,
-    CREATE_PRODUCT_API,CREATE_PRODUCT_IMAGE_API} = products;
+    CREATE_PRODUCT_API,CREATE_PRODUCT_IMAGE_API, UPDATE_PRODUCT_API,
+  UPDATE_PRODUCTIMAGE_API} = products;
 
 export const addProductDetails= async(data,token)=>{
     const toastId = toast.loading("Loading...");
@@ -25,6 +26,29 @@ export const addProductDetails= async(data,token)=>{
     }
     toast.dismiss(toastId)
     return result;
+}
+
+// update product apis
+export const updateProductDetails = async(data,token)=>{
+  let result = null
+  const toastId = toast.loading("Loading...")
+  try {
+    const response = await apiConnector("POST", UPDATE_PRODUCT_API, data, {
+      "Content-Type": "multipart/form-data",
+      Authorization: `Bearer ${token}`,
+    })
+    console.log("EDIT PRODUCT API RESPONSE............", response)
+    if (!response?.data?.success) {
+      throw new Error("Could Not Update PRODUCT Details")
+    }
+    toast.success("PRODUCT Details Updated Successfully")
+    result = response?.data?.data
+  } catch (error) {
+    console.log("EDIT PRODUCT API ERROR............", error)
+    toast.error(error.message)
+  }
+  toast.dismiss(toastId)
+  return result
 }
 
 // get ALL products
@@ -83,6 +107,28 @@ export const createProductImage = async (data, token) => {
       result = response?.data?.data
     } catch (error) {
       console.log("CREATE_PRODUCT_IMAGE_API API ERROR............", error)
+      toast.error(error.message)
+    }
+    toast.dismiss(toastId)
+    return result
+  }
+
+  // UPDATE a product image
+  export const updateProductImage = async (data, token) => {
+    let result = null
+    const toastId = toast.loading("Loading...")
+    try {
+      const response = await apiConnector("POST", UPDATE_PRODUCTIMAGE_API, data, {
+        Authorization: `Bearer ${token}`,
+      })
+      console.log("UPDATE PRODUCT IMAGE API RESPONSE............", response)
+      if (!response?.data?.success) {
+        throw new Error("Could Not edit product")
+      }
+      toast.success("Lecture product image")
+      result = response?.data?.data
+    } catch (error) {
+      console.log("UPDATE_PRODUCTIMAGE_API API ERROR............", error)
       toast.error(error.message)
     }
     toast.dismiss(toastId)

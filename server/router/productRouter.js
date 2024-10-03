@@ -2,7 +2,7 @@ const express = require("express");
 const productRouter = express.Router();
 
 const {createProduct,createProductImage,getAllproducts,getProductDetail,
-    deleteProductImage} = require("../controller/ProductController");
+    deleteProductImage, updateProduct, updateProductImage} = require("../controller/ProductController");
 
 const {createCategories,getAllCategories,updateCategory,
     getCategoryProducts,getTagsProducts} = require("../controller/Categories")
@@ -16,7 +16,9 @@ const {isAuth, isAdmin} = require("../middleware/Auth");
 // product router apis
 productRouter.post("/createProduct", isAuth,isAdmin, createProduct);
 productRouter.post("/createProductImage", isAuth,isAdmin, createProductImage);
+productRouter.post("/updateProduct", isAuth, isAdmin, updateProduct);
 productRouter.delete("/deleteProductImage", isAuth,isAdmin, deleteProductImage);
+productRouter.post("/updateProductImage", isAuth,isAdmin, updateProductImage);
 
 productRouter.get("/getAllproducts", getAllproducts);
 productRouter.post("/getProductDetail",getProductDetail);

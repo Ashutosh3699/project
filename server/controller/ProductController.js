@@ -58,9 +58,7 @@ exports.createProduct= async (req,res) =>{
         
         return res.status(200).json({
             success:true,
-            data: {response,
-                tagRes
-            },
+            data: response,
             message: "Product is created successfully",
         })
         
@@ -73,6 +71,55 @@ exports.createProduct= async (req,res) =>{
             message: "Product is NOT created ",
         })
     }
+}
+
+exports.updateProduct = async(req,res)=>{
+    try {
+        const { productId } = req.body
+        const updates = req.body;
+
+        const product = await Products.findById(productId);
+        if (!product) {
+            return res.status(404).json({ error: "product not found" })
+          }
+
+          // If Thumbnail Image is found, update it
+          if(req.files){
+            console.log("thumbnail update");
+            const thumbnail = req.files.thumbnailImage;
+            const thumbnailImage = await fileAndImageUploader(thumbnail, process.env.FOLDER_NAME);
+
+            product.thumbnail = thumbnailImage.secure_url;
+          }
+
+        // Update only the fields that are present in the request body
+        for (const key in updates) {
+            if (updates.hasOwnProperty(key)) {
+              if (key === "instructions") {
+                product[key] = JSON.parse(updates[key])
+              } else {
+                product[key] = updates[key]
+              }
+            }
+          }
+
+          await product.save();
+          const response = await Products.findById(productId).populate("tags").
+          populate("image").exec();
+
+          res.status(200).json({
+            success:"true",
+            message: "product edited successfully",
+            data:response,
+          });
+        }
+        catch(error){
+            res.status(500).json({
+                success:"false",
+                message: "product edited failed",
+              });
+        }
+
 }
 
 exports.getAllproducts = async(req,res) =>{
@@ -128,6 +175,7 @@ exports.createProductImage= async(req,res)=>{
         const {product_id, title} = req.body;
         // fetch the file for video
         const image = req.files.image;
+        console.log("image is: ",req.files.image )
         // validation
         if(!image || !product_id || !title ){
 
@@ -150,7 +198,7 @@ exports.createProductImage= async(req,res)=>{
             $push: {
                 image:productImage_id
             }
-        }, {new:true});
+        }, {new:true}).populate("image").exec();
         // response
         return res.status(200).json({
             success: true,
@@ -166,11 +214,68 @@ exports.createProductImage= async(req,res)=>{
     }
 };
 
+exports.updateProductImage = async(req,res)=>{
+
+    try {
+        // console.log("req.body is: ", req.body);
+        const {productImageId, title} = req.body;
+
+        if(!productImageId){
+
+            return res.status(401).json({
+                success:false,
+                message: "Enter the details properly, incorrect fill of data"
+            })
+        }
+
+        const imageRes = await ProductImage.findById(productImageId);
+        if(!imageRes){
+            return res.status(404).json({
+                success: false,
+                message: "SubSection not found",
+              })
+        }
+
+        // console.log("image res is: ", imageRes);
+
+        if(req.files && req.files.image !== undefined){
+            // console.log("image in image: ");
+            const image = req.files.image;
+            const image_url = await fileAndImageUploader(image, process.env.FOLDER_NAME);
+            // console.log("image: ", image_url.secure_url);
+            // create sub-section in db
+           imageRes.image= image_url.secure_url
+        }
+
+
+        if(title!==undefined){
+            // console.log("image is at title : ", imageRes);
+            imageRes.title = title
+        }
+        // console.log("image is : ", imageRes);
+        await imageRes.save();
+
+        return res.status(200).json({
+            success:"true",
+            message: "Image editte d successfully",
+            data:imageRes
+        })
+
+
+    } catch (error) {
+         return res.status(500).json({
+            success:false,
+            message: "Error occured while creating ProductImage",
+            error:error.message
+        })
+    }
+}
+
 // deleteSubSection
 exports.deleteProductImage = async(req,res)=>{
     try {
         // fetch the subsection id using params
-        const {productImage_id} = req.body;
+        const {productImage_id, productId} = req.body;
          // validate the data
          if(!productImage_id ){
             return res.status(400).json({
@@ -178,12 +283,19 @@ exports.deleteProductImage = async(req,res)=>{
                 message: "Enter the data properly, all details are not available"
             });
         }
+        // remove from the list 
+        const response  = await Products.findByIdAndUpdate(productId,{
+            $pull: {
+                image:productImage_id
+            }
+        },{new:true}).populate("image").exec();
 
         await ProductImage.findByIdAndDelete(productImage_id);
 
         return res.status(200).json({
             success:true,
-            message: "ProductImage is deleted successfully"
+            message: "ProductImage is deleted successfully",
+            data:response
         })
     } catch (error) {
         

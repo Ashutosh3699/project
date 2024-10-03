@@ -7,7 +7,7 @@ import { RiMoneyRupeeCircleLine } from 'react-icons/ri';
 import ProductImage from '../ProductImage';
 import ProductInstruction from './ProductInstruction';
 import { setEditProduct, setProduct, setStep } from '../../../../../features/productSlice';
-import { addProductDetails } from '../../../../../services/operations/productApi';
+import { addProductDetails, updateProductDetails } from '../../../../../services/operations/productApi';
 
 const ProductInformationForm = () => {
 
@@ -107,14 +107,14 @@ const ProductInformationForm = () => {
                 }
     
                 setLoading(true);
-                // const result = await editCourseDetails(formData, token);
-                // console.log(" result is after edit is: ", result);
+                const result = await updateProductDetails(formData, token);
+                console.log(" result is after edit is: ", result);
                 setLoading(false);
-                // if(result){
-                //     console.log("inside the result is: ", result);
-                //     dispatch(setStep(2));
-                //     dispatch(setProduct(result));
-                // }
+                if(result){
+                    console.log("inside the result is: ", result);
+                    dispatch(setStep(2));
+                    dispatch(setProduct(result));
+                }
                 
             }
             else{

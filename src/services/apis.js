@@ -34,7 +34,9 @@ export const products = {
     CREATE_PRODUCT_API : BASE_URL+ "/productRouter/createProduct",
     CREATE_PRODUCT_IMAGE_API : BASE_URL+ "/productRouter/createProductImage",
     DELETE_PRODUCT_IMAGE_API : BASE_URL+ "/productRouter/deleteProductImage",
-    GET_PRODUCT_DETAIL_API: BASE_URL + "/productRouter/getProductDetail"
+    GET_PRODUCT_DETAIL_API: BASE_URL + "/productRouter/getProductDetail",
+    UPDATE_PRODUCT_API: BASE_URL + "/productRouter/updateProduct",
+    UPDATE_PRODUCTIMAGE_API: BASE_URL + "/productRouter/updateProductImage"
 
 }
 
