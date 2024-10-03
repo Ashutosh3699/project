@@ -45,12 +45,12 @@ const UpdateCategory = () => {
     }
 
   return (
-    <div className='py-3 px-6 border border-gray-500 rounded-lg flex flex-col gap-4 w-[50%] mx-auto'>
+    <div className='py-3 px-6 border border-gray-500 rounded-lg flex flex-col gap-4 w-[70%] mx-auto'>
 
         <h2 className='text-2xl text-gray-300 '>Update Category</h2>
     
          <form  onSubmit={handleSubmit(onsubmit)} 
-         className='flex flex-col gap-4 items-center '
+         className='flex flex-col gap-8 items-center '
          >
                 <div className='flex flex-row gap-4'>
                     <div className='flex flex-col gap-2 items-center'>
