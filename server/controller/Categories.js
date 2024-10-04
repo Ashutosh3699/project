@@ -40,7 +40,7 @@ exports.createCategories=async(req,res)=>{
               }
         },{new:true})
         console.log("final response is: ", response);
-        const allCategory = await Category.find({});
+        const allCategory = await Category.find({}).populate("subCategory").exec();
 
         return res.status(200).json({
             success:true,
@@ -82,8 +82,17 @@ exports.updateCategory=async(req,res)=>{
             $push:{
                 subCategory:tagRes._id
             }
-        })
+        },{new:true})
         console.log("final response is: ", response);
+
+        console.log("final response is: ", response);
+        const allCategory = await Category.find({}).populate("subCategory").exec();
+        
+        return res.status(200).json({
+            success:true,
+            message:"Category and tag inserted in it successfully",
+            data:allCategory
+        })
 
     } catch (error) {
         console.log("error at category Update is: ", error.message);
@@ -176,7 +185,7 @@ exports.getTagsProducts = async(req,res)=>{
     try {
 
         const {tagId} = req.body;
-
+        console.log("tag is: ", tagId);
         if(!tagId){
             return res.status(400).json({
                 success:false,
@@ -184,7 +193,12 @@ exports.getTagsProducts = async(req,res)=>{
             })
         }
 
-        const response = await Tags.findById(tagId).populate("product").exec();
+        const response = await Tags.findById(tagId).populate({
+            path:"product",
+            populate:{
+                path: "image"
+            }
+        }).exec();
 
         console.log("response is: ", response);
 

@@ -19,17 +19,17 @@ const UpdateCategory = () => {
     } = useForm();
 
     useEffect(()=>{
-
-        // fetch the category and load it inside categoryList
+          // fetch the category and load it inside categoryList
         const fetchCategory=async()=>{
             setLoading(true);
             const res = await getAllCategories();
-            // console.log("res is: ", res);
+            console.log("res is: ", res);
             if(res){
                 dispatch(addCategory(res));
             }
             setLoading(false);
         }
+
         fetchCategory();
     },[]);
 
@@ -39,7 +39,9 @@ const UpdateCategory = () => {
         const response = await updateCategory(token,data);
         if(response){
             console.log("response is: ", response);
+            dispatch(addCategory(response));
         }
+        
         setValue("categoryId", "");
         setValue("tagName", "");
     }

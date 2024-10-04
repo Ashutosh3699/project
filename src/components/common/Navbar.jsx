@@ -40,19 +40,15 @@ const Navbar = () => {
     </div>
 
     <ul  className='md:flex gap-2 lg:gap-6 text-md lg:text-lg hidden  '>
-        <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
-            <NavLink  to={"/about-us"}>
-                About us
-            </NavLink>
-            <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
-            
-        </li>
+        <NavLink  to={"/about-us"}>
+            <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
+                    About us
+                <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
+            </li>
+        </NavLink>
         <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative text-center group' >
-            <NavLink >
                 Our Fields
-            </NavLink>
             <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
-
 {/* commented the service part */}
             <div  className= {`bg-transparent px-4 py-4  invisible  group-hover:visible transition-all  duration-300 top-5  absolute bg-black `}>
 
@@ -73,30 +69,32 @@ const Navbar = () => {
 
             </div>
         </li>
+        <NavLink  to={"/product"}>
         <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
-            <NavLink  to={"/product"}>
+           
                 Products
-            </NavLink>
+            
             <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
         </li>
+        </NavLink>
+        <NavLink  to={"/consultancy"}>
+            <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
+                    Consultancy
+                <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
+            </li>
+        </NavLink>
+        <NavLink  to={"/"}>
         <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
-            <NavLink  to={"/consultancy"}>
-                Consultancy
-            </NavLink>
-            <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
-        </li>
-        <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
-            <NavLink  to={"/"}>
                 Career
-            </NavLink>
             <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
         </li>
-        <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative text-center'>
-            <NavLink  to={"/blogs"}>
-                Blogs
-            </NavLink>
-            <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
-        </li>
+        </NavLink>
+        <NavLink  to={"/blogs"}>
+            <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative text-center'>
+                    Blogs
+                <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
+            </li>
+        </NavLink>
 
     </ul>
 

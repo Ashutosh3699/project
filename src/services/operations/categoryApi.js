@@ -79,5 +79,27 @@ export async function  getAllCategories(){
     return result;
 }
 
+export async function getTagProduct(tagId){
+    const toastId = toast.loading("...loading");
+    let result = [];
+
+    try {
+        console.log("tag is: ", tagId)
+        const response = await apiConnector("POST",GET_TAG_PRODUCT_API,{tagId});
+
+          console.log("response at get in category is: ", response?.data?.data);
+        if(!response.data.success){
+            throw new Error("Could not getting any category")
+        }
+        result = response?.data?.data;
+        toast.success("get category successfully");
+    } catch (error) {
+        console.log("GET_ALL_CATEGORY_API API ERROR............", error)
+        toast.error(error.message)
+    }
+    toast.dismiss(toastId);
+    return result;
+}
+
 
 

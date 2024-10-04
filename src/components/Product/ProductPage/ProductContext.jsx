@@ -1,40 +1,37 @@
 import React,{useEffect, useState} from 'react';
-import { getAllProducts } from '../../../services/operations/productApi';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addItems } from '../../../features/cartSlice';
+import { getTagProduct } from '../../../services/operations/categoryApi';
 
 
-const ProductContext = () => {
+const ProductContext = ({selectedCategory}) => {
 
     const [showProduct, setShowProduct] = useState([]);
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const dispatch = useDispatch();
-
-    const {totalItems,total,carts} = useSelector((state)=>state.cart);
+    const [tagName,setTagName] = useState(null);
 
     useEffect(()=>{
 
         const fetchAllProduct= async()=>{
-            const response = await  getAllProducts();
-            setShowProduct(response);
+            console.log("selected category is: ", selectedCategory);
+            const response = await  getTagProduct(selectedCategory);
+            console.log(response);
+            setShowProduct(response.product);
+            setTagName(response.TagName);
         }
 
-        setLoading(true);
-        fetchAllProduct();
-        setLoading(false);
-    },[])
+        if(selectedCategory){
 
-    console.log("response is : ", showProduct);
+            setLoading(true);
+            fetchAllProduct();
+            setLoading(false);
+        }
+    },[selectedCategory])
 
-    const addToCart=(index)=>{
-        const selectproduct = showProduct.filter((item)=>item._id === index);
-        dispatch(addItems(selectproduct));
-        console.log("add to cart: ",carts );
-        console.log("add to totalItem: ",totalItems );
-        console.log("total is:", total);
-    }
+    // console.log("response is : ", showProduct);
 
     const getProductdetail= async(index)=>{
         
@@ -45,6 +42,10 @@ const ProductContext = () => {
 
   return (
     <div className=' flex gap-4 flex-wrap w-[80%] mx-auto'>
+
+        <h2 className='w-full text-2xl font-semibold text-gray-600'>{
+            tagName ? tagName : <div>No product available</div>
+        }</h2>
         {
             showProduct.map((element)=>(
                 <div key={element._id} className='flex flex-col w-[300px] items-center gap-3 bg-gray-900 rounded-xl overflow-hidden border border-gray-500'>
@@ -57,10 +58,6 @@ const ProductContext = () => {
                     <p>
                         {element.price}
                     </p>
-
-                    <button   onClick={()=>addToCart(element._id)}>
-                        Add cart
-                    </button>
 
                 </div>
             ))
