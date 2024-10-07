@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt");
 const Profile  = require("../models/Profile");
 const JWT = require("jsonwebtoken");
 const mailsender = require("../utils/mailSender");
+const OtpAdmin = require("../models/OtpAdmin");
 
 require("dotenv").config();
 
@@ -48,8 +49,69 @@ exports.sendOtp = async(req,res)=>{
             result = await OTP.findOne({otp});
         }
         // create the otp data in database and before saving the otp will be send to user
-
         const data = await OTP.create({
+            email,
+            otp
+        })
+        console.log("otp created at db, ", data);
+        return res.status(200).json({
+            success:true,
+            data,
+            message: "OTP has been sent successfully"
+        })
+
+    } catch (error) {
+        
+        console.log("error", error);
+        return res.status(500).json({
+            success:false,
+            message: "Error occured while sendOTP"
+        })
+    }
+}
+
+// otp generation for admin 
+exports.sendOtpForAdmin = async(req,res)=>{
+    try {
+        // fetching the email
+        const  {email} = req.body;
+        // validate the email
+        if(!email){
+
+            return res.status(400).json({
+                success:false,
+                message: "Enter a valid emailId"
+            })
+        }
+        // check the user is already exist or not
+        const userExistinDb = await User.findOne({email});
+        if(userExistinDb){
+            return res.status(401).json({
+                success:false,
+                message: "User is already exist"
+            })
+        }
+        // generate the otp
+        let otp =  otpGenerator.generate(6,{
+            upperCaseAlphabets:false,
+            lowerCaseAlphabets: false,
+            specialChars: false
+        });
+        console.log("otp is " , otp);
+        let result = await OtpAdmin.findOne({otp});
+        // check the otp is unique
+        while(result){
+
+            otp =  otpGenerator.generate(6,{
+                upperCaseAlphabets:false,
+                lowerCaseAlphabets: false,
+                specialChars: false
+            })
+            result = await OtpAdmin.findOne({otp});
+        }
+        // create the otp data in database and before saving the otp will be send to user
+
+        const data = await OtpAdmin.create({
             email,
             otp
         })
@@ -99,20 +161,39 @@ exports.signUp =  async(req,res) =>{
             })
         }
         // bring the otp from db and check the otp is correct while entering
-        const otpDb = await OTP.find({email}).sort({ createdAt: -1 }).limit(1);;
-        console.log("otpDb", otpDb);
-        if (otpDb.length === 0) {
-			// OTP not found for the email
-			return res.status(400).json({
-				success: false,
-				message: "The OTP is not valid",
-			});
-		} 
-        else if(otp !== otpDb[0].otp){
-            return res.status(401).json({
-                success:false,
-                message: "OTP is false please enter correct otp"
-            })
+        if(accountType === "Client"){
+            const otpDb = await OTP.find({email}).sort({ createdAt: -1 }).limit(1);
+            console.log("otpDb", otpDb);
+            if (otpDb.length === 0) {
+                // OTP not found for the email
+                return res.status(400).json({
+                    success: false,
+                    message: "The OTP is not valid",
+                });
+            } 
+            else if(otp !== otpDb[0].otp){
+                return res.status(401).json({
+                    success:false,
+                    message: "OTP is false please enter correct otp"
+                })
+            }
+        }
+        else{
+            const otpDb = await OtpAdmin.find({email}).sort({ createdAt: -1 }).limit(1);
+            console.log("otpDb is admin", otpDb);
+            if (otpDb.length === 0) {
+                // OTP not found for the email
+                return res.status(400).json({
+                    success: false,
+                    message: "The OTP is not valid for admin",
+                });
+            } 
+            else if(otp !== otpDb[0].otp){
+                return res.status(401).json({
+                    success:false,
+                    message: "OTP is false please enter correct otp for admin"
+                })
+            }
         }
         // hash the password
         const hashPassword = await bcrypt.hash(password,10);

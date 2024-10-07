@@ -6,7 +6,7 @@ import {ACCOUNT_TYPE}  from "../../../utils/constant";
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import {setsignupData} from "../../../features/authSlice";
-import {sendOTP} from "../../../services/operations/authApi"
+import {sendOTP, sendOTPAdmin} from "../../../services/operations/authApi"
 
 
 const SignupForAdmin = () => {
@@ -52,7 +52,7 @@ const SignupForAdmin = () => {
         dispatch(setsignupData(signupdata));
         
         // send otp 
-        dispatch(sendOTP(signupData.email, navigate));
+        dispatch(sendOTPAdmin(signupData.email, navigate));
         // Reset
         setSignupData({
             firstName: "",

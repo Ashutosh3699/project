@@ -5,6 +5,7 @@ const BASE_URL = import.meta.env.VITE_BASE_URL;
 // Apis for ENDPOINTS
 export const endpoints= {
     SEND_OTP_API: BASE_URL + "/userRouter/sendOtp",
+    SEND_OTP_ADMIN_API_URL : BASE_URL + "/userRouter/sendOtpForAdmin",
     SIGNUP_API: BASE_URL + "/userRouter/sign-up",
     LOGIN_API: BASE_URL + "/userRouter/login",
     RESETPASSTOKEN_API : BASE_URL+"/userRouter/resetPasswordToken",

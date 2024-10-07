@@ -2,7 +2,7 @@ const express = require("express");
 const userRouter = express.Router();
 
 // fetch the login and signup function
-const {sendOtp, signUp, logIn, changePassword} = require("../controller/AuthController");
+const {sendOtp, signUp, logIn, changePassword, sendOtpForAdmin} = require("../controller/AuthController");
 const {isAuth} = require("../middleware/Auth");
 const {resetPasswordToken, resetPassword} = require("../controller/ResetPassword");
 
@@ -17,6 +17,8 @@ userRouter.post("/login",logIn);
 
 // sendotp and signup page
 userRouter.post("/sendOtp", sendOtp);
+// sendotp for admin and signup page
+userRouter.post("/sendOtpForAdmin", sendOtpForAdmin);
 
 userRouter.post("/sign-up",signUp);
 

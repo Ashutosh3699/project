@@ -98,7 +98,7 @@ const router = createBrowserRouter([
           </OpenRoute>)
       },
       {
-        path: "/admin-signup/sign-up",
+        path: "/admin-signup-aeromat/sign-up",
         element: (<OpenRoute>
             <SignupForAdmin/>
           </OpenRoute>)

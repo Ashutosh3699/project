@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { AddCategory } from './AddCategory'
 import UpdateCategory from './UpdateCategory'
 import { useSelector } from 'react-redux'
-import { RxDropdownMenu } from 'react-icons/rx'
+import { FaAngleRight } from "react-icons/fa6";
 
 const CategorySection = () => {
 
@@ -29,15 +29,15 @@ const CategorySection = () => {
                         <summary className='flex justify-between items-center border
                             border-gray-500  px-5 py-2 border-b-4 border-b-gray-200  '>
                           <div className='flex justify-between items-center gap-x-3 '>
-                              <RxDropdownMenu className="text-2xl text-richblack-50"/>
+                              <FaAngleRight className="text-2xl text-richblack-50"/>
                               <p className="font-semibold text-richblack-50">{element?.categoryName}</p>
                           </div>
                         </summary>
 
-                        <div>
+                        <div className='bg-gray-500 text-gray-50 '>
                             {
                               element?.subCategory?.map((tag,index)=>(
-                                <div  key={index}>
+                                <div  key={index} className='border border-gray-200  text-left pl-7'>
                                     <h4>{tag.TagName}</h4>
                                 </div>
                               ))

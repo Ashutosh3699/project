@@ -48,17 +48,21 @@ const ProductContext = ({selectedCategory}) => {
         }</h2>
         {
             showProduct.map((element)=>(
-                <div key={element._id} className='flex flex-col w-[300px] items-center gap-3 bg-gray-900 rounded-xl overflow-hidden border border-gray-500'>
+                <div key={element._id} className='flex flex-col gap-2 overflow-hidden w-[100%] 
+                md:w-[31%] rounded-lg  bg-zinc-100 shadow-inner' onClick={()=>getProductdetail(element._id)}>
 
                     <img  src={element.thumbnail} alt={`product-image-${element.productName}`} className='lg:w-[300px]  ' />
-                    <h3 onClick={()=>getProductdetail(element._id)}  >{element.productName}</h3>
-                    <p>
-                        {element.productDetail}
-                    </p>
-                    <p>
-                        {element.price}
-                    </p>
+                    
+                    <div className='px-4 py-3'>
+                        <h3  className='text-zinc-600 text-xl font-semibold'  >{element.productName}</h3>
+                        <p  className=' text-sm md:text-md text-zinc-500 font-sans'>
+                            {element.productDetail}
+                        </p>
+                        <p className='italic  text-lg text-zinc-400 font-semibold'>
+                            {element.price}
+                        </p>
 
+                    </div>
                 </div>
             ))
         }
