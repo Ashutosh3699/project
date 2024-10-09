@@ -1,42 +1,47 @@
 import React,{useEffect, useState} from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { addItems } from '../../../features/cartSlice';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+// import { addItems } from '../../../features/cartSlice';
 import { getTagProduct } from '../../../services/operations/categoryApi';
 
 
-const ProductContext = ({selectedCategory}) => {
+const ProductContext = () => {
 
     const [showProduct, setShowProduct] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [selectedCategory, setSelecetedCategory] = useState([]);
+    const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
-    const dispatch = useDispatch();
     const [tagName,setTagName] = useState(null);
+
+    const {tagId} = useParams();
 
     useEffect(()=>{
 
-        const fetchAllProduct= async()=>{
-            console.log("selected category is: ", selectedCategory);
-            const response = await  getTagProduct(selectedCategory);
+        setLoading(true);
+        const fetchTagProduct= async()=>{
+            console.log("tag --> category is:----> ", tagId);
+            const response = await  getTagProduct(tagId);
             console.log(response);
             setShowProduct(response.product);
             setTagName(response.TagName);
         }
 
-        if(selectedCategory){
+        fetchTagProduct();
+        setLoading(false);
+    },[tagId])
 
-            setLoading(true);
-            fetchAllProduct();
-            setLoading(false);
-        }
-    },[selectedCategory])
 
     // console.log("response is : ", showProduct);
 
     const getProductdetail= async(index)=>{
         
         const selectproduct = showProduct.filter((item)=>item._id === index);
-        navigate(`/product/${selectproduct[0]._id}`);
+        console.log("selected product is: ", selectproduct);
+        navigate(`/product/${tagId}/${selectproduct[0]._id}`);
+    }
+
+    if(loading === true){
+        return (<div>...loading</div>)
     }
 
 
@@ -56,7 +61,7 @@ const ProductContext = ({selectedCategory}) => {
                     <div className='px-4 py-3'>
                         <h3  className='text-zinc-600 text-xl font-semibold'  >{element.productName}</h3>
                         <p  className=' text-sm md:text-md text-zinc-500 font-sans'>
-                            {element.productDetail}
+                            {element.productDetail.slice(0,100)} ....
                         </p>
                         <p className='italic  text-lg text-zinc-400 font-semibold'>
                             {element.price}

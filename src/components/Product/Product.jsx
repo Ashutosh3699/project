@@ -1,21 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ProductCategory from './ProductPage/ProductCategory';
-import ProductContext from './ProductPage/ProductContext';
+import { Outlet } from 'react-router-dom';
+
 
 const Product = () => {
-
-  const [selectedCategory, setSelectedCategory] = useState(null);
 
   return (
     <div className='bg-white text-white w-full h-full'>
     
-            <div className=' flex flex-row flex-wrap  w-full min-h-[100vh] '>
+              <div className=' flex flex-row flex-wrap  w-full min-h-[100vh] '>
 
-                    <ProductCategory setSelectedCategory={setSelectedCategory} selectedCategory={selectedCategory} />
+                  <ProductCategory  />
                   <div className='py-6 w-[80%]   border-l  border-gray-400'>
-                    <ProductContext selectedCategory={selectedCategory}  />
+                  <Outlet/>
                   </div>
-            </div>
+              </div>
 
     </div>
   )

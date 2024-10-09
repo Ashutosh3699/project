@@ -5,7 +5,7 @@ import { fetchProductDetail } from '../../services/operations/productApi';
 
 const ViewProduct = () => {
 
-  const {product_id} = useParams();
+  const {productId} = useParams();
   const [productData,setProductData] = useState({});
   const [image,setImage] = useState(0);
   const [imageList,setImageList] = useState([]); 
@@ -14,7 +14,7 @@ const ViewProduct = () => {
   useEffect(()=>{
     
     const getproduct = async()=>{
-      const res = await fetchProductDetail(product_id);
+      const res = await fetchProductDetail(productId);
       console.log("res",res);
       if(res){
         setProductData(res);
@@ -30,7 +30,7 @@ const ViewProduct = () => {
 
 
   return (
-    <div className='w-full bg-regal-blue py-20  '>
+    <div className='w-full bg-white py-20  '>
         {
           loading===true ? (
             <div className='text-4xl text-white font-semibold'>
@@ -38,7 +38,7 @@ const ViewProduct = () => {
             </div>
           ):
           (
-            <div className=' lg:w-[60%] flex flex-col items-center mx-auto'>
+            <div className=' lg:w-[100%] flex flex-row justify-center mx-auto'>
                 
                 <div className='w-[90%] flex items-start justify-between py-8 px-8 bg-gray-800 text-white rounded-xl'>
                     <div>

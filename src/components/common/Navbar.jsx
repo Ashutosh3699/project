@@ -1,4 +1,4 @@
-import React,{useRef, useState} from 'react'
+import React,{useRef, useState, useEffect} from 'react'
 import { NavLink } from 'react-router-dom';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaRegUser } from "react-icons/fa";
@@ -6,13 +6,49 @@ import { CiShoppingCart } from "react-icons/ci";
 import logo from "../../assets/mainlogo.png";
 import useOutsideClick from '../../customHook/useOutsideClick';
 import { services } from '../HomePage/WhatWeProvide/services/first';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ProfileDropDown from '../Authentication/Profile/ProfileDropDown';
+import { getAllCategories} from '../../services/operations/categoryApi';
+import { addFetchedCategory } from '../../features/CategorySlice';
+import { setSelecetedCategory } from '../../features/CategorySlice';
 
 const Navbar = () => {
 
     const {token} = useSelector((state)=>state.auth);
     const cart = useSelector((state)=>state.cart);
+    const {categoryList,selectedCategory} = useSelector((state)=>state.category);
+    
+    const [loading, setLoading] = useState(true);
+    const dispatch = useDispatch();
+  
+  
+    useEffect(()=>{
+  
+      const fetchCategory =async()=>{
+  
+        setLoading(true);
+        const response = await getAllCategories();
+        console.log("response is category: ", response);
+  
+        if(response){
+          
+          dispatch(addFetchedCategory(response));
+        }
+        setLoading(false);
+      }
+  
+      fetchCategory();
+
+    },[]);
+
+    useEffect(()=>{
+
+        if(categoryList.length>0){
+
+            console.log("category list --> is: ", categoryList);
+            dispatch(setSelecetedCategory(categoryList[0].subCategory[0]._id)) ;
+        }
+    }, [categoryList]);
 
     const [attributeclass,setattributeClass] = useState("invisible opacity-0");
     const divref = useRef(null);
@@ -28,6 +64,10 @@ const Navbar = () => {
       else{
         setattributeClass("invisible opacity-0");
       }
+    }
+
+    if(loading=== true){
+        return <div>...loading</div>
     }
 
   return (
@@ -69,7 +109,7 @@ const Navbar = () => {
 
             </div>
         </li>
-        <NavLink  to={"/product"}>
+        <NavLink  to={`/product/${selectedCategory}`}>
         <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
            
                 Products
@@ -116,7 +156,7 @@ const Navbar = () => {
                     </NavLink>
                 </li>
                 <li className=' hover:bg-gray-400 rounded-md w-full text-center hover:text-white'>
-                    <NavLink  to={"/product"}>
+                    <NavLink  to={`/product/${selectedCategory}`}>
                         Products
                     </NavLink>
                 </li>

@@ -29,6 +29,7 @@ import MyProfile from './components/Authentication/Dashboard/MyProfile.jsx';
 import Settings from './components/Authentication/Dashboard/settings/Settings.jsx'
 import Product from './components/Product/Product.jsx'
 import ViewProduct from './components/Product/ViewProduct.jsx'
+import ProductContext from "./components/Product/ProductPage/ProductContext.jsx"
 import CategorySection from './components/Product/Categories/CategorySection.jsx'
 import InstructorRoute from './components/Authentication/InstructorRoute.js'
 import AddProduct from './components/Product/CreateProduct/AddProduct.jsx'
@@ -70,12 +71,16 @@ const router = createBrowserRouter([
         element: <Career/>
       },
       {
-        path: "/product",
-        element: <Product/>
-      },
-      {
-        path:"/product/:product_id",
-        element: <ViewProduct/>
+        element: (<Product/>),
+        children:[{
+          path:"/product/:tagId",
+          element: <ProductContext/>
+        },
+        {
+          path:"/product/:tagId/:productId",
+          element: <ViewProduct/>
+        }
+      ]
       },
       {
         path: "/our-services/:serviceId",
