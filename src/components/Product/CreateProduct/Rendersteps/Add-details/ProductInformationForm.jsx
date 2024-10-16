@@ -53,7 +53,7 @@ const ProductInformationForm = () => {
         }
 
     },[]);
-    console.log("categories are: ", showCategory);
+    // console.log("categories are: ", showCategory);
 
     const isFormUpdated=()=>{
 
@@ -75,7 +75,7 @@ const ProductInformationForm = () => {
     };
 // edit is left
     const  onSubmit= async(data)=>{
-        console.log("data is: ", data);
+        // console.log("data is: ", data);
         if(editProduct){  // edit course from course slice will be true after the first save of the course
 
             if(isFormUpdated()){
@@ -111,7 +111,7 @@ const ProductInformationForm = () => {
                 console.log(" result is after edit is: ", result);
                 setLoading(false);
                 if(result){
-                    console.log("inside the result is: ", result);
+                    // console.log("inside the result is: ", result);
                     dispatch(setStep(2));
                     dispatch(setProduct(result));
                 }
@@ -120,9 +120,7 @@ const ProductInformationForm = () => {
             else{
                 toast("No changes made yet");
             }
-    
             // navigate("/dashboard/my-courses");
-    
             return ;
           }
     
@@ -137,19 +135,19 @@ const ProductInformationForm = () => {
           formData.append("instructions", JSON.stringify(data.productInstructions));
     
           setLoading(true);
-          console.log("BEFORE add course API call");
-          console.log("PRINTING FORMDATA", formData.entries());
+        //   console.log("BEFORE add course API call");
+        //   console.log("PRINTING FORMDATA", formData.entries());
           const result = await addProductDetails(formData,token);
           setLoading(false);
             if(result) {
-                console.log("changes at step section");
+                // console.log("changes at step section");
                 dispatch( setStep(2));
                 dispatch(setEditProduct(true));
                 dispatch(setProduct(result));
             }
            
-            console.log("PRINTING FORMDATA", );
-            console.log("PRINTING result", result);
+            // console.log("PRINTING FORMDATA", );
+            // console.log("PRINTING result", result);
     }
 
 

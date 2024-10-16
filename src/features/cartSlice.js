@@ -25,21 +25,24 @@ export const cartslice = createSlice({
         // addcard
         addItems: (state, action) =>{
 
-            const course = action.payload;
-            console.log("course at add item is: ", course[0]);
+            const product = action.payload;
 
-            const index = state.carts.findIndex((item) =>( item._id === course[0]._id));
-            // console.log("index is: ", index);
+            const index = state.carts.findIndex((item) =>( item._id === product[0]._id));
+
             if (index >= 0) {
-                toast.error("Course already in cart")
-                return
+                
+                const itemToRemove = state.carts.find((item) => item._id === product[0]._id);
+                // If the course is found in the cart, remove it
+                state.carts.splice(index, 1)
+                // console.log("item is: ", item);
+                state.totalItems--;
+                state.total -= parseInt(itemToRemove.price)*itemToRemove.selectQuantity;
               }
 
-            state.carts.push(course[0]);
-
+            state.carts.push(product[0]);
             // Update the total quantity and price
-            state.totalItems++
-            state.total += parseInt(course[0].price);
+            state.totalItems++;
+            state.total += parseInt(product[0].price)*product[0].selectQuantity;
             // Update to localstorage
             localStorage.setItem("cart", JSON.stringify(state.carts))
             localStorage.setItem("total", JSON.stringify(state.total))
@@ -56,7 +59,7 @@ export const cartslice = createSlice({
             if (index >= 0) {
               // If the course is found in the cart, remove it
               state.totalItems--
-              state.total -= state.carts[index].price
+              state.total -= parseInt(state.carts[index].price)*state.carts[index].selectQuantity;
               state.carts.splice(index, 1)
               // Update to localstorage
               localStorage.setItem("cart", JSON.stringify(state.carts))

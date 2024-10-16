@@ -15,8 +15,8 @@ const ProductCategory = () => {
  
   const {categoryList, selectedCategory} = useSelector((state)=>state.category);
 
-  console.log("category list is: ", categoryList);
-  console.log("selected category is: ", selectedCategory);
+  // console.log("category list is: ", categoryList);
+  // console.log("selected category is: ", selectedCategory);
  
 
   return (
@@ -34,7 +34,6 @@ const ProductCategory = () => {
 
                   <summary className='flex justify-between items-center border bg-cyan-700 
                       border-gray-500  px-5 py-2 border-b-4 border-b-gray-200  w-full ' 
-                      onClick={() => handleToggle(index)}
                       >
                       <div className='flex justify-between items-center gap-x-3 '>
                           <FaChevronUp className={`${element._id ? (" rotate-180"): ("rotate-0")} text-xl text-richblack-50`}/>

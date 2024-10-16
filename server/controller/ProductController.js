@@ -8,9 +8,15 @@ require("dotenv").config();
 exports.createProduct= async (req,res) =>{
     try {
         // fetch file and data
-        let  {productName, productDetail, price, whatWeWillget,_instructions, tags} = req.body;
+        let  {productName, 
+            productDetail, 
+            price, 
+            whatWeWillget,
+            instructions:_instructions, 
+            tags} = req.body;
 
         const  thumbnail = req.files.thumbnail;
+        const instructions = JSON.parse(_instructions);
 
         console.log("body is : ",req.body);
         console.log("thumbnail is: ",thumbnail);
@@ -43,7 +49,7 @@ exports.createProduct= async (req,res) =>{
             whatWeWillget,
             price,
             thumbnail:imageURL.secure_url,
-			instructions: _instructions,
+			instructions,
             tags
         });
 

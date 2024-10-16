@@ -38,6 +38,17 @@ const productSchema = new  mongoose.Schema({
     type:mongoose.Schema.Types.ObjectId,
     ref: "Tags",
     required:true,
+  },
+  quantity:{
+    type:Number,
+    default:0,
+    required:true,
+  },
+  inStock:{
+    type:String,
+    enum: ["in Stock", "out of Stock"],
+    default:"out of Stock",
+    required:true,
   }
 
 })

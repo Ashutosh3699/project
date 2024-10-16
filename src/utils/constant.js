@@ -3,7 +3,7 @@ export const ACCOUNT_TYPE = {
     ADMIN: "Admin",
   }
   
-  // export const COURSE_STATUS = {
-  //   DRAFT: "Draft",
-  //   PUBLISHED: "Published",
-  // }
+  export const PRODUCT_STATUS = {
+    DRAFT: "in Stock",
+    PUBLISHED: "out of Stock",
+  }

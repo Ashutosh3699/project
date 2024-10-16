@@ -25,7 +25,8 @@ const RenderSteps = () => {
     <div>
         <div className="relative mb-2 flex w-full justify-center">
             {steps.map( (item,index) => (
-                <>
+                <>   
+                {/* warning due to index key */}
                     <div key={index}
                     className="flex flex-col items-center "
                     >

@@ -8,7 +8,7 @@ import { getTagProduct } from '../../../services/operations/categoryApi';
 const ProductContext = () => {
 
     const [showProduct, setShowProduct] = useState([]);
-    const [selectedCategory, setSelecetedCategory] = useState([]);
+    // const [selectedCategory, setSelecetedCategory] = useState([]);
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
     const [tagName,setTagName] = useState(null);
@@ -19,9 +19,9 @@ const ProductContext = () => {
 
         setLoading(true);
         const fetchTagProduct= async()=>{
-            console.log("tag --> category is:----> ", tagId);
+            // console.log("tag --> category is:----> ", tagId);
             const response = await  getTagProduct(tagId);
-            console.log(response);
+            // console.log(response);
             setShowProduct(response.product);
             setTagName(response.TagName);
         }
@@ -36,7 +36,7 @@ const ProductContext = () => {
     const getProductdetail= async(index)=>{
         
         const selectproduct = showProduct.filter((item)=>item._id === index);
-        console.log("selected product is: ", selectproduct);
+        // console.log("selected product is: ", selectproduct);
         navigate(`/product/${tagId}/${selectproduct[0]._id}`);
     }
 

@@ -28,7 +28,7 @@ const Navbar = () => {
   
         setLoading(true);
         const response = await getAllCategories();
-        console.log("response is category: ", response);
+        // console.log("response is category: ", response);
   
         if(response){
           
@@ -182,10 +182,10 @@ const Navbar = () => {
         {/* login and sign-up */}
             <div className='flex justify-between items-center gap-2 md:gap-4 ' >
 
-            <div className='relative  flex flex-row gap-1  items-center'>
+            <NavLink  to={"/add-cart"} className='relative  flex flex-row gap-1  items-center'>
                         <CiShoppingCart className='text-xl md:text-3xl' />
                         <div>{cart.totalItems}</div>
-             </div>
+             </NavLink>
             {/* login and signup wala div */}
             {
                 token === null && (
