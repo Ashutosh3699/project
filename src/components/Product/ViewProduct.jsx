@@ -6,13 +6,15 @@ import { FaMinus, FaPlus, FaRegShareFromSquare } from 'react-icons/fa6';
 import copy from 'copy-to-clipboard';
 import toast from 'react-hot-toast';
 import ReactImageMagnify from 'react-image-magnify';
-import { PRODUCT_STATUS } from '../../utils/constant';
+import { ACCOUNT_TYPE, PRODUCT_STATUS } from '../../utils/constant';
 import BuyProduct from './BuyProduct';
+import { useSelector } from 'react-redux';
 
 
 const ViewProduct = () => {
 
   const {productId} = useParams();
+  const {user} = useSelector((state)=>state.profile);
   const [productData,setProductData] = useState({});
   const [image,setImage] = useState(0);
   const [imageList,setImageList] = useState([]); 
@@ -90,7 +92,8 @@ const ViewProduct = () => {
 
                           </div>
 
-                          <div className='flex gap-2 items-center px-3 py-1 rounded-md bg-gray-700 justify-center'>
+                          {
+                           ( !user || user.accountType===ACCOUNT_TYPE.CLIENT) && <div className='flex gap-2 items-center px-3 py-1 rounded-md bg-gray-700 justify-center'>
                               <FaPlus className=' cursor-pointer' onClick={()=>{
                                 if(quantSelected<productData.quantity){
                                   setQuantSelected(quantSelected+1);
@@ -103,15 +106,18 @@ const ViewProduct = () => {
                                 }
                               }}/>
                           </div>
+                          }
                           <div className=' select-none text-sm font-thin text-gray-300'>
                             {
                               quantSelected > 1 ? (<span>*select quantity: {quantSelected}</span>) : (<div></div>)
                             }
                           </div>
 
-                          <div className='my-3'>
+                          {
+                           ( !user || user.accountType===ACCOUNT_TYPE.CLIENT) && <div className='my-3'>
                               <BuyProduct product={productData}  quantity={quantSelected}/>
                           </div>
+                          }
 
                     </div>
 

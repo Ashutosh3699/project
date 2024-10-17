@@ -11,10 +11,12 @@ import ProfileDropDown from '../Authentication/Profile/ProfileDropDown';
 import { getAllCategories} from '../../services/operations/categoryApi';
 import { addFetchedCategory } from '../../features/CategorySlice';
 import { setSelecetedCategory } from '../../features/CategorySlice';
+import { ACCOUNT_TYPE } from '../../utils/constant';
 
 const Navbar = () => {
 
     const {token} = useSelector((state)=>state.auth);
+    const {user} = useSelector((state)=>state.profile);
     const cart = useSelector((state)=>state.cart);
     const {categoryList,selectedCategory} = useSelector((state)=>state.category);
     
@@ -182,10 +184,12 @@ const Navbar = () => {
         {/* login and sign-up */}
             <div className='flex justify-between items-center gap-2 md:gap-4 ' >
 
-            <NavLink  to={"/add-cart"} className='relative  flex flex-row gap-1  items-center'>
+            {
+              ( !user || user && user.accountType === ACCOUNT_TYPE.CLIENT )  &&  <NavLink  to={"/dashboard/add-item"} className='relative  flex flex-row gap-1  items-center'>
                         <CiShoppingCart className='text-xl md:text-3xl' />
                         <div>{cart.totalItems}</div>
-             </NavLink>
+                </NavLink>
+            }
             {/* login and signup wala div */}
             {
                 token === null && (

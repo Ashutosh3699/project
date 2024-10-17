@@ -82,7 +82,7 @@ const BuyProduct = ({product,quantity}) => {
      >Go to contact-us</button>
     }
      {/* <p className='text-xs text-caribbeangreen-50'>30-Day Money-Back Guarantee</p> */}
- </div>
+   </div>
   )
 }
 

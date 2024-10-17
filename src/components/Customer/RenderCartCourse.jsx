@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { AiFillDelete } from "react-icons/ai";
+import { removeCard } from '../../features/cartSlice';
 
 const RenderCartCourse = () => {
 
@@ -17,7 +18,7 @@ const RenderCartCourse = () => {
 
           return (<div key={index}
           className={`flex w-full flex-wrap items-start justify-between gap-6 ${
-            index !== carts.length - 1 && "border-b border-b-richblack-400 pb-6"
+            index !== carts.length - 1 && "border-b border-b-gray-400 pb-6"
           } ${index !== 0 && "mt-6"} `}
           >
 
@@ -30,8 +31,8 @@ const RenderCartCourse = () => {
                       </div>
 
                       <div className="flex flex-col space-y-1">
-                          <h3 className="text-lg font-medium text-richblack-5">{product?.productName}</h3>
-                          <p className="text-sm text-richblack-300">{product?.inStock}</p>
+                          <h3 className="text-lg font-medium text-gray-50">{product?.productName}</h3>
+                          <p className="text-sm text-gray-300">{product?.inStock}</p>
 
 
                       </div>

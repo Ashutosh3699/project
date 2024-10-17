@@ -35,6 +35,7 @@ import InstructorRoute from './components/Authentication/InstructorRoute.js'
 import AddProduct from './components/Product/CreateProduct/AddProduct.jsx'
 import SignupForAdmin from './components/Authentication/signup/SignupForAdmin.jsx'
 import AddItem from './components/Customer/AddCart/AddItem.jsx'
+import ClientRoute from './components/Authentication/ClientRoute.js'
 
 
 const store= configureStore({
@@ -58,10 +59,6 @@ const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blogs/>
-      },
-      {
-        path: "/add-cart",
-        element: <AddItem/>
       },
       {
           path: "/blogs/:id",
@@ -165,7 +162,13 @@ const router = createBrowserRouter([
             element: <InstructorRoute>
               <AddProduct/>
             </InstructorRoute>
-          }
+          },
+          {
+            path: "/dashboard/add-item",
+            element: <ClientRoute>
+                <AddItem/>
+            </ClientRoute>
+          },
           
         ]
       }

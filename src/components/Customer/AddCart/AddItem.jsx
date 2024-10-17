@@ -16,8 +16,8 @@ const AddItem = () => {
     <div className='w-full  flex flex-col gap-10'>
 
       <div className='flex flex-col gap-4'> 
-          <h2 className='text-3xl text-richblack-50 font-semibold'>My Wishlist</h2>
-          <p className='text-lg font-medium text-richblack-200 '>{totalItems} courses in cart</p>
+          <h2 className='text-3xl text-gray-50 font-semibold'>My Wishlist</h2>
+          <p className='text-lg font-medium text-gray-200 '>{totalItems} courses in cart</p>
       </div>
 
       {
