@@ -30,8 +30,36 @@ const ProductContext = () => {
         setLoading(false);
     },[tagId])
 
+    const [sortOption, setSortOption] = useState('default');
 
-    // console.log("response is : ", showProduct);
+    useEffect(()=>{
+
+        const sortProductData = (products, option) => {
+
+            let newProducts = [];
+
+            if (option === 'alphabet-az') {
+               newProducts =  [...products].sort((a, b) => a.productName.localeCompare(b.productName));
+            } else if (option === 'alphabet-za') {
+               newProducts = [...products].sort((a, b) => b.productName.localeCompare(a.productName));
+            } else if (option === 'price-low-high') {
+               newProducts = [...products].sort((a, b) => a.price - b.price);
+            } else if (option === 'price-high-low') {
+               newProducts = [...products].sort((a, b) => b.price - a.price);
+            }
+            else{
+                newProducts = products;
+            }
+            if(newProducts!=[]){
+                setShowProduct(newProducts);
+            }
+          };
+
+          if(showProduct!=[])  sortProductData(showProduct,sortOption);
+
+    },[sortOption])
+
+    console.log("response is : ", showProduct);
 
     const getProductdetail= async(index)=>{
         
@@ -47,6 +75,18 @@ const ProductContext = () => {
 
   return (
     <div className=' flex gap-4 flex-wrap w-[80%] mx-auto'>
+
+        <select
+            value={sortOption}
+            onChange={(e) => setSortOption(e.target.value)}
+            className="p-2 bg-gray-700 text-white rounded-md  h-10"
+            >
+            <option value="default">Sort by</option>
+            <option value="alphabet-az">Alphabetical (A-Z)</option>
+            <option value="alphabet-za">Alphabetical (Z-A)</option>
+            <option value="price-low-high">Price (Low to High)</option>
+            <option value="price-high-low">Price (High to Low)</option>
+            </select>
 
         <h2 className='w-full text-2xl font-semibold text-gray-600'>{
             tagName ? tagName : <div>No product available</div>
@@ -71,6 +111,8 @@ const ProductContext = () => {
                 </div>
             ))
         }
+
+
     
     </div>
   )

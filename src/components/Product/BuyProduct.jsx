@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
 import { addItems } from '../../features/cartSlice';
+import ConfirmationModal from '../common/ConfirmationModal';
 
 const BuyProduct = ({product,quantity}) => {
 
@@ -13,10 +14,10 @@ const BuyProduct = ({product,quantity}) => {
     const navigate = useNavigate();
     const {token} = useSelector((state)=>state.auth);
     const {user} = useSelector((state)=>state.profile);
-    const {carts, totalItems, total} = useSelector((state)=>state.cart);
+    // const {carts, totalItems, total} = useSelector((state)=>state.cart);
 
     // if not logged in then show confirmation modal
-    const [confirmatioModal, setConfirmationModal] = useState(null);
+    const [confirmationModal, setConfirmationModal] = useState(null);
     // paymentloading from productSlice
     const {paymentLoading} = useSelector((state)=>state.product);
     const {loading} = useSelector((state)=>state.profile);
@@ -82,6 +83,7 @@ const BuyProduct = ({product,quantity}) => {
      >Go to contact-us</button>
     }
      {/* <p className='text-xs text-caribbeangreen-50'>30-Day Money-Back Guarantee</p> */}
+     {confirmationModal && <ConfirmationModal  modalData={confirmationModal}   />}
    </div>
   )
 }

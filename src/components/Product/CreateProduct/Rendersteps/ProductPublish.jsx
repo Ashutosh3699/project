@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { PRODUCT_STATUS } from '../../../../utils/constant';
 import toast from 'react-hot-toast';
 import { updateProductDetails } from '../../../../services/operations/productApi';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const ProductPublish = () => {
 
@@ -12,6 +13,8 @@ const ProductPublish = () => {
     const {token} = useSelector((state)=>state.auth);
     const {product, editProduct}  = useSelector((state)=>state.product);
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
+    const {productId} = useParams();
     const {
       register,
       handleSubmit,
@@ -68,10 +71,13 @@ const ProductPublish = () => {
             goAndSubmit();
         }
         else{
-            toast("No changes made yet");
+            toast.success("No changes made yet");
+
         }
-        // navigate("/dashboard/my-courses");
-        return ;
+        console.log("tags is; ", product.tags);
+        console.log("productId is; ",productId);
+        navigate(`/product/${product.tags}/${productId}`);
+        return;
       }
 
       const formData = new FormData();

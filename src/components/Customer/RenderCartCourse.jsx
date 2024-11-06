@@ -7,8 +7,7 @@ const RenderCartCourse = () => {
 
     const {carts} = useSelector((state)=>state.cart);
     const dispatch = useDispatch();
-  
-    console.log("carts is: ", carts);
+
 
   return (
     <div className="flex flex-1 flex-col">
@@ -17,27 +16,26 @@ const RenderCartCourse = () => {
         carts.map((product,index) => {
 
           return (<div key={index}
-          className={`flex w-full flex-wrap items-start justify-between gap-6 ${
+          className={`flex  flex-wrap items-start justify-between gap-6 w-[70%] ${
             index !== carts.length - 1 && "border-b border-b-gray-400 pb-6"
           } ${index !== 0 && "mt-6"} `}
           >
 
-                <div className="flex flex-1 flex-col gap-4 xl:flex-row">
+                <div className="flex flex-1 flex-col gap-4 xl:flex-row justify-between ">
 
-                      <div className="h-[148px] w-[220px] rounded-lg overflow-hidden" >
-                          <img  src={product?.thumbnail}  
-                           alt={product?.productName}
-                          className="h-[148px] w-[220px] rounded-lg object-cover" />
+                      <div className='flex  gap-4'>
+                        <div className="h-[148px] w-[220px] rounded-lg overflow-hidden" >
+                            <img  src={product?.thumbnail}  
+                            alt={product?.productName}
+                            className="h-[148px] w-[220px] rounded-lg object-cover" />
+                        </div>
+                        <div className="flex flex-col space-y-1">
+                            <h3 className="text-xl font-medium text-gray-50">{product?.productName}</h3>
+                            <p className="text-md text-gray-300">{product?.inStock}</p>
+                        </div>
                       </div>
 
-                      <div className="flex flex-col space-y-1">
-                          <h3 className="text-lg font-medium text-gray-50">{product?.productName}</h3>
-                          <p className="text-sm text-gray-300">{product?.inStock}</p>
-
-
-                      </div>
-
-                      <div className="flex flex-col items-end space-y-2">
+                      <div className="flex flex-col items-end space-y-2  ">
 
                           <button
                           onClick={()=> dispatch(removeCard(product?._id))}
@@ -47,8 +45,10 @@ const RenderCartCourse = () => {
                           </button>
 
                           <h5 className="mb-6 text-3xl font-medium text-yellow-100">
-                            ₹ {product?.price} 
+                            ₹ {product?.price * product?.selectQuantity} 
                           </h5>
+
+                          <p className="mb-6 text-lg font-medium text-yellow-100"> Number of selected quantity: {product?.selectQuantity}</p>
                       </div>
 
                 </div>
@@ -56,7 +56,7 @@ const RenderCartCourse = () => {
           </div>)
         })
       }
-    
+     
     </div>
   )
 }

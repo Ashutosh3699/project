@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { fetchProductDetail } from '../../services/operations/productApi';
 import { IoIosArrowDroprightCircle } from 'react-icons/io';
 import { FaMinus, FaPlus, FaRegShareFromSquare } from 'react-icons/fa6';
@@ -9,21 +9,26 @@ import ReactImageMagnify from 'react-image-magnify';
 import { ACCOUNT_TYPE, PRODUCT_STATUS } from '../../utils/constant';
 import BuyProduct from './BuyProduct';
 import { useSelector } from 'react-redux';
+import { getTagProduct } from '../../services/operations/categoryApi';
 
 
 const ViewProduct = () => {
 
-  const {productId} = useParams();
+  const {productId,tagId} = useParams();
   const {user} = useSelector((state)=>state.profile);
   const [productData,setProductData] = useState({});
   const [image,setImage] = useState(0);
   const [imageList,setImageList] = useState([]); 
   const [quantSelected, setQuantSelected] = useState(1);
   const [loading,setLoading] = useState(false);
+  const [other, setOther] = useState([]);
+  const navigate = useNavigate();
+
 
   useEffect(()=>{
     
     const getproduct = async()=>{
+      console.log("tag is: ", tagId);
       const res = await fetchProductDetail(productId);
       // console.log("res",res);
       if(res){
@@ -32,11 +37,17 @@ const ViewProduct = () => {
         images.unshift(res.thumbnail);
         setImageList(images);
       }
+
+      const result = await getTagProduct(tagId);
+      console.log("result tags is: ", result);
+      if(result){
+        setOther(result.product);
+      }
     }
     setLoading(true);
     getproduct();
     setLoading(false);
-  },[])
+  },[productId,tagId])
 
   const handleShare=()=>{
 
@@ -45,7 +56,7 @@ const ViewProduct = () => {
   }
 
   // console.log("imageList details is:   ", imageList);
-  // console.log("product details is:   ", productData);
+  // console.log("product details is:   ", other);
 
   return (
     <div className='w-full bg-white py-10  '>
@@ -56,7 +67,7 @@ const ViewProduct = () => {
             </div>
           ):
           (
-            <div className=' lg:w-[100%] flex flex-row justify-center mx-auto'>
+            <div className=' lg:w-[100%] flex flex-col justify-center items-center mx-auto gap-8 ' >
                 
                 <div className='w-[80%] flex items-start gap-10 py-8 px-8 bg-gray-800 text-white rounded-xl'>
                     <div>
@@ -109,7 +120,7 @@ const ViewProduct = () => {
                           }
                           <div className=' select-none text-sm font-thin text-gray-300'>
                             {
-                              quantSelected > 1 ? (<span>*select quantity: {quantSelected}</span>) : (<div></div>)
+                              quantSelected > 1 ? (<span>*selected quantity: {quantSelected}</span>) : (<div></div>)
                             }
                           </div>
 
@@ -117,6 +128,14 @@ const ViewProduct = () => {
                            ( !user || user.accountType===ACCOUNT_TYPE.CLIENT) && <div className='my-3'>
                               <BuyProduct product={productData}  quantity={quantSelected}/>
                           </div>
+                          }
+                          {
+                            (!user || user.accountType === ACCOUNT_TYPE.ADMIN) && <div>
+                            <button
+                              onClick={()=>{navigate(`/dashboard/edit-course/${productId}`)}}
+                              className=' bg-yellow-400 text-gray-800 font-semibold py-2 w-[90%] rounded-md border-b-2 border-gray-500'
+                              >Edit Product</button>
+                            </div>
                           }
 
                     </div>
@@ -170,7 +189,40 @@ const ViewProduct = () => {
                     </div>
                 </div>
 
-               
+                <div className='w-full px-8 py-6 bg-gray-800 text-white'>
+                        
+                        <h3 className='text-2xl font-bold  py-4'>Learn related products: </h3>
+
+                      <div className='flex gap-4 flex-row items-center justify-start'>
+                      {
+                          other.slice(0,4).map((product,index)=>(
+                            product._id !== productId && (
+                                <div key={index} 
+                                className='flex flex-col gap-2 hover:scale-105 transition-all duration-500 overflow-hidden w-[24%]  
+                                rounded-lg  bg-zinc-100 shadow-inner'
+                                onClick={()=>{navigate(`/product/${tagId}/${product._id}`)}}
+                                >
+
+                                    <img  src={product.thumbnail} alt={`product-image-${product.productName}`} className='lg:w-[300px]  ' />
+
+                                    <div className='px-4 py-3'>
+                                      <h3  className='text-zinc-600 text-xl font-semibold'  >{product.productName}</h3>
+                                      <p  className=' text-sm md:text-md text-zinc-500 font-sans'>
+                                          {product.productDetail.slice(0,100)} ....
+                                      </p>
+                                      <p className='italic  text-lg text-zinc-400 font-semibold'>
+                                          {product.price}
+                                      </p>
+
+                                  </div>
+
+                                </div>
+                            ) 
+                          ))
+                        }
+                      </div>
+                </div>
+  
             </div>
             
           )

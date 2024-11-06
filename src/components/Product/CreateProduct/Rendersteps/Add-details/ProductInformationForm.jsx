@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import {getAllCategories} from "../../../../../services/operations/categoryApi";
 import { RiMoneyRupeeCircleLine } from 'react-icons/ri';
 import ProductImage from '../ProductImage';
 import ProductInstruction from './ProductInstruction';
 import { setEditProduct, setProduct, setStep } from '../../../../../features/productSlice';
 import { addProductDetails, updateProductDetails } from '../../../../../services/operations/productApi';
+import toast from 'react-hot-toast';
 
 const ProductInformationForm = () => {
 
     const [loading,setLoading]= useState(true);
+    const {productId} = useParams();
     const {token} = useSelector((state)=>state.auth);
     const [showCategory, setShowCategory] = useState([]);
     const dispatch = useDispatch();
@@ -82,7 +84,7 @@ const ProductInformationForm = () => {
     
                 const currentProduct = getValues();
                 const formData = new FormData();
-    
+                console.log("currentProduct", currentProduct);
                 formData.append("productId", product._id);
                 if(currentProduct.productName !== product.productName){
                     formData.append("productName", data.productName);
@@ -111,16 +113,16 @@ const ProductInformationForm = () => {
                 console.log(" result is after edit is: ", result);
                 setLoading(false);
                 if(result){
-                    // console.log("inside the result is: ", result);
+                    console.log("inside the result is: ", result);
                     dispatch(setStep(2));
                     dispatch(setProduct(result));
                 }
                 
             }
             else{
-                toast("No changes made yet");
+                toast.success("No change made");
             }
-            // navigate("/dashboard/my-courses");
+
             return ;
           }
     
