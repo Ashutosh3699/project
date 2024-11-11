@@ -73,7 +73,7 @@ const Navbar = () => {
     }
 
   return (
-    <div className={`w-full flex justify-between md:justify-around items-center bg-regal-blue    text-white  z-50 `}  >
+    <div className={`w-full flex justify-between md:justify-around items-center bg-regal-blue  py-2   text-white  z-50 `}  >
     
     <div>
     <NavLink  to={'/'}>
@@ -145,7 +145,7 @@ const Navbar = () => {
         {/* for mobile */}
         <div  className=' flex md:hidden relative px-4'  onClick={clickHandler} ref={divref} >
             <GiHamburgerMenu />
-            <ul  className={`${attributeclass} flex-col rounded-md  gap-4 absolute top-7 right-0  bg-white text-blue-color font-medium  
+            <ul  className={`${attributeclass} flex-col rounded-md  gap-4 absolute top-7 right-6  bg-white text-blue-color font-medium  
             text-md  cursor-pointer  w-[120px]  px-4 py-3 transition-all duration-200  translate-x-20`}>
                 <li  className=' hover:bg-gray-400 rounded-md w-full text-center hover:text-white'>
                     <NavLink  to={"/about-us"}>

@@ -7,6 +7,7 @@ import {logout} from "../../../services/operations/authApi"
 import { useNavigate } from 'react-router-dom';
 // import ConfirmationModal from '../../common/ConfirmationModal';
 import { VscSignOut } from "react-icons/vsc";
+import ConfirmationModal from '../../common/ConfirmationModal';
 
 const SideBar = () => {
 
@@ -77,9 +78,9 @@ const SideBar = () => {
             
         </div>
 
-        {/* {
-            confirmModal && <ConfirmationModal modalData={confirmModal}/> 
-        } */}
+        {
+            confirmModal &&  <ConfirmationModal modalData={confirmModal}/>
+        }
 
     </div>
   )

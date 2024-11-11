@@ -37,7 +37,7 @@ const ProfileDropDown = () => {
 
   return (
 
-    <div className='w-10 h-10 rounded-full  relative border border-richblack-600 cursor-pointer '
+    <div className='w-10 h-10 rounded-full  bg-gray-700 relative border border-gray-600 cursor-pointer '
     onClick={clickHandler}
     ref={divref}
     >
@@ -50,25 +50,22 @@ const ProfileDropDown = () => {
     </div>
 
       <div  
-      className={`${attributeclass} absolute -left-32 top-[160%] flex flex-col justify-center items-center rounded-md
-                                   bg-gray-50  p-4  text-gray-800   duration-400  transition-all 
-                                    lg:w-[200px]  z-10  gap-2`}>
+      className={`${attributeclass} absolute -left-20 top-[160%] flex flex-col justify-center items-center rounded-md
+                                   bg-gray-500  pt-4  text-gray-800   duration-400  transition-all  lg:w-[150px]  z-10  gap-2`}>
 
-            <div className='absolute w-6 h-6 bg-gray-50  rounded-md rotate-45 
+            <div className='absolute w-6 h-6 bg-gray-500  rounded-md rotate-45 
             -top-2  right-10 z-0'></div>
 
-            <Link  to={"/dashboard/my-profile"}>
-            <div className="flex w-full items-center gap-x-1 py-[10px] px-[12px] text-sm text-gray-300 hover:bg-gray-700 hover:text-gray-50">
+            <Link  to={"/dashboard/my-profile"} className="flex w-full justify-center items-center gap-x-1 py-[10px]  text-sm text-gray-300 hover:bg-gray-700 hover:text-gray-50">
               <VscDashboard className="text-lg" />
               Dashboard
-            </div>
             </Link>
 
             <div
             onClick={() => {
               dispatch(logout(navigate))
             }}
-            className="flex w-full items-center gap-x-1 py-[10px] px-[12px] text-sm text-gray-300 hover:bg-gray-700 hover:text-gray-50"
+            className="flex w-full justify-center items-center gap-x-1 py-[10px]  text-sm text-gray-300 hover:bg-gray-700 hover:text-gray-50"
           >
             <VscSignOut className="text-lg" />
             Logout
