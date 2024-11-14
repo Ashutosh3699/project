@@ -111,14 +111,14 @@ const Navbar = () => {
 
             </div>
         </li>
-        <NavLink  to={`/product/${selectedCategory}`}>
+        {(user!==null && user.accountType===ACCOUNT_TYPE.ADMIN)&& <NavLink  to={`/product/${selectedCategory}`}>
         <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
            
                 Products
             
             <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
         </li>
-        </NavLink>
+        </NavLink>}
         <NavLink  to={"/consultancy"}>
             <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
                     Consultancy

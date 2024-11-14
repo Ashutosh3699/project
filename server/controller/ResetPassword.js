@@ -1,5 +1,5 @@
 const  User = require("../models/User");
-const mailsender = require("../utils/mailSender");
+const mailsender = require("../utils/sendMail");
 const bcrypt = require("bcryptjs");
 const crypto = require("crypto");
 

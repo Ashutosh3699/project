@@ -1,9 +1,18 @@
 import React from 'react';
 import ProductCategory from './ProductPage/ProductCategory';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { ACCOUNT_TYPE } from '../../utils/constant';
 
 
 const Product = () => {
+
+  const {user} = useSelector((state)=>state.profile);
+  const navigate = useNavigate();
+
+  if(user.accountType===ACCOUNT_TYPE.CLIENT){
+    return navigate("/");
+  }
 
   return (
     <div className='bg-white text-white w-full h-full'>
