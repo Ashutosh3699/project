@@ -59,7 +59,7 @@ const ChangePassword = () => {
 
                 </div>
 
-            <div  className='flex flex-row gap-6'>
+            <div  className='flex flex-col md:flex-row gap-6'>
 
                 <div className='flex flex-col gap-2 items-start '>
                     <label  htmlFor='newPassword'  className='text-md text-gray-50 font-semibold  pl-4 flex gap-1  items-start'>

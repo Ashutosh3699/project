@@ -24,9 +24,9 @@ const ProfileUpdateForm = () => {
 
   return (
     <form  onSubmit={handleSubmit(submitForm)}
-        className='flex flex-col gap-4  lg:w-10/12 mx-auto mt-6'>
+        className='flex flex-col gap-4 w-full lg:w-10/12 mx-auto mt-6'>
 
-        <div className='flex flex-row justify-between items-center'>
+        <div className='flex flex-col  md:flex-row justify-between items-start'>
             {/* firstName */}
             <div  className='flex flex-col gap-1 items-start  my-4'>
                 <label  htmlFor='firstName'  className='text-md text-gray-50 font-semibold pl-4 flex gap-1  items-start'>
@@ -61,7 +61,7 @@ const ProfileUpdateForm = () => {
         </div>
 
         {/* section2 */}
-        <div className='flex flex-row justify-between items-center'>
+        <div className='flex flex-col  md:flex-row justify-between items-start'>
             {/* date of birth */}
             <div  className='flex flex-col gap-1 items-start  my-4'>
                 <label  htmlFor='DOB'  className='text-md text-gray-50 font-semibold pl-4 flex gap-1  items-start'>

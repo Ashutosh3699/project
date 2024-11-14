@@ -1,4 +1,4 @@
-const mailsender = require("../utils/mailsender");
+const mailsender = require("../utils/sendMail");
 const ContactUsForm = require("../mail/ContactUsFormat")
 
 require("dotenv").config();

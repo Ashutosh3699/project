@@ -1,10 +1,10 @@
 const User = require("../models/User");
 const OTP = require("../models/OTP");
 const otpGenerator = require('otp-generator');
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const Profile  = require("../models/Profile");
 const JWT = require("jsonwebtoken");
-const mailsender = require("../utils/mailSender");
+const mailsender = require("../utils/sendMail");
 const OtpAdmin = require("../models/OtpAdmin");
 
 require("dotenv").config();

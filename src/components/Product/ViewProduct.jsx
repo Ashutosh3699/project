@@ -69,7 +69,7 @@ const ViewProduct = () => {
           (
             <div className=' lg:w-[100%] flex flex-col justify-center items-center mx-auto gap-8 ' >
                 
-                <div className='w-[80%] flex items-start gap-10 py-8 px-8 bg-gray-800 text-white rounded-xl'>
+                <div className='w-full md:w-[80%] flex flex-col md:flex-row items-start gap-10 py-8 px-4 md:px-8 bg-gray-800 text-white rounded-xl'>
                     <div>
                           <div className='lg:w-[400px]    mb-10'>
                             {/* <img src= alt={`product-image-${image}`}  className='w-full'/> */}
@@ -193,12 +193,12 @@ const ViewProduct = () => {
                         
                         <h3 className='text-2xl font-bold  py-4'>Learn related products: </h3>
 
-                      <div className='flex gap-4 flex-row items-center justify-start'>
+                      <div className='flex gap-4 flex-row items-center justify-start flex-wrap'>
                       {
                           other.slice(0,4).map((product,index)=>(
                             product._id !== productId && (
                                 <div key={index} 
-                                className='flex flex-col gap-2 hover:scale-105 transition-all duration-500 overflow-hidden w-[24%]  
+                                className='flex flex-col gap-2 hover:scale-105 transition-all duration-500 overflow-hidden w-[90%] md:w-[24%]  
                                 rounded-lg  bg-zinc-100 shadow-inner'
                                 onClick={()=>{navigate(`/product/${tagId}/${product._id}`)}}
                                 >

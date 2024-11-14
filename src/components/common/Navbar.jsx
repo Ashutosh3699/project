@@ -152,10 +152,29 @@ const Navbar = () => {
                         About us
                     </NavLink>
                 </li>
-                <li className=' hover:bg-gray-400 rounded-md w-full text-center hover:text-white'>
-                    <NavLink  to={"/"}>
-                        Our fields
-                    </NavLink>
+                <li className='cursor-pointer transition-all duration-300  relative group  hover:bg-gray-400 
+                rounded-md w-full text-center hover:text-white' >
+                        Our Fields
+        {/* commented the service part */}
+                    <div  className= {`bg-transparent px-4 py-4  invisible  group-hover:visible transition-all  duration-300 top-0  
+                    absolute bg-black  `}>
+
+                        <ul className="flex-col  gap-3 absolute top-5 right-6 text-md w-[200px] cursor-pointer  text-black rounded-lg 
+                        bg-white items-center px-4 py-4 space-y-3 duration-200 transition-all ">
+                            
+                            {
+                                services.map((item,index)=>(
+                                    <li className=' hover:bg-slate-800 rounded-lg hover:text-white ' key={index}>
+                                        <NavLink  to={`/our-services/${item.id}`}>
+                                            <p className='w-full font-medium text-center text-sm '>{`${item.name.substring(0,15)}...`}</p>
+                                        </NavLink>
+                                    </li>
+                                ))
+                            }
+                        
+                        </ul>
+
+                    </div>
                 </li>
                 <li className=' hover:bg-gray-400 rounded-md w-full text-center hover:text-white'>
                     <NavLink  to={`/product/${selectedCategory}`}>
@@ -163,7 +182,7 @@ const Navbar = () => {
                     </NavLink>
                 </li>
                 <li className=' hover:bg-gray-400 rounded-md w-full text-center hover:text-white'> 
-                    <NavLink  to={"/"}>
+                    <NavLink  to={"/consultancy"}>
                         Consultancy
                     </NavLink>
                 </li>

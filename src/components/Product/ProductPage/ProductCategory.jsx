@@ -37,12 +37,12 @@ const ProductCategory = () => {
     useOutsideClick(divref1, handleClickOutside1);
 
   return (
-    <div className=' w-[100%] lg:w-[20%]  h-[100%] py-6  shadow-inner  shadow-cyan-700'>
+    <div className=' w-[100%] lg:w-[20%]  h-[100%] py-6  shadow-inner  shadow-cyan-700'  ref={divref1}>
 
       <h3 className='text-4xl text-gray-300 select-none font-extrabold px-4 pb-2 flex gap-2 items-center' 
-
+      onClick={clickHandler} 
      >Store  
-      <FaPlus className='flex  lg:hidden'  onClick={clickHandler} ref={divref1}  />
+      <FaPlus className='flex  lg:hidden'  />
       </h3>
       {
          <div className='hidden lg:block'>
@@ -89,7 +89,7 @@ const ProductCategory = () => {
 
       {
          <div  className={`${attributeclass}  
-         w-[80%] absolute bg-gray-800 top-[23%] left-0 transition-all duration-300 py-3 ml-3  rounded-md `}>
+         w-[80%] absolute bg-gray-800 top-[23%] left-0 z-10 transition-all duration-300 py-3 ml-3  rounded-md `}  >
 
 
           {

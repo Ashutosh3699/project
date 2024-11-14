@@ -11,7 +11,7 @@ const MyProfile = () => {
   const navigate = useNavigate();
 
   return (
-    <div className='bg-regal-blue text-gray-50'>
+    <div className='bg-regal-blue text-gray-50 '>
 
         <h1 className='text-2xl pl-3 font-bold text-gray-50 mb-6'>My Profile</h1>
 

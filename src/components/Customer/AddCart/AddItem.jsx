@@ -27,7 +27,7 @@ const AddItem = () => {
                   <RenderTotalAmount/>
               </div>
           ) : (
-              <h3 className=' px-10  text-richblack-25 text-2xl font-extrabold w-[80%] mx-auto'>No courses in the cart</h3>
+              <h3 className=' px-10 py-10  text-gray-500 text-4xl font-bold w-[80%] mx-auto'>No courses in the cart</h3>
           )
       }
 

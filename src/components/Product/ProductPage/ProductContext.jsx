@@ -111,6 +111,9 @@ const ProductContext = () => {
                 </div>
             ))
         }
+        {
+            showProduct.length==0 && <div className='text-gray-500  font-bold text-2xl '>No Product available </div>
+        }
 
 
     
