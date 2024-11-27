@@ -111,7 +111,7 @@ const Navbar = () => {
 
             </div>
         </li>
-        {(user!==null && user.accountType===ACCOUNT_TYPE.ADMIN)&& <NavLink  to={`/product/${selectedCategory}`}>
+        { <NavLink  to={`/product/${selectedCategory}`}>
         <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
            
                 Products

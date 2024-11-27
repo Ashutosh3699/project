@@ -14,7 +14,6 @@ const BuyProduct = ({product,quantity}) => {
     const navigate = useNavigate();
     const {token} = useSelector((state)=>state.auth);
     const {user} = useSelector((state)=>state.profile);
-    // const {carts, totalItems, total} = useSelector((state)=>state.cart);
 
     // if not logged in then show confirmation modal
     const [confirmationModal, setConfirmationModal] = useState(null);
@@ -25,6 +24,13 @@ const BuyProduct = ({product,quantity}) => {
     const handleBuyFunction= ()=>{
         if(token){
         //    buyCourse(token, [courseId], user, navigate, dispatch)
+        if(user.accountDetails.phoneNumber != null && user.accountDetails.address!=null){
+            console.log("userr is: ", user);
+          }
+          else{
+            toast.error("Please add your address and phone number");
+          }
+
           return;
         }
         else{

@@ -13,13 +13,13 @@ export const sidebarLinks = [
     type: ACCOUNT_TYPE.CLIENT,
     icon: "VscAdd",
   },
-  {
-    id: 3,
-    name: "Purchase History",
-    path: "/dashboard/purchase-history",
-    type: ACCOUNT_TYPE.CLIENT,
-    icon: "VscHistory",
-  },
+  // {
+  //   id: 3,
+  //   name: "Purchase History",
+  //   path: "/dashboard/purchase-history",
+  //   type: ACCOUNT_TYPE.CLIENT,
+  //   icon: "VscHistory",
+  // },
   {
     id: 4,
     name: "Add Product",

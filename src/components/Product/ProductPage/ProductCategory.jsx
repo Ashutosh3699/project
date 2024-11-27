@@ -40,9 +40,9 @@ const ProductCategory = () => {
     <div className=' w-[100%] lg:w-[20%]  h-[100%] py-6  shadow-inner  shadow-cyan-700'  ref={divref1}>
 
       <h3 className='text-4xl text-gray-300 select-none font-extrabold px-4 pb-2 flex gap-2 items-center' 
-      onClick={clickHandler} 
+      
      >Store  
-      <FaPlus className='flex  lg:hidden'  />
+      <FaPlus className='flex  lg:hidden' onClick={clickHandler}   />
       </h3>
       {
          <div className='hidden lg:block'>
@@ -51,7 +51,7 @@ const ProductCategory = () => {
             categoryList.length===0 ? <div>No category present here</div>  : <div>
               {
                 categoryList.map((element,index)=>(
-                  <details  key={index} className='w-full cursor-pointer select-none text-center flex flex-row items-center ' >
+                  <details  key={index} className='w-full h-full cursor-pointer select-none text-center flex flex-col items-center ' >
 
                   <summary className='flex justify-between items-center border bg-cyan-700 
                       border-gray-500  px-5 py-2 border-b-4 border-b-gray-200  w-full ' 
@@ -62,12 +62,12 @@ const ProductCategory = () => {
                       </div>
                   </summary>
 
-                  <div>
+                  <div className=' xl:w-[280px]  lg:w-[200px]'>
                       {
                         element?.subCategory?.map((tag,index)=>(
-                          <div  key={index} className={`w-full ${selectedCategory === tag._id ? "bg-gray-800": " bg-yellow-800"}
-                          hover:text-blue-color  cursor-pointer py-1 items-center  transition-all duration-300
-                          gap-x-4  flex justify-start px-4 border border-yellow-950` }
+                          <div  key={index} className={` ${selectedCategory === tag._id ? "bg-gray-800": " bg-yellow-800"}
+                          hover:text-blue-color  cursor-pointer py-1 items-start  transition-all duration-300
+                          gap-x-4  flex justify-start px-4 border border-yellow-950 w-full` }
                             onClick={()=>{
                               dispatch(setSelecetedCategory(tag._id));
                               navigate(`/product/${tag._id}`)
@@ -96,7 +96,7 @@ const ProductCategory = () => {
             categoryList.length===0 ? <div>No category present here</div>  : <div>
               {
                 categoryList.map((element,index)=>(
-                  <details  key={index} className='w-full cursor-pointer select-none text-center flex flex-row items-center ' >
+                  <details  key={index} className='w-full cursor-pointer select-none text-center flex flex-col items-center ' >
 
                   <summary className='flex justify-between items-center border bg-cyan-700 
                       border-gray-500  px-5 py-2 border-b-4 border-b-gray-200  w-full ' 
@@ -107,7 +107,7 @@ const ProductCategory = () => {
                       </div>
                   </summary>
 
-                  <div>
+                  <div className=' w-[250px] '>
                       {
                         element?.subCategory?.map((tag,index)=>(
                           <div  key={index} className={`w-full ${selectedCategory === tag._id ? "bg-gray-800": " bg-yellow-800"}

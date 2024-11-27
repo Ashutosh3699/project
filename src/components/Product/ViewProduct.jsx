@@ -5,11 +5,12 @@ import { IoIosArrowDroprightCircle } from 'react-icons/io';
 import { FaMinus, FaPlus, FaRegShareFromSquare } from 'react-icons/fa6';
 import copy from 'copy-to-clipboard';
 import toast from 'react-hot-toast';
-import ReactImageMagnify from 'react-image-magnify';
 import { ACCOUNT_TYPE, PRODUCT_STATUS } from '../../utils/constant';
 import BuyProduct from './BuyProduct';
 import { useSelector } from 'react-redux';
 import { getTagProduct } from '../../services/operations/categoryApi';
+import { MdOutlineZoomIn } from "react-icons/md";
+import ImageZoom from './ImageZoom';
 
 
 const ViewProduct = () => {
@@ -23,6 +24,7 @@ const ViewProduct = () => {
   const [loading,setLoading] = useState(false);
   const [other, setOther] = useState([]);
   const navigate = useNavigate();
+  const [confirmationModal, setConfirmationModal] = useState(null);
 
 
   useEffect(()=>{
@@ -71,21 +73,15 @@ const ViewProduct = () => {
                 
                 <div className='w-full md:w-[80%] flex flex-col md:flex-row items-start gap-10 py-8 px-4 md:px-8 bg-gray-800 text-white rounded-xl'>
                     <div>
-                          <div className='lg:w-[400px]    mb-10'>
-                            {/* <img src= alt={`product-image-${image}`}  className='w-full'/> */}
-                            <ReactImageMagnify {...{
-                              smallImage: {
-                                  alt: 'Wristwatch by Ted Baker London',
-                                  isFluidWidth: true,
-                                  src: imageList[image]
-                              },
-                              largeImage: {
-                                  src: imageList[image],
-                                  width: 700,
-                                  height: 800,
-                                  enlargedImagePosition: "besides"
-                              }
-                          }} />
+                          <div className='lg:w-[400px]    mb-10 relative'>
+                            <img src={imageList[image]} alt={`product-image-${image}`}  className='w-[700px]'/>
+                            <MdOutlineZoomIn  
+                            onClick={()=>{setConfirmationModal({
+                              imageLink: imageList[image],
+                              btn1text:"cancel",
+                              btn1Handler:()=>setConfirmationModal(null),
+                            })}}
+                            className=' absolute top-4 left-4 text-2xl hover:text-3xl  transition-all duration-300 cursor-pointer '/>
                           </div>
 
                           <div className='flex flex-row gap-3 '>
@@ -227,7 +223,7 @@ const ViewProduct = () => {
             
           )
         }
-    
+        {confirmationModal && <ImageZoom  modalData={confirmationModal}  />}
     </div>
   )
 }

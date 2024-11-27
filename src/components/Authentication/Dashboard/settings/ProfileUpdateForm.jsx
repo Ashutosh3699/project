@@ -2,12 +2,14 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import {updateProfile} from "../../../../services/operations/profileApi"
+import { useNavigate } from 'react-router-dom';
 
 
 const ProfileUpdateForm = () => {
 
     const {token} = useSelector((state)=>state.auth);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const {
         register,
@@ -18,7 +20,7 @@ const ProfileUpdateForm = () => {
 
          data.phoneNumber = `${data.contactNumber}`
          console.log("data is : ", data);
-        dispatch(updateProfile(data,token));
+        dispatch(updateProfile(data,token,navigate));
      }
     
 

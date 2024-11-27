@@ -20,21 +20,21 @@ const CategorySection = () => {
         
         <div className='flex flex-row gap-6 w-full  '>
 
-          <div className='text-gray-200 flex flex-col items-center w-[18%] '>
+          <div className='text-gray-200 flex flex-col items-center w-[25%] '>
 
               {
                 category?.map((element,index)=>(
-                  <details  key={index} className='w-full text-center flex flex-row items-center'>
+                  <details  key={index} className='w-full text-center flex flex-col items-center'>
 
-                        <summary className='flex justify-between items-center border
-                            border-gray-500  px-5 py-2 border-b-4 border-b-gray-200  '>
+                        <summary className='flex  justify-between items-center border
+                            border-gray-500  px-5 py-2 border-b-4 border-b-gray-200  w-full '>
                           <div className='flex justify-between items-center gap-x-3 '>
                               <FaAngleRight className="text-2xl text-richblack-50"/>
                               <p className="font-semibold text-richblack-50">{element?.categoryName}</p>
                           </div>
                         </summary>
 
-                        <div className='bg-gray-500 text-gray-50 '>
+                        <div className='bg-gray-500 text-gray-50  xl:w-[240px] lg:w-[180px]'>
                             {
                               element?.subCategory?.map((tag,index)=>(
                                 <div  key={index} className='border border-gray-200  text-left pl-7'>
