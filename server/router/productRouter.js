@@ -5,10 +5,12 @@ const {createProduct,createProductImage,getAllproducts,getProductDetail,
     deleteProductImage, updateProduct, updateProductImage} = require("../controller/ProductController");
 
 const {createCategories,getAllCategories,updateCategory,
-    getCategoryProducts,getTagsProducts} = require("../controller/Categories")
+    getCategoryProducts,getTagsProducts} = require("../controller/Categories");
+
+const {capturePayment} = require("../controller/Payment")
 
 // import middlewares
-const {isAuth, isAdmin} = require("../middleware/Auth");
+const {isAuth, isAdmin, isClient} = require("../middleware/Auth");
 
 // ********************************************************************************************************
 //                                      Product routes
@@ -32,8 +34,10 @@ productRouter.get("/getAllCategories", getAllCategories);
 productRouter.post("/getCategoryProducts",getCategoryProducts);
 productRouter.post("/getTagsProducts",getTagsProducts);
 
-
-
+// ********************************************************************************************************
+//                                      payment routes
+// ********************************************************************************************************
+productRouter.post("/capturePayment", isAuth,isClient, capturePayment);
 
 
 module.exports = productRouter

@@ -4,7 +4,7 @@ import {products} from "../apis"
 
 const {GET_ALL_PRODUCT_API,GET_PRODUCT_DETAIL_API,DELETE_PRODUCT_IMAGE_API,
     CREATE_PRODUCT_API,CREATE_PRODUCT_IMAGE_API, UPDATE_PRODUCT_API,
-  UPDATE_PRODUCTIMAGE_API} = products;
+  UPDATE_PRODUCTIMAGE_API, GET_PAYMENT_API} = products;
 
 export const addProductDetails= async(data,token)=>{
     const toastId = toast.loading("Loading...");
@@ -156,3 +156,24 @@ export const deleteProductImage = async (data, token) => {
     toast.dismiss(toastId)
     return result
   }
+
+  export async function buyCourse(token,products,userDetails,navigate,dispatch) {
+    
+    const toastId = toast.loading("...loading");
+    try {
+        //initiate the order
+        console.log("products is: ", products);
+        const orderResponse = await  apiConnector("POST", GET_PAYMENT_API,{products},
+            {
+                Authorization: `Bearer ${token}`,
+            }
+        );
+
+        toast.success("fine");
+    } catch (error) {
+        console.log("PAYMENT API ERROR.....", error);
+        toast.error("Could not make Payment");
+    }
+    toast.dismiss(toastId)
+}
+

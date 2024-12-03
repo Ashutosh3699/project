@@ -2,6 +2,7 @@ import React, { useState }  from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import ConfirmationModal from '../common/ConfirmationModal';
+import { buyCourse } from '../../services/operations/productApi';
 
 const RenderTotalAmount = () => {
 
@@ -16,8 +17,16 @@ const RenderTotalAmount = () => {
 
       console.log("buy carts: ", carts);
       if(token){
-        // buyCourse(token, courses, user, navigate, dispatch)
-       return;
+        if(user.accountDetails.phoneNumber != null && user.accountDetails.address!=null){
+          console.log("userr is: ", user);
+          console.log("product is: ",carts);
+          buyCourse(token, carts, user, navigate, dispatch);
+        }
+        else{
+          toast.error("Please add your address and phone number");
+        }
+
+        return;
       }
       else{
         setConfirmationModal({

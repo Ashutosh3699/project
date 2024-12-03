@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
 import { addItems } from '../../features/cartSlice';
 import ConfirmationModal from '../common/ConfirmationModal';
+import { buyCourse } from '../../services/operations/productApi';
 
 const BuyProduct = ({product,quantity}) => {
 
@@ -22,10 +23,17 @@ const BuyProduct = ({product,quantity}) => {
     const {loading} = useSelector((state)=>state.profile);
 
     const handleBuyFunction= ()=>{
+
+      const updatedProduct = {
+        ...product,
+        selectQuantity: quantity
+     };
+
         if(token){
-        //    buyCourse(token, [courseId], user, navigate, dispatch)
-        if(user.accountDetails.phoneNumber != null && user.accountDetails.address!=null){
+          if(user.accountDetails.phoneNumber != null && user.accountDetails.address!=null){
             console.log("userr is: ", user);
+            console.log("product is: ",productId);
+              buyCourse(token, [updatedProduct], user, navigate, dispatch)
           }
           else{
             toast.error("Please add your address and phone number");

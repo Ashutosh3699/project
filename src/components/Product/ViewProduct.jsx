@@ -58,7 +58,7 @@ const ViewProduct = () => {
   }
 
   // console.log("imageList details is:   ", imageList);
-  // console.log("product details is:   ", other);
+  console.log("product details is:   ", other);
 
   return (
     <div className='w-full bg-white py-10  '>
@@ -190,7 +190,7 @@ const ViewProduct = () => {
                         <h3 className='text-2xl font-bold  py-4'>Learn related products: </h3>
 
                       <div className='flex gap-4 flex-row items-center justify-start flex-wrap'>
-                      {
+                      {other!==undefined &&
                           other.slice(0,4).map((product,index)=>(
                             product._id !== productId && (
                                 <div key={index} 

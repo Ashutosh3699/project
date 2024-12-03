@@ -62,10 +62,8 @@ exports.passwordUpdated = (email, name) => {
                 </p>
                 <p>If you did not request this password change, please contact us immediately to secure your account.</p>
             </div>
-            <div class="support">If you have any questions or need further assistance, please feel free to reach out to us
-                at
-                <a href="mailto:info@studynotion.com">info@studynotion.com</a>. We are here to help!
-            </div>
+            <div class="support">If you have any questions or need assistance, please feel free to reach out to us at <a
+					href="mailto:info@aeromat.in">info@aeromat.in</a>. We are here to help!</div>
         </div>
     </body>
     
