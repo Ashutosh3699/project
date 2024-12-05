@@ -45,10 +45,10 @@ const userSchema = new  mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "Profile"
     },
-    accountProducts: {
+    accountProducts: [{
         type:mongoose.Schema.Types.ObjectId,
         ref: "Products"
-    }
+    }]
 
 })
 

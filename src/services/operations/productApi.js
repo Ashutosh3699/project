@@ -1,10 +1,11 @@
 import {toast } from "react-hot-toast";
 import {apiConnector} from "../apiConnector";
 import {products} from "../apis"
+import { resetCart } from "../../features/cartSlice";
 
 const {GET_ALL_PRODUCT_API,GET_PRODUCT_DETAIL_API,DELETE_PRODUCT_IMAGE_API,
     CREATE_PRODUCT_API,CREATE_PRODUCT_IMAGE_API, UPDATE_PRODUCT_API,
-  UPDATE_PRODUCTIMAGE_API, GET_PAYMENT_API} = products;
+  UPDATE_PRODUCTIMAGE_API, GET_PAYMENT_API, GET_PAYMENT_STATUS_API, GET_PAYMENT_DONE_STATUS_API} = products;
 
 export const addProductDetails= async(data,token)=>{
     const toastId = toast.loading("Loading...");
@@ -168,12 +169,60 @@ export const deleteProductImage = async (data, token) => {
                 Authorization: `Bearer ${token}`,
             }
         );
-
+        dispatch(resetCart());
         toast.success("fine");
     } catch (error) {
         console.log("PAYMENT API ERROR.....", error);
         toast.error("Could not make Payment");
     }
     toast.dismiss(toastId)
+}
+
+export async function findPaymentStatus(token,user) {
+    
+  const toastId = toast.loading("...loading");
+  let res;
+  try {
+
+      const paymentStatus = await  apiConnector("POST", GET_PAYMENT_STATUS_API,user,
+          {
+              Authorization: `Bearer ${token}`,
+          }
+      );
+      console.log("data recieved:::::::: ",paymentStatus);
+      if(paymentStatus.data.success){
+        res = paymentStatus;
+      }
+      toast.success("findPaymentStatus successfull");
+  } catch (error) {
+      console.log("findPaymentStatus API ERROR.....", error);
+      toast.error("Could not make Payment");
+  }
+  toast.dismiss(toastId);
+  return res;
+}
+
+export async function PaymentStatusDone(token,data) {
+    
+  const toastId = toast.loading("...loading");
+  let res;
+  try {
+
+      const paymentStatus = await  apiConnector("POST", GET_PAYMENT_DONE_STATUS_API,data,
+          {
+              Authorization: `Bearer ${token}`,
+          }
+      );
+      console.log(paymentStatus);
+      if(paymentStatus.data.success){
+        res = paymentStatus;
+      }
+      toast.success("findPaymentStatus successfull");
+  } catch (error) {
+      console.log("findPaymentStatus API ERROR.....", error);
+      toast.error("Could not make Payment");
+  }
+  toast.dismiss(toastId);
+  return res;
 }
 

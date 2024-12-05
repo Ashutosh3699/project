@@ -7,3 +7,8 @@ export const ACCOUNT_TYPE = {
     DRAFT: "in Stock",
     PUBLISHED: "out of Stock",
   }
+
+  export const PAYMENT_STATUS = {
+    DONE: "done",
+    NOT_DONE: "not yet",
+  }

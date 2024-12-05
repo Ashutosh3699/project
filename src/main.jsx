@@ -37,6 +37,7 @@ import SignupForAdmin from './components/Authentication/signup/SignupForAdmin.js
 import AddItem from './components/Customer/AddCart/AddItem.jsx'
 import ClientRoute from './components/Authentication/ClientRoute.js'
 import EditCourse from './components/Product/editcourse/EditCourse.jsx'
+import StatusPay from './components/Product/PaymentStatus/StatusPay.jsx'
 
 
 const store= configureStore({
@@ -176,7 +177,12 @@ const router = createBrowserRouter([
               <EditCourse/>
             </InstructorRoute>
           },
-         
+         {
+          path:"/dashboard/informationForAdmin",
+          element:<InstructorRoute>
+            <StatusPay/>
+          </InstructorRoute>
+         }
           
         ]
       }

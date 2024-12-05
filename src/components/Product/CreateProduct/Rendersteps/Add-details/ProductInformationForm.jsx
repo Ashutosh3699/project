@@ -280,7 +280,7 @@ const ProductInformationForm = () => {
         <div>
             <ProductInstruction
                 name={"productInstructions"}
-                label={"product instructions"}
+                label={"Product instructions"}
                 setValue={setValue}
                 errors={errors}
                 register={register}

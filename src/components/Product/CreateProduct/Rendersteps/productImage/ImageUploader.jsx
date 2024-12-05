@@ -146,7 +146,7 @@ const ImageUploader = ({
 
                     <div className="flex flex-col space-y-2">
 
-                            <label htmlFor='title' className="text-sm text-gray-50">Lecture Title {!view && <sup className="text-pink-200">*</sup>}</label>
+                            <label htmlFor='title' className="text-sm text-gray-50">Product Title {!view && <sup className="text-pink-200">*</sup>}</label>
                             <input
                                 id='title'
                                 name='title'

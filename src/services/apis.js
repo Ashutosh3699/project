@@ -38,7 +38,9 @@ export const products = {
     GET_PRODUCT_DETAIL_API: BASE_URL + "/productRouter/getProductDetail",
     UPDATE_PRODUCT_API: BASE_URL + "/productRouter/updateProduct",
     UPDATE_PRODUCTIMAGE_API: BASE_URL + "/productRouter/updateProductImage",
-    GET_PAYMENT_API: BASE_URL + "/productRouter/capturePayment"
+    GET_PAYMENT_API: BASE_URL + "/productRouter/capturePayment",
+    GET_PAYMENT_STATUS_API: BASE_URL + "/productRouter/findUnpaidPayments",
+    GET_PAYMENT_DONE_STATUS_API: BASE_URL + "/productRouter/PaymentStatusUpdate"
 
 }
 

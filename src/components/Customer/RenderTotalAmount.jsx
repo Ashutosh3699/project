@@ -13,20 +13,33 @@ const RenderTotalAmount = () => {
   const [confirmationModal, setConfirmationModal] = useState(null);
   const dispatch = useDispatch();
 
+  const BuyProductFunction=()=>{
+
+    if(user.accountDetails.phoneNumber != null && user.accountDetails.address!=null){
+      console.log("userr is: ", user);
+      console.log("product is: ",carts);
+      buyCourse(token, carts, user, navigate, dispatch);
+    }
+    else{
+      toast.error("Please add your address and phone number");
+    }
+
+    setConfirmationModal(null);
+    return;
+  }
+
   const handleBuyCourse= ()=>{
 
       console.log("buy carts: ", carts);
       if(token){
-        if(user.accountDetails.phoneNumber != null && user.accountDetails.address!=null){
-          console.log("userr is: ", user);
-          console.log("product is: ",carts);
-          buyCourse(token, carts, user, navigate, dispatch);
-        }
-        else{
-          toast.error("Please add your address and phone number");
-        }
-
-        return;
+        setConfirmationModal({
+          text1: "Do you want to buy the course",
+          text2: "Are you sure !",
+          btn1text:"Done",
+          btn2text:"Cancel",
+          btn1Handler:()=>BuyProductFunction(),
+          btn2Handler:()=>setConfirmationModal(null),
+        })
       }
       else{
         setConfirmationModal({

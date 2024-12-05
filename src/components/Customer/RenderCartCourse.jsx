@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { AiFillDelete } from "react-icons/ai";
 import { removeCard } from '../../features/cartSlice';
@@ -8,6 +8,8 @@ const RenderCartCourse = () => {
     const {carts} = useSelector((state)=>state.cart);
     const dispatch = useDispatch();
 
+    useEffect(()=>{
+    },[carts])
 
   return (
     <div className="flex flex-1 flex-col w-full">

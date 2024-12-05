@@ -22,28 +22,40 @@ const BuyProduct = ({product,quantity}) => {
     const {paymentLoading} = useSelector((state)=>state.product);
     const {loading} = useSelector((state)=>state.profile);
 
-    const handleBuyFunction= ()=>{
+    const BuyProductFunction=()=>{
 
       const updatedProduct = {
         ...product,
         selectQuantity: quantity
      };
 
-        if(token){
-          if(user.accountDetails.phoneNumber != null && user.accountDetails.address!=null){
-            console.log("userr is: ", user);
-            console.log("product is: ",productId);
-              buyCourse(token, [updatedProduct], user, navigate, dispatch)
-          }
-          else{
-            toast.error("Please add your address and phone number");
-          }
+     if(user.accountDetails.phoneNumber != null && user.accountDetails.address!=null){
+        console.log("userr is: ", user);
+        console.log("product is: ",productId);
+          buyCourse(token, [updatedProduct], user, navigate, dispatch)
+      }
+      else{
+        toast.error("Please add your address and phone number");
+      }
+      setConfirmationModal(null)
+      return;
+    }
 
-          return;
+    const handleBuyFunction= ()=>{
+
+        if(token){
+          setConfirmationModal({
+            text1: "Do you want to buy the products",
+            text2: "Are you sure !",
+            btn1text:"Done",
+            btn2text:"Cancel",
+            btn1Handler:()=>BuyProductFunction(),
+            btn2Handler:()=>setConfirmationModal(null),
+          })
         }
         else{
           setConfirmationModal({
-            text1: "Do you want to buy the course",
+            text1: "Do you want to buy the products",
             text2: "You are not logged in, please login first",
             btn1text:"login",
             btn2text:"cancel",
@@ -61,15 +73,13 @@ const BuyProduct = ({product,quantity}) => {
          };
         
         if(user && user.accountType === ACCOUNT_TYPE.ADMIN){
-          toast.error("Your account type is instrutor");
+          toast.error("Your account type is Admin");
         }
         else{
-            // console.log("product is: ", product);
+
           dispatch(addItems([updatedProduct]));
         }
 
-        // console.log("cart is: ", carts);
-        // console.log("total is: ", total);
       }
 
     if(loading || paymentLoading){

@@ -126,7 +126,7 @@ const ViewProduct = () => {
                           </div>
                           }
                           {
-                            (!user || user.accountType === ACCOUNT_TYPE.ADMIN) && <div>
+                            (user && user.accountType === ACCOUNT_TYPE.ADMIN) && <div>
                             <button
                               onClick={()=>{navigate(`/dashboard/edit-course/${productId}`)}}
                               className=' bg-yellow-400 text-gray-800 font-semibold py-2 w-[90%] rounded-md border-b-2 border-gray-500'
