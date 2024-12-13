@@ -17,6 +17,10 @@ const paymentSchema = new  mongoose.Schema({
     default:0,
     required:true,
   },
+  invoice:{
+    type:String,
+    required:true,
+  },
   payStatus:{
     type:String,
     enum: ["done", "not yet"],

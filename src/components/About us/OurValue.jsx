@@ -7,7 +7,7 @@ const OurValue = () => {
 
          <div className='w-full border  flex flex-wrap gap-7  rounded-xl  px-8  py-10 bg-[#F6F6F6]  shadow-inner  justify-center items-center'>
 
-                <div className='md:w-[200px]  rounded-xl  bg-[#606060] flex flex-col px-4  items-center py-7  text-white  shadow-inner shadow-gray-300'>
+                <div className='md:w-[200px]  rounded-xl  bg-[#606060] flex flex-col px-4   items-start py-7  text-white  shadow-inner shadow-gray-300'>
                     <h3  className=' font-semibold text-lg mb-4'>
                     Absolute Reliability
                     </h3>
@@ -17,7 +17,7 @@ const OurValue = () => {
                     </p>
                 </div>
 
-                <div className='md:w-[200px]   rounded-xl  bg-[#606060] flex flex-col px-4  items-center py-12  text-white  shadow-inner shadow-gray-300'>
+                <div className='md:w-[200px]   rounded-xl  bg-[#606060] flex flex-col px-4  items-start py-12  text-white  shadow-inner shadow-gray-300'>
                     <h3  className=' font-semibold text-lg mb-4'>
                     Innovative Flexibility
                     </h3>
@@ -26,7 +26,7 @@ const OurValue = () => {
                     </p>
                 </div>
 
-                <div className='md:w-[200px]   rounded-xl  bg-[#606060] flex flex-col px-4  items-center py-12  shadow-inner shadow-gray-300  text-white'>
+                <div className='md:w-[200px]   rounded-xl  bg-[#606060] flex flex-col px-4  items-start py-12  shadow-inner shadow-gray-300  text-white'>
                     <h3  className=' font-semibold text-lg mb-4'>
                     Versatility
                     </h3>
@@ -36,7 +36,7 @@ perform
                     </p>
                 </div>
 
-                <div className='md:w-[200px]  rounded-xl  bg-[#606060] flex flex-col px-4  items-center py-12  text-white  shadow-inner shadow-gray-300'>
+                <div className='md:w-[200px]  rounded-xl  bg-[#606060] flex flex-col px-4   items-start py-12  text-white  shadow-inner shadow-gray-300'>
                     <h3  className=' font-semibold text-lg mb-4'>
                     Complete SAFETY
                     </h3>
@@ -46,8 +46,8 @@ accreditation
                     </p>
                 </div>
 
-                <div className='md:w-[200px]   rounded-xl  bg-[#606060] flex flex-col px-3  items-center py-16  text-white  shadow-inner shadow-gray-300'>
-                    <h3  className=' font-semibold text-md mb-4'>
+                <div className='md:w-[216px]   rounded-xl  bg-[#606060] flex flex-col px-3   items-start py-16  text-white  shadow-inner shadow-gray-300'>
+                    <h3  className=' font-semibold text-lg mb-4'>
                     Complete Commitment
                     </h3>
                     <p className='text-sm mb-4'>

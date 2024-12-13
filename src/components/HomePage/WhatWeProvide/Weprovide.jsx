@@ -22,7 +22,7 @@ const Weprovide = () => {
                     services.map((item,index)=>{
                         return (
 
-                           <Link to={`/`}  className='hover:scale-95 transition-all duration-200' key={index}  >
+                           <Link to={`/our-services/${item.id}`}  className='hover:scale-95 transition-all duration-200' key={index}  >
                             {/* commented the link over here  */}
                             <div  
                                 className='w-[250px]  h-[150px] bg-white  overflow-hidden rounded-lg  text-black flex 

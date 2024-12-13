@@ -38,6 +38,7 @@ import AddItem from './components/Customer/AddCart/AddItem.jsx'
 import ClientRoute from './components/Authentication/ClientRoute.js'
 import EditCourse from './components/Product/editcourse/EditCourse.jsx'
 import StatusPay from './components/Product/PaymentStatus/StatusPay.jsx'
+import PurchaseHistory from './components/Customer/History/PurchaseHistory.jsx'
 
 
 const store= configureStore({
@@ -153,6 +154,14 @@ const router = createBrowserRouter([
             path:"/dashboard/my-profile",
             element:(
                <MyProfile/>
+            )
+          },
+          {
+            path:"/dashboard/purchase-history",
+            element:(
+              <ClientRoute>
+               <PurchaseHistory/>
+              </ClientRoute>
             )
           },
           {

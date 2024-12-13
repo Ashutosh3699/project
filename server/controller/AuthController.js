@@ -36,7 +36,7 @@ exports.sendOtp = async(req,res)=>{
             lowerCaseAlphabets: false,
             specialChars: false
         });
-        console.log("otp is " , otp);
+        // console.log("otp is " , otp);
         let result = await OTP.findOne({otp});
         // check the otp is unique
         while(result){
@@ -53,7 +53,7 @@ exports.sendOtp = async(req,res)=>{
             email,
             otp
         })
-        console.log("otp created at db, ", data);
+        // console.log("otp created at db, ", data);
         return res.status(200).json({
             success:true,
             data,
@@ -97,7 +97,7 @@ exports.sendOtpForAdmin = async(req,res)=>{
             lowerCaseAlphabets: false,
             specialChars: false
         });
-        console.log("otp is " , otp);
+        // console.log("otp is " , otp);
         let result = await OtpAdmin.findOne({otp});
         // check the otp is unique
         while(result){
@@ -115,7 +115,7 @@ exports.sendOtpForAdmin = async(req,res)=>{
             email,
             otp
         })
-        console.log("otp created at db, ", data);
+        // console.log("otp created at db, ", data);
         return res.status(200).json({
             success:true,
             data,
@@ -180,7 +180,7 @@ exports.signUp =  async(req,res) =>{
         }
         else{
             const otpDb = await OtpAdmin.find({email}).sort({ createdAt: -1 }).limit(1);
-            console.log("otpDb is admin", otpDb);
+            // console.log("otpDb is admin", otpDb);
             if (otpDb.length === 0) {
                 // OTP not found for the email
                 return res.status(400).json({
@@ -267,7 +267,7 @@ exports.logIn = async(req,res) =>{
                                 {
                                     expiresIn: "24h"
                                 });
-            console.log(token);
+            // console.log(token);
 
             // use to_object 
             data.token = token;

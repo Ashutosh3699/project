@@ -5,7 +5,8 @@ import { resetCart } from "../../features/cartSlice";
 
 const {GET_ALL_PRODUCT_API,GET_PRODUCT_DETAIL_API,DELETE_PRODUCT_IMAGE_API,
     CREATE_PRODUCT_API,CREATE_PRODUCT_IMAGE_API, UPDATE_PRODUCT_API,
-  UPDATE_PRODUCTIMAGE_API, GET_PAYMENT_API, GET_PAYMENT_STATUS_API, GET_PAYMENT_DONE_STATUS_API} = products;
+  UPDATE_PRODUCTIMAGE_API, GET_PAYMENT_API, GET_PAYMENT_STATUS_API,
+   GET_PAYMENT_DONE_STATUS_API, GET_PAYMENT_HISTORY_STATUS_API} = products;
 
 export const addProductDetails= async(data,token)=>{
     const toastId = toast.loading("Loading...");
@@ -226,3 +227,26 @@ export async function PaymentStatusDone(token,data) {
   return res;
 }
 
+export async function Paymenthistory(token) {
+    
+  const toastId = toast.loading("...loading");
+  let res;
+  try {
+
+      const paymentHistory = await  apiConnector("POST", GET_PAYMENT_HISTORY_STATUS_API,{},
+          {
+              Authorization: `Bearer ${token}`,
+          }
+      );
+      console.log(paymentHistory);
+      if(paymentHistory.data.success){
+        res = paymentHistory;
+      }
+      toast.success("paymentHistory successfull");
+  } catch (error) {
+      console.log("paymentHistory API ERROR.....", error);
+      toast.error("Could not make Payment");
+  }
+  toast.dismiss(toastId);
+  return res;
+}

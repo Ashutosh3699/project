@@ -47,7 +47,7 @@ const userSchema = new  mongoose.Schema({
     },
     accountProducts: [{
         type:mongoose.Schema.Types.ObjectId,
-        ref: "Products"
+        ref: "Payments"
     }]
 
 })

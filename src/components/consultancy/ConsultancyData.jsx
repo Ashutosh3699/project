@@ -33,9 +33,9 @@ const ConsultancyData = () => {
 
 
   return (
-    <div className='flex flex-col  gap-2 pt-4  relative  w-full  lg:pb-[150px] bg-gray-700  z-10'>
+    <div className='flex flex-col  gap-2 pt-4  relative  w-full  lg:pb-[150px] bg-white z-10'>
         {/* heading  */}
-        <div  className=' text-xl md:text-3xl text-gray-100  font-semibold  text-center'>
+        <div  className=' text-xl md:text-3xl text-gray-700  font-semibold  text-center'>
             Reach us for any solutions
         </div>
 
@@ -91,7 +91,7 @@ const ConsultancyData = () => {
                     course.map((element, index)=>{
                         return (
                         <div  className={`flex flex-col pt-6 pb-3 px-4 gap-10 w-[95%] md:w-[70%]    lg:w-[31%] cursor-pointer
-                        ${element === currentCourse ? (" bg-gray-50   drop-shadow-[20px_20px_0px_rgba(255,235,55,5)] "):(" bg-gray-500")}`}
+                        ${element === currentCourse ? (" bg-gray-50  drop-shadow-2xl "):(" bg-gray-500 drop-shadow-2xl ")}`}
                         onClick={()=>setCurrentCourse(element)}
                          key={index}>
                            

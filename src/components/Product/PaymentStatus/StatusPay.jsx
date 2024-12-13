@@ -61,6 +61,7 @@ const StatusPay = () => {
                         </div>
                           <div className='w-[full] mx-auto px-2 py-2 bg-gray-800 rounded-lg my-2'>
                             <h3 className=' font-medium text-md'> {item.productId.productName.toUpperCase()}</h3>
+                            <h3 className=' font-medium text-sm'>Invoice: {item?.invoice}</h3>
                             <p>₹ {item.productId.price}</p>
                             <p>Quantity: {item.quantity}</p>
                           </div>

@@ -27,19 +27,19 @@ exports.createCategories=async(req,res)=>{
             categoryName
         });
 
-        console.log("categoryRes response is: ", categoryRes);
+        // console.log("categoryRes response is: ", categoryRes);
         // enter the tag in database
         const tagRes = await Tags.create({
             TagName:tagName
         });
-        console.log("tag response is: ", tagRes);
+        // console.log("tag response is: ", tagRes);
 
         const response = await Category.findByIdAndUpdate(categoryRes._id,{
             $push:{
                 subCategory:tagRes._id         
               }
         },{new:true})
-        console.log("final response is: ", response);
+        // console.log("final response is: ", response);
         const allCategory = await Category.find({}).populate("subCategory").exec();
 
         return res.status(200).json({
@@ -76,16 +76,16 @@ exports.updateCategory=async(req,res)=>{
         const tagRes = await Tags.create({
             TagName:tagName
         });
-        console.log("tag response is: ", tagRes);
+        // console.log("tag response is: ", tagRes);
 
         const response = await Category.findByIdAndUpdate(categoryId,{
             $push:{
                 subCategory:tagRes._id
             }
         },{new:true})
-        console.log("final response is: ", response);
+        // console.log("final response is: ", response);
 
-        console.log("final response is: ", response);
+        // console.log("final response is: ", response);
         const allCategory = await Category.find({}).populate("subCategory").exec();
         
         return res.status(200).json({
@@ -153,7 +153,7 @@ exports.getCategoryProducts= async(req,res)=>{
             populate:"product"
         });
 
-        console.log("response is: ", response);
+        // console.log("response is: ", response);
 
         if(!response){
             return res.status(404).json({

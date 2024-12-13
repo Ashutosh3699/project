@@ -7,7 +7,7 @@ const {createProduct,createProductImage,getAllproducts,getProductDetail,
 const {createCategories,getAllCategories,updateCategory,
     getCategoryProducts,getTagsProducts} = require("../controller/Categories");
 
-const {capturePayment, findUnpaidPayments, PaymentStatusUpdate} = require("../controller/Payment")
+const {capturePayment, findUnpaidPayments, PaymentStatusUpdate,ProductHistory} = require("../controller/Payment")
 
 // import middlewares
 const {isAuth, isAdmin, isClient} = require("../middleware/Auth");
@@ -40,6 +40,7 @@ productRouter.post("/getTagsProducts",getTagsProducts);
 productRouter.post("/capturePayment", isAuth,isClient, capturePayment);
 productRouter.post("/findUnpaidPayments", isAuth,isAdmin, findUnpaidPayments);
 productRouter.post("/PaymentStatusUpdate", isAuth,isAdmin, PaymentStatusUpdate);
+productRouter.post("/ProductHistory", isAuth,isClient, ProductHistory);
 
 
 module.exports = productRouter

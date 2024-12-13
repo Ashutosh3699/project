@@ -4,7 +4,7 @@ require("dotenv").config();
 exports.isAuth = async(req,res,next) =>{
     try {
         const token =  req.cookies.token || req.body.token ||  req.header("Authorization").replace("Bearer ", "");
-        console.log("token is okay");
+        // console.log("token is okay");
         if(!token || token===undefined){
 
             res.status(401).json({

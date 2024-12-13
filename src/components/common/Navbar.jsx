@@ -89,7 +89,7 @@ const Navbar = () => {
             </li>
         </NavLink>
         <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative text-center group' >
-                Our Fields
+        Services
             <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
 {/* commented the service part */}
             <div  className= {`bg-transparent px-4 py-4  invisible  group-hover:visible transition-all  duration-300 top-5  absolute bg-black `}>
@@ -101,7 +101,7 @@ const Navbar = () => {
                         services.map((item,index)=>(
                             <li className=' hover:bg-slate-800 rounded-lg hover:text-white ' key={index}>
                                 <NavLink  to={`/our-services/${item.id}`}>
-                                    <p className='w-full font-medium text-center text-sm '>{`${item.name.substring(0,15)}...`}</p>
+                                    <p className='w-full font-medium text-center text-sm '>{`${item.name2.substring(0,35)}`}</p>
                                 </NavLink>
                             </li>
                         ))
@@ -154,7 +154,7 @@ const Navbar = () => {
                 </li>
                 <li className='cursor-pointer transition-all duration-300  relative group  hover:bg-gray-400 
                 rounded-md w-full text-center hover:text-white' >
-                        Our Fields
+                        Services
         {/* commented the service part */}
                     <div  className= {`bg-transparent px-4 py-4  invisible  group-hover:visible transition-all  duration-300 top-0  
                     absolute bg-black  `}>
@@ -166,7 +166,7 @@ const Navbar = () => {
                                 services.map((item,index)=>(
                                     <li className=' hover:bg-slate-800 rounded-lg hover:text-white ' key={index}>
                                         <NavLink  to={`/our-services/${item.id}`}>
-                                            <p className='w-full font-medium text-center text-sm '>{`${item.name.substring(0,15)}...`}</p>
+                                            <p className='w-full font-medium text-center text-sm '>{`${item.name2.substring(0,25)}`}</p>
                                         </NavLink>
                                     </li>
                                 ))

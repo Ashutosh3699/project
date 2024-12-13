@@ -54,9 +54,9 @@ const ContactUsForm = () => {
 
 
   return (
-    <div className='w-full bg-regal-blue  flex flex-col-reverse lg:flex-row justify-center gap-4 pb-20 pt-5  lg:pt-44 relative'>
+    <div className='w-full bg-white  flex flex-col-reverse lg:flex-row justify-center gap-4 pb-20 pt-5  lg:pt-44 relative'>
 
-        <section className=' px-4  py-8 bg-blue-500 w-[300px] mx-auto lg:mx-0  rounded-xl flex flex-col gap-10 h-full  lg:sticky lg:top-10'>
+        <section className=' px-4  py-8 bg-gray-500 w-[300px] mx-auto lg:mx-0  rounded-xl flex flex-col gap-10 h-full  lg:sticky lg:top-10'>
 
             <div className='flex flex-col gap-3 items-start'>
                 <div className=' text-base  md:text-lg text-blue-100 font-bold  flex flex-row gap-5'>
@@ -97,11 +97,11 @@ const ContactUsForm = () => {
         </section>
 
 
-      <form className='px-4 pt-6 pb-6 border lg:w-[50%] border-blue-400 text-white  rounded-lg  flex flex-col gap-5 items-start'
+      <form className='px-4 pt-6 pb-6 border lg:w-[50%] border-gray-500 text-white  rounded-lg  flex flex-col gap-5 items-start'
       onSubmit={submitHandler}
       >
 
-        <h2 className='mx-auto  text-center text-gray-200 font-semibold text-2xl'>Contact Us Here...</h2>
+        <h2 className='mx-auto  text-center text-gray-500 font-semibold text-2xl'>Contact Us Here...</h2>
 
         <div className='flex  flex-col lg:flex-row   justify-around items-center lg:w-[90%] mx-auto'>
           <label className='flex flex-col gap-2 items-start'>
@@ -114,7 +114,7 @@ const ContactUsForm = () => {
               id='firstName'
               value={formData.firstName}
               onChange={changeHandler}
-              className='text-gray-700 bg-blue-100 px-4 py-2 rounded-md placeholder:text-gray-500 border-2 border-gray-500'
+              className='text-gray-700 bg-white px-4 py-2 rounded-md placeholder:text-gray-500 border-2 border-gray-500'
             />
           </label>
 
@@ -128,7 +128,7 @@ const ContactUsForm = () => {
               id='lastName'
               value={formData.lastName}
               onChange={changeHandler}
-             className='text-gray-700 bg-blue-100 px-4 py-2 rounded-md placeholder:text-gray-500 border-2 border-gray-500'
+             className='text-gray-700 bg-white px-4 py-2 rounded-md placeholder:text-gray-500 border-2 border-gray-500'
             />
           </label>
 
@@ -146,7 +146,7 @@ const ContactUsForm = () => {
               id='email'
               value={formData.email}
               onChange={changeHandler}
-             className='text-gray-700 bg-blue-100 px-4 py-2 rounded-md placeholder:text-gray-500 border-2 border-gray-500'
+             className='text-gray-700 bg-white px-4 py-2 rounded-md placeholder:text-gray-500 border-2 border-gray-500'
             />
           </label>
 
@@ -160,20 +160,20 @@ const ContactUsForm = () => {
               id='phoneNumber'
               value={formData.phoneNumber}
               onChange={changeHandler}
-              className='text-gray-700 bg-blue-100 px-4 py-2 rounded-md placeholder:text-gray-500 border-2 border-gray-500'
+              className='text-gray-700 bg-white px-4 py-2 rounded-md placeholder:text-gray-500 border-2 border-gray-500'
             />
           </label>
         </div>
         
 
-        <label className='flex flex-col gap-2 items-start justify-around mx-auto lg:w-[70%]  w-[90%]' >
+        <label className='flex flex-col gap-2 items-start justify-around mx-auto lg:w-[75%]  w-[90%]' >
           <h3>Message: </h3>
           <textarea
           type='textform' 
           id='message'
           name='message'
           placeholder='Message...'
-          className='text-gray-700 bg-blue-100 px-4 py-2 w-[100%] rounded-md placeholder:text-gray-500 border-2 border-gray-500'
+          className='text-gray-700 bg-white px-4 shadow-md py-2 w-[100%] rounded-md placeholder:text-gray-500 border-2 border-gray-500'
           value={formData.message}
           onChange={changeHandler}
           required
