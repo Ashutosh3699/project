@@ -70,7 +70,7 @@ export async function  getAllCategories(){
             throw new Error("Could not getting any category")
         }
         result = response?.data?.data;
-        toast.success("get category successfully");
+        // toast.success("get category successfully");
     } catch (error) {
         console.log("GET_ALL_CATEGORY_API API ERROR............", error)
         toast.error(error.message)

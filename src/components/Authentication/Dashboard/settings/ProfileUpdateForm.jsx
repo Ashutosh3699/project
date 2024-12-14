@@ -32,7 +32,7 @@ const ProfileUpdateForm = () => {
             {/* firstName */}
             <div  className='flex flex-col gap-1 items-start  my-4'>
                 <label  htmlFor='firstName'  className='text-md text-gray-50 font-semibold pl-4 flex gap-1  items-start'>
-                firstName 
+                Firstname 
                 </label>
                 <input
                     type='text'
@@ -47,7 +47,7 @@ const ProfileUpdateForm = () => {
             {/* lastName */}
             <div  className='flex flex-col gap-1 items-start  my-4'>
               <label  htmlFor='lastName'  className='text-md text-gray-50 font-semibold pl-4 flex gap-1  items-start'>
-              lastName 
+              Lastname 
               </label>
               <input
                   type='text'
@@ -67,7 +67,7 @@ const ProfileUpdateForm = () => {
             {/* date of birth */}
             <div  className='flex flex-col gap-1 items-start  my-4'>
                 <label  htmlFor='DOB'  className='text-md text-gray-50 font-semibold pl-4 flex gap-1  items-start'>
-                dateOfBirth 
+                DateOfBirth 
                 </label>
                 <input
                     type='date'

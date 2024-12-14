@@ -53,24 +53,42 @@ const Navbar = () => {
     }, [categoryList]);
 
     const [attributeclass,setattributeClass] = useState("invisible opacity-0");
+    const [attributeclass2,setattributeClass2] = useState("invisible opacity-0");
     const divref = useRef(null);
+
     const handleClickOutside = () => {
       // function to be added
       setattributeClass("invisible opacity-0");
+      setattributeClass2("invisible opacity-0");
     };
+
+
     useOutsideClick(divref, handleClickOutside);
     const clickHandler=()=>{
       if(attributeclass === "invisible opacity-0"){
         setattributeClass("visible opacity-100");
+        setattributeClass2("invisible opacity-0");
       }
       else{
         setattributeClass("invisible opacity-0");
       }
     }
+    const clickHandler2=()=>{
+        
+        if(attributeclass2 === "invisible opacity-0"){
+          setattributeClass2("visible opacity-100");
+        }
+        else{
+          setattributeClass2("invisible opacity-0");
+        }
+        setattributeClass("visible opacity-100");
+      }
 
     if(loading=== true){
         return <div>...loading</div>
     }
+
+    console.log("set attribute2 is: ", attributeclass2);
 
   return (
     <div className={`w-full flex justify-between md:justify-around items-center bg-regal-blue  py-2   text-white  z-50 `}  >
@@ -101,7 +119,7 @@ const Navbar = () => {
                         services.map((item,index)=>(
                             <li className=' hover:bg-slate-800 rounded-lg hover:text-white ' key={index}>
                                 <NavLink  to={`/our-services/${item.id}`}>
-                                    <p className='w-full font-medium text-center text-sm '>{`${item.name2.substring(0,35)}`}</p>
+                                    <p className='w-full font-medium text-center text-sm '>{`${item.name2}`}</p>
                                 </NavLink>
                             </li>
                         ))
@@ -145,36 +163,17 @@ const Navbar = () => {
         {/* for mobile */}
         <div  className=' flex md:hidden relative px-4'  onClick={clickHandler} ref={divref} >
             <GiHamburgerMenu />
-            <ul  className={`${attributeclass} flex-col rounded-md  gap-4 absolute top-7 right-6  bg-white text-blue-color font-medium  
-            text-md  cursor-pointer  w-[120px]  px-4 py-3 transition-all duration-200  translate-x-20`}>
+            <ul  className={`${attributeclass} flex-col rounded-md  gap-8 absolute top-7 right-6  bg-white text-gray-700 font-medium  
+            text-lg text-left  cursor-pointer  w-[150px]  px-4 py-3 transition-all duration-200  translate-x-20`} >
                 <li  className=' hover:bg-gray-400 rounded-md w-full text-center hover:text-white'>
                     <NavLink  to={"/about-us"}>
                         About us
                     </NavLink>
                 </li>
                 <li className='cursor-pointer transition-all duration-300  relative group  hover:bg-gray-400 
-                rounded-md w-full text-center hover:text-white' >
+                rounded-md w-full text-center hover:text-white'  onClick={clickHandler2}  ref={divref}>
                         Services
-        {/* commented the service part */}
-                    <div  className= {`bg-transparent px-4 py-4  invisible  group-hover:visible transition-all  duration-300 top-0  
-                    absolute bg-black  `}>
-
-                        <ul className="flex-col  gap-3 absolute top-5 right-6 text-md w-[200px] cursor-pointer  text-black rounded-lg 
-                        bg-white items-center px-4 py-4 space-y-3 duration-200 transition-all ">
-                            
-                            {
-                                services.map((item,index)=>(
-                                    <li className=' hover:bg-slate-800 rounded-lg hover:text-white ' key={index}>
-                                        <NavLink  to={`/our-services/${item.id}`}>
-                                            <p className='w-full font-medium text-center text-sm '>{`${item.name2.substring(0,25)}`}</p>
-                                        </NavLink>
-                                    </li>
-                                ))
-                            }
-                        
-                        </ul>
-
-                    </div>
+        
                 </li>
                 <li className=' hover:bg-gray-400 rounded-md w-full text-center hover:text-white'>
                     <NavLink  to={`/product/${selectedCategory}`}>
@@ -252,6 +251,28 @@ const Navbar = () => {
 
             </div>
     </div>
+
+            
+            {/* commented the service part */}
+            <div  className= {`${attributeclass2} absolute top-12  right-48
+             cursor-pointer  transition-all duration-200   `}  >
+
+                        <ul className="flex-col  gap-3 absolute  text-md w-[200px] cursor-pointer  text-black rounded-lg 
+                        bg-white items-center px-4 py-4 space-y-3 duration-200 transition-all ">
+                            
+                            {
+                                services.map((item,index)=>(
+                                    <li className=' hover:bg-slate-800 text-left rounded-lg hover:text-white ' key={index}>
+                                        <NavLink  to={`/our-services/${item.id}`}>
+                                            <p className='w-full font-medium text-center text-sm '>{`${item.name2.substring(0,25)}`}</p>
+                                        </NavLink>
+                                    </li>
+                                ))
+                            }
+                        
+                        </ul>
+
+                    </div>
 
 
     </div>

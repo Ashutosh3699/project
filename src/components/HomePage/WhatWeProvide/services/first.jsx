@@ -52,7 +52,6 @@ export const services = [
     id: "services12342",
     name: " LiDAR (Light Detection and Ranging Services)",
     name2: "LIDAR",
-    size: "w-1/2 mx-auto rounded-full object-center",
     image:  image2,
     intro: "In the world dominated by visual media, aerial photography and First Person View (FPV) cinematic shoots have proven to be powerful tools for capturing breathtaking images that were once beyond reach. With the help of cutting-edge drone technology and high-resolution cameras, we specialize in delivering stunning aerial visuals that can transform ordinary scenes into extraordinary experiences. Whether showcasing scenic landscapes, documenting events, or highlighting architectural marvels, our aerial photography and FPV shoots offer a unique perspective that redefines visual storytelling.",
      image_2: lidar1,

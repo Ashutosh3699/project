@@ -29,7 +29,7 @@ const OurServices = () => {
 
                         <div className='flex gap-2 justify-around my-3 items-center flex-wrap lg:flex-nowrap'>
                           <img src={info.image_1}  className='lg:max-w-[350px]  max-h-[300px] animation '/>
-                          <p className=' max-w-[60%]  text-left
+                          <p className='lg:max-w-[60%]  text-left max-w-[100%]
                            text-md md:text-lg text-zinc-500 font-sans mb-4'>
                             {info.intro}
                           </p>
@@ -55,7 +55,7 @@ const OurServices = () => {
 
                         <div className='flex  md:flex-row-reverse gap-2 text-center justify-between mb-3 items-center flex-wrap  lg:flex-nowrap'>
                           <img src={info.image_2}  className='lg:max-w-[350px] ' />
-                          <p className='max-w-[60%]  text-left text-md md:text-lg text-zinc-500 font-sans mb-4'>
+                          <p className='lg:max-w-[60%]  max-w-[100%] text-left text-md md:text-lg text-zinc-500 font-sans mb-4'>
                             {info.lastContent}
                           </p>
 

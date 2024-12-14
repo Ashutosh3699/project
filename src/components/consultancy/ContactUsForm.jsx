@@ -108,7 +108,7 @@ const ContactUsForm = () => {
             <h3>FirstName: </h3>
             <input
               required
-              placeholder='Enter FirstName'
+              placeholder='Enter Firstname'
               name='firstName'
               type='text'
               id='firstName'
@@ -122,7 +122,7 @@ const ContactUsForm = () => {
             <h3>LastName: </h3>
             <input
               required
-              placeholder='Enter LastName'
+              placeholder='Enter Lastname'
               name='lastName'
               type='text'
               id='lastName'
