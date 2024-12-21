@@ -51,7 +51,7 @@ const SideBar = () => {
 
 
   return (
-    <div className=' flex py-3  md:py-10 bg-regal-blue  md:bg-gray-800   flex-col   gap-4 border-r-[1px]
+    <div className=' flex py-3  md:py-10 bg-regal-blue  md:bg-gray-600   flex-col   gap-4 border-r-[1px]
        border-gray-600 h-[100%] md:min-h-[100%]'>
         <div className='w-full relative'>
            <div className='md:hidden text-xl text-blue-50 flex gap-2 items-center justify-center '  onClick={clickHandler} ref={divref1}>

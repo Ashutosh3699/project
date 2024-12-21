@@ -67,14 +67,14 @@ const ContactUsForm = (data) => {
 	<body>
 		<div class="container">
 			
-			<div class="message">Enquiry Email</div>
+			<div class="message">Enquiry Email by client</div>
 			<div class="body">
 				<p>Dear User,</p>
 				<p>Thank you for Enquiry to Aeromat. To complete your registration, for any product you require</p>
 				<h2 class="highlight">${data}</h2>
 			</div>
 			<div class="support">If you have any questions or need assistance, please feel free to reach out to us at <a
-					href="mailto:info@aeromat.in">info@aeromat.in</a>. We are here to help!</div>
+					href="mailto:info@aeromat.in">info@aeromat.in</a>. We are here to help! Aeromat creative Labs pvt ltd</div>
 		</div>
 	</body>
 	

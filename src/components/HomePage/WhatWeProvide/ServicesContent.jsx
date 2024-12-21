@@ -31,7 +31,7 @@ const ServicesContent = () => {
                                 className='w-[250px]  h-[150px] bg-white  overflow-hidden rounded-lg  text-black flex 
                                     flex-col  justify-around  items-center border border-cyan-300  shadow-md shadow-cyan-500 cursor-pointer'>
 
-                                        <img  src={item.image}  className={item.size}/>
+                                        <img  src={item.image}  className={item.size} />
                                     
                                         <div  className='w-full md:w-[75%] text-sm text-center  font-semibold px-2 md:px-0 md:mx-auto  align-middle pb-6'>
                                             {item.name}

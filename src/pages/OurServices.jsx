@@ -27,8 +27,8 @@ const OurServices = () => {
 
                         <h1  className='text-2xl  text-gray-500  font-bold'>{info.name.toUpperCase()}</h1>
 
-                        <div className='flex gap-2 justify-around my-3 items-center flex-wrap lg:flex-nowrap'>
-                          <img src={info.image_1}  className='lg:max-w-[350px]  max-h-[300px] animation '/>
+                        <div className='flex gap-2 justify-around  items-center flex-wrap lg:flex-nowrap bg-gray-100 border rounded-lg shadow-inner py-5'>
+                          <img src={info.image_1}  className='lg:max-w-[350px]  max-h-[300px] animation rounded-lg '/>
                           <p className='lg:max-w-[60%]  text-left max-w-[100%]
                            text-md md:text-lg text-zinc-500 font-sans mb-4'>
                             {info.intro}
@@ -53,8 +53,8 @@ const OurServices = () => {
                           }
                         </div>
 
-                        <div className='flex  md:flex-row-reverse gap-2 text-center justify-between mb-3 items-center flex-wrap  lg:flex-nowrap'>
-                          <img src={info.image_2}  className='lg:max-w-[350px] ' />
+                        <div className='flex  md:flex-row-reverse gap-2 text-center justify-between mb-3 items-center flex-wrap  lg:flex-nowrap bg-gray-100 border rounded-lg shadow-inner px-5 py-5'>
+                          <img src={info.image_2}  className='lg:max-w-[350px]  max-h-[300px]  rounded-md' />
                           <p className='lg:max-w-[60%]  max-w-[100%] text-left text-md md:text-lg text-zinc-500 font-sans mb-4'>
                             {info.lastContent}
                           </p>

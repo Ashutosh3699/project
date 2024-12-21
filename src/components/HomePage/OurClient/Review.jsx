@@ -143,6 +143,15 @@ const Review = () => {
         logo:"https://lh3.googleusercontent.com/a-/ALV-UjX_2Bp1iKXfZJDbJUcpJTJibW6-UR_s1AIvA5q_jdbEzAKWGIo=w120-h120-p-rp-mo-br100"
 
       },
+      {
+        id: 16,
+        name: "Jai Sarang" ,
+        star: 5,
+        content: "Best service, really friendly people who are eager to help out. amazing and quick service, and explained everything about drones to me. would definitely go back here whenever i have to when i have some problems about drones.",
+        time: "4 months ago",
+        logo:"https://lh3.googleusercontent.com/a-/ALV-UjWDEOnjLxsVBTv4x930j5_tRlEF2hZqNkDtQYKdYF4FKPSBt_3w=w94-h94-p-rp-mo-br100"
+
+      },
 
     ];
 

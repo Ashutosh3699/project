@@ -3,6 +3,7 @@ import bgImage1 from  './agriculture.png';
 import bgImage3 from  './consumer.png';
 import bgImage2 from  './surveillance.jpg';
 import { FaChevronRight } from "react-icons/fa";
+import { NavLink } from 'react-router-dom';
 
 const OurExploration = () => {
 
@@ -22,9 +23,9 @@ const OurExploration = () => {
 
                         <p className='text-sm  flex justify-center items-center w-full px-5 align-middle'>Revolutionizing agriculture with precision drone technology for optimal crop management.</p>
 
-                        <div className=' mt-36 flex gap-2 items-center'>
+                        <NavLink to={"/our-services/services12348"} className='mt-36 flex gap-2 items-center'>
                             Learn More   <FaChevronRight />
-                        </div>
+                        </NavLink>
                     </div>
                 </div>
 
@@ -36,9 +37,9 @@ const OurExploration = () => {
 
                         <p className='text-sm  flex justify-center items-center w-full px-5 align-middle'>Advanced drone surveillance solutions for enhanced security and monitoring.</p>
 
-                        <div className='mt-36 flex gap-2 items-center'>
+                        <NavLink to={"/our-services/services12344"} className='mt-36 flex gap-2 items-center'>
                             Learn More   <FaChevronRight />
-                        </div>
+                        </NavLink>
                     </div>
                 </div>
 
@@ -50,9 +51,9 @@ const OurExploration = () => {
 
                         <p className='text-sm  flex justify-center items-center w-full px-5 align-middle'>Innovative drone products designed to elevate your everyday experiences.</p>
 
-                        <div className='mt-36 flex gap-2 items-center'>
+                        <NavLink to={"/our-services/services12343"} className='mt-36 flex gap-2 items-center'>
                             Learn More   <FaChevronRight />
-                        </div>
+                        </NavLink>
                     </div>
                 </div>
 

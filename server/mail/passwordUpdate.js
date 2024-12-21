@@ -55,7 +55,7 @@ exports.passwordUpdated = (email, name) => {
     
     <body>
         <div class="container">
-            <div class="message">Password Update Confirmation</div>
+            <div class="message">Password Update Confirmation </div>
             <div class="body">
                 <p>Hey ${name},</p>
                 <p>Your password has been successfully updated for the email <span class="highlight">${email}</span>.
@@ -63,7 +63,7 @@ exports.passwordUpdated = (email, name) => {
                 <p>If you did not request this password change, please contact us immediately to secure your account.</p>
             </div>
             <div class="support">If you have any questions or need assistance, please feel free to reach out to us at <a
-					href="mailto:info@aeromat.in">info@aeromat.in</a>. We are here to help!</div>
+					href="mailto:info@aeromat.in">info@aeromat.in</a>. We are here to help! Aeromat creative Labs pvt ltd</div>
         </div>
     </body>
     

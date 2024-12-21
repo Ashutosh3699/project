@@ -19,14 +19,14 @@ const Mission = () => {
                 </p>
             </div>
 
-            <div className='flex justify-center items-center object-cover overflow-hidden w-full md:w-1/5 bg-[#D9D9D9]'>
+            <div className='flex justify-center items-center object-cover rounded-md overflow-hidden w-full md:w-1/5 bg-[#D9D9D9]'>
                 <img src={missionimage} alt='mission' className="scale-125"  />
             </div>
         </div>
 
         <div className='flex flex-wrap w-full gap-5 '>
 
-            <div className='flex justify-center items-center object-cover  overflow-hidden w-full md:w-1/5 bg-[#D9D9D9]'>
+            <div className='flex justify-center items-center object-cover rounded-md  overflow-hidden w-full md:w-1/5 bg-[#D9D9D9]'>
                 <img src={vissionimage} alt='mission'  className=' scale-150' />
             </div>
 

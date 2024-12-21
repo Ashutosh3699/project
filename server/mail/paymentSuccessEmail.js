@@ -78,11 +78,12 @@ exports.paymentSuccessEmail = (name, result, paymentId) => {
                  taxation, allowance over the products and find out the total amount over the products </p>
 
                  <p><b>
-                    Contact Details: 1324374904 <br\> address: ajhaslkdhasdfjsaldfk 
+                    //edit here..........
+                    // Contact Details: +91 ${phoneNumber}, <br\> address: ${address}
                  </b></p>
               </div>
               <div class="support">If you have any questions or need assistance, please feel free to reach out to us at <a
-					href="mailto:info@aeromat.in">info@aeromat.in</a>. We are here to help!</div>
+					href="mailto:info@aeromat.in">info@aeromat.in</a>. We are here to help! Aeromat creative Labs pvt ltd</div>
           </div>
       </body>
       

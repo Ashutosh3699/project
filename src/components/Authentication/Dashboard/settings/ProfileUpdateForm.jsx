@@ -40,8 +40,8 @@ const ProfileUpdateForm = () => {
                     name='firstName'
                     id='firstName'
                     {...register('firstName')}
-                    className='w-full  px-5 py-3 font-semibold text-md text-gray-200 bg-gray-800  rounded-md border 
-                      border-gray-400 shadow-inner  shadow-gray-300'
+                    className='w-full  px-5 py-3 font-semibold text-md text-gray-200 bg-regal-blue  rounded-md border 
+                      border-gray-400   shadow-gray-300'
                 />
             </div>
             {/* lastName */}
@@ -55,8 +55,8 @@ const ProfileUpdateForm = () => {
                   name='lastName'
                   id='lastName'
                   {...register('lastName')}
-                  className='w-full  px-5 py-3 font-semibold text-md text-gray-25 bg-gray-800  rounded-md border 
-                    border-gray-400 shadow-inner  shadow-gray-300'
+                  className='w-full  px-5 py-3 font-semibold text-md text-gray-25  bg-regal-blue   rounded-md border 
+                    border-gray-400   shadow-gray-300'
               />
           </div>
 
@@ -75,8 +75,8 @@ const ProfileUpdateForm = () => {
                     name='DOB'
                     id='DOB'
                     {...register('DOB')}
-                    className='w-full  px-5 py-3 font-semibold text-md text-gray-200 bg-gray-800  rounded-md border 
-                    border-gray-400 shadow-inner  shadow-gray-300'
+                    className='w-full  px-5 py-3 font-semibold text-md text-gray-200  bg-regal-blue   rounded-md border 
+                    border-gray-400  shadow-gray-300'
                 />
             </div>
             {/* phone Number */}
@@ -88,8 +88,8 @@ const ProfileUpdateForm = () => {
                                     name='contactNumber'
                                     id='contactNumber'
                                     placeholder='12345 67890'
-                                    className='px-5 py-3  text-gray-50 bg-gray-800  text-md font-edu-sa
-                            rounded-md border border-gray-400  shadow-gray-400 shadow-inner  '
+                                    className='px-5 py-3  text-gray-50  bg-regal-blue   text-md font-edu-sa
+                            rounded-md border border-gray-400  shadow-gray-400   '
                                     {...register("contactNumber",  
                                     {   maxLength: {value:10, message:"Invalid Phone Number"},
                                         minLength:{value:8, message:"Invalid Phone Number"} })}
@@ -149,15 +149,15 @@ const ProfileUpdateForm = () => {
                     name='address'
                     id='address'
                     {...register('address')}
-                    className='w-full  px-5 py-3 lg:w-[450px]  font-semibold text-md text-gray-200 bg-gray-800  rounded-md border 
-                      border-gray-400 shadow-inner  shadow-gray-300'
+                    className='w-full  px-5 py-3 lg:w-[450px]  font-semibold text-md text-gray-200  bg-regal-blue   rounded-md border 
+                      border-gray-400  shadow-gray-300'
                 />
         </div>
        
             
         <button type='submit'
         className={`px-5  py-2  rounded-md font-semibold  hover:scale-95 transition-all duration-300  mt-4
-            drop-shadow-[0_1px_10px_rgba(255,255,255,0.5)] bg-[#FFD60A]  text-black`}>
+            drop-shadow-[0_1px_10px_rgba(255,255,255,0.5)] bg-blue-300  text-black`}>
             Submit
         </button>
 

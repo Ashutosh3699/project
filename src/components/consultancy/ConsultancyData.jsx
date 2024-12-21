@@ -91,7 +91,7 @@ const ConsultancyData = () => {
                     course.map((element, index)=>{
                         return (
                         <div  className={`flex flex-col pt-6 pb-3 px-4 gap-10 w-[95%] md:w-[70%]    lg:w-[31%] cursor-pointer
-                        ${element === currentCourse ? (" bg-gray-50  drop-shadow-2xl "):(" bg-gray-500 drop-shadow-2xl ")}`}
+                        ${element === currentCourse ? (" bg-gray-50  drop-shadow-2xl border border-blue-color "):(" bg-gray-500 drop-shadow-2xl ")}`}
                         onClick={()=>setCurrentCourse(element)}
                          key={index}>
                            

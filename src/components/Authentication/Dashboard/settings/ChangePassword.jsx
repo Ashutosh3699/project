@@ -44,7 +44,7 @@ const ChangePassword = () => {
                             name='oldPassword'
                             id='oldPassword'
                             {...register("oldPassword",{required:true})}
-                            className='w-full  px-5 py-3 font-semibold text-md text-gray-200 bg-gray-800  rounded-md border  border-gray-400 shadow-inner  shadow-richblack-300'
+                            className='w-full  px-5 py-3 font-semibold text-md text-gray-200  bg-regal-blue   rounded-md border  border-gray-400  shadow-richblack-300'
                         />
                         {
                             errors.oldPassword && <p>password is required.</p>
@@ -73,7 +73,7 @@ const ChangePassword = () => {
                             name='newPassword'
                             id='newPassword'
                             {...register("newPassword",{required:true})}
-                            className='w-full  px-5 py-3 font-semibold text-md text-gray-200 bg-gray-800  rounded-md border  border-gray-400 shadow-inner  shadow-richblack-300'
+                            className='w-full  px-5 py-3 font-semibold text-md text-gray-200  bg-regal-blue   rounded-md border  border-gray-400 shadow-richblack-300'
                         />
                         {
                             errors.newPassword && <p>password is required.</p>
@@ -100,7 +100,7 @@ const ChangePassword = () => {
                             name='confirmPassword'
                             id='confirmPassword'
                             {...register("confirmPassword",{required:true})}
-                            className='w-full  px-5 py-3 font-semibold text-md text-gray-200 bg-gray-800  rounded-md border  border-gray-400 shadow-inner  shadow-richblack-300'
+                            className='w-full  px-5 py-3 font-semibold text-md text-gray-200  bg-regal-blue   rounded-md border  border-gray-400  shadow-richblack-300'
                         />
                         {
                             errors.confirmPassword && <p>password is required.</p>
@@ -120,7 +120,7 @@ const ChangePassword = () => {
              </div>
 
              <button className={`px-5  py-2  rounded-md font-semibold  hover:scale-95 transition-all duration-300  mt-4
-                    drop-shadow-[0_1px_10px_rgba(255,255,255,0.5)] bg-[#FFD60A]  text-black`}>
+                    drop-shadow-[0_1px_10px_rgba(255,255,255,0.5)] bg-blue-300  text-black`}>
                     Submit
                 </button>
 

@@ -71,10 +71,10 @@ const ViewProduct = () => {
           (
             <div className=' lg:w-[100%] flex flex-col justify-center items-center mx-auto gap-8 ' >
                 
-                <div className='w-full md:w-[80%] flex flex-col md:flex-row items-start gap-10 py-8 px-4 md:px-8 bg-gray-800 text-white rounded-xl'>
+                <div className='w-full md:w-[80%] flex flex-col md:flex-row items-start gap-10 py-8 px-4 md:px-8 bg-zinc-100 text-white rounded-xl'>
                     <div>
                           <div className='lg:w-[400px]    mb-10 relative'>
-                            <img src={imageList[image]} alt={`product-image-${image}`}  className='w-[700px]'/>
+                            <img src={imageList[image]} alt={`product-image-${image}`}  className='w-[700px] rounded-md border border-blue-300'/>
                             <MdOutlineZoomIn  
                             onClick={()=>{setConfirmationModal({
                               imageLink: imageList[image],
@@ -92,7 +92,7 @@ const ViewProduct = () => {
                                   onClick={()=>setImage(index)}
                                   >
                                     <img src={item} alt={`product-image-${item}`} 
-                                    className={`${index===image ? "border-2 border-gray-200 scale-90" : ""} w-full`} />
+                                    className={`${index===image ? "border-2 border-gray-700 scale-90" : ""} w-full`} />
                                   </div>
                                 })
                               }
@@ -139,18 +139,18 @@ const ViewProduct = () => {
                     <div className='flex flex-col items-start gap-4 '>
                       <div className='space-y-4 select-none'>
                           <div className='flex flex-col gap-1'>
-                            <h2 className='text-3xl font-semibold text-gray-100 uppercase'>{productData.productName}</h2>
-                            <div className=' italic   font-sans text-gray-400 text-sm font-semibold text-start'>
+                            <h2 className='text-3xl font-semibold text-gray-700 uppercase'>{productData.productName}</h2>
+                            <div className=' italic   font-sans text-gray-500 text-sm font-semibold text-start'>
                                 {productData.whatWeWillget}
                             </div>
                           </div>
 
                       </div>
 
-                      <div className='text-base font-thin  select-none'>
+                      <div className='text-base font-thin  select-none text-gray-800'>
                         {productData.productDetail}
                       </div>
-                      <div className='flex flex-col gap-1 items-start text-green-300 text-sm font-thin'>
+                      <div className='flex flex-col gap-1 items-start text-green-400 text-sm font-thin'>
                               {
                                 productData.instructions?.map((item,index)=>(
                                   <p key={index} className='flex items-center gap-2'> 
@@ -160,7 +160,7 @@ const ViewProduct = () => {
                         </div>
                         
                         <div className='flex gap-6 items-center'>
-                          <div className='text-2xl text-gray-50  font-bold'>
+                          <div className='text-2xl text-gray-800  font-bold'>
                           ₹ {productData.price}
                           </div>
 
@@ -169,10 +169,10 @@ const ViewProduct = () => {
                           </div>
                       </div>
 
-                      <div className='flex gap-2 items-center'>
+                      <div className='flex gap-2 items-center text-gray-900'>
                       <span>quantity:</span>
                       <span 
-                        className={`${productData.quantity> 4 ? "text-white" : "text-red-500"} font-thin text-base`}>
+                        className={`${productData.quantity> 4 ? "text-gray-950" : "text-red-500"} font-thin text-base`}>
                         {productData.quantity} left</span> 
                         {
                           productData.inStock === PRODUCT_STATUS.DRAFT ? 

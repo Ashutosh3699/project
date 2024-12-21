@@ -88,7 +88,7 @@ const Navbar = () => {
         return <div>...loading</div>
     }
 
-    console.log("set attribute2 is: ", attributeclass2);
+    // console.log("set attribute2 is: ", attributeclass2);
 
   return (
     <div className={`w-full flex justify-between md:justify-around items-center bg-regal-blue  py-2   text-white  z-50 `}  >
@@ -143,12 +143,6 @@ const Navbar = () => {
                 <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
             </li>
         </NavLink>
-        <NavLink  to={"/"}>
-        <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative'>
-                Career
-            <div className=" bg-blue-color  bottom-0 h-1 absolute w-full hidden group-hover:block transition-all duration-300"></div>
-        </li>
-        </NavLink>
         <NavLink  to={"/blogs"}>
             <li className='cursor-pointer  hover:text-blue-400 transition-all duration-300 group  px-2  py-5  relative text-center'>
                     Blogs
@@ -163,7 +157,7 @@ const Navbar = () => {
         {/* for mobile */}
         <div  className=' flex md:hidden relative px-4'  onClick={clickHandler} ref={divref} >
             <GiHamburgerMenu />
-            <ul  className={`${attributeclass} flex-col rounded-md  gap-8 absolute top-7 right-6  bg-white text-gray-700 font-medium  
+            <ul  className={`${attributeclass} flex-col rounded-md  gap-8 absolute top-10 right-6  bg-gray-200 text-gray-700 font-medium  
             text-lg text-left  cursor-pointer  w-[150px]  px-4 py-3 transition-all duration-200  translate-x-20`} >
                 <li  className=' hover:bg-gray-400 rounded-md w-full text-center hover:text-white'>
                     <NavLink  to={"/about-us"}>
@@ -185,11 +179,7 @@ const Navbar = () => {
                         Consultancy
                     </NavLink>
                 </li>
-                <li className=' hover:bg-gray-400 rounded-md w-full text-center hover:text-white'>
-                    <NavLink  to={"/"}>
-                        Career
-                    </NavLink>
-                </li>
+
                 <li className=' hover:bg-gray-400 rounded-md w-full text-center hover:text-white'>
                     <NavLink  to={"/blogs"}>
                         Blogs
@@ -254,17 +244,17 @@ const Navbar = () => {
 
             
             {/* commented the service part */}
-            <div  className= {`${attributeclass2} absolute top-12  right-48
+            <div  className= {`${attributeclass2} absolute top-16  right-48
              cursor-pointer  transition-all duration-200   `}  >
 
                         <ul className="flex-col  gap-3 absolute  text-md w-[200px] cursor-pointer  text-black rounded-lg 
-                        bg-white items-center px-4 py-4 space-y-3 duration-200 transition-all ">
+                        bg-gray-200 items-center px-4 py-4 space-y-3 duration-200 transition-all ">
                             
                             {
                                 services.map((item,index)=>(
                                     <li className=' hover:bg-slate-800 text-left rounded-lg hover:text-white ' key={index}>
                                         <NavLink  to={`/our-services/${item.id}`}>
-                                            <p className='w-full font-medium text-center text-sm '>{`${item.name2.substring(0,25)}`}</p>
+                                            <p className='w-full font-medium text-center text-sm '>{`${item.name2.substring(0,35)}`}</p>
                                         </NavLink>
                                     </li>
                                 ))

@@ -13,11 +13,11 @@ const AddItem = () => {
 
 
   return (
-    <div className='w-full  flex flex-col gap-10  bg-regal-blue'>
+    <div className='w-full  flex flex-col gap-10  bg-white'>
 
       <div className='flex flex-col gap-4 w-[80%] mx-auto'> 
-          <h2 className='text-3xl text-gray-50 font-semibold'>My Wishlist</h2>
-          <p className='text-lg font-medium text-gray-200 '>{totalItems} courses in cart</p>
+          <h2 className='text-3xl text-gray-700 font-semibold'>My Wishlist</h2>
+          <p className='text-lg font-medium text-gray-800 '>{totalItems} Products in cart</p>
       </div>
 
       {
@@ -27,7 +27,7 @@ const AddItem = () => {
                   <RenderTotalAmount/>
               </div>
           ) : (
-              <h3 className=' px-10 py-10  text-gray-500 text-4xl font-bold w-[80%] mx-auto'>No courses in the cart</h3>
+              <h3 className=' px-10 py-10  text-gray-500 text-4xl font-bold w-[80%] mx-auto'>No Products in the cart</h3>
           )
       }
 

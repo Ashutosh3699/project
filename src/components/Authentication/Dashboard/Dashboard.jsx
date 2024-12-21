@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom'
 
 const Dashboard = () => {
   return (
-    <div className='w-full bg-regal-blue h-full'>
+    <div className='w-full bg-white h-full'>
         <div className='relative flex flex-col  md:flex-row w-full  h-full'>
             
             <div className='hidden md:block min-h-[100vh]  '>
