@@ -43,8 +43,8 @@ const ProductImageSection = () => {
   const goToNext=()=>{
 
     // console.log("courses is: ", course);
-    if(product?.image?.length <= 1){
-      toast.error("Add atleast two section");
+    if(product?.image?.length < 1){
+      toast.error("Add atleast one section");
       return;
     }
 

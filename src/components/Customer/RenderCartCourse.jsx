@@ -18,7 +18,7 @@ const RenderCartCourse = () => {
         carts.map((product,index) => {
 
           return (<div key={index}
-          className={`flex  flex-wrap items-start justify-between gap-6 w-[90%]  md:w-[70%] ${
+          className={`flex  flex-wrap items-start justify-between gap-6 w-[90%]  md:w-[70%] text-gray-900 ${
             index !== carts.length - 1 && "border-b border-b-gray-400 pb-6"
           } ${index !== 0 && "mt-6"} `}
           >
@@ -32,8 +32,8 @@ const RenderCartCourse = () => {
                             className="h-[148px] w-[220px] rounded-lg object-cover" />
                         </div>
                         <div className="flex flex-col space-y-1 md:items-center">
-                            <h3 className="text-xl font-medium text-gray-50">{product?.productName}</h3>
-                            <p className="text-md text-gray-300">{product?.inStock}</p>
+                            <h3 className="text-xl font-medium text-gray-500">{product?.productName}</h3>
+                            <p className="text-md text-gray-900">{product?.inStock}</p>
                         </div>
                       </div>
 
@@ -46,11 +46,11 @@ const RenderCartCourse = () => {
                            <AiFillDelete /> <span>Remove</span>
                           </button>
 
-                          <h5 className="mb-6 text-xl  md:text-3xl font-medium text-yellow-100">
+                          <h5 className="mb-6 text-xl  md:text-3xl font-medium text-yellow-300">
                             ₹ {product?.price * product?.selectQuantity} 
                           </h5>
 
-                          <p className="md:mb-6 w-full text-md md:text-lg font-medium text-yellow-100"> Number of selected quantity: {product?.selectQuantity}</p>
+                          <p className="md:mb-6 w-full text-md md:text-lg font-medium text-yellow-300"> Number of selected quantity: {product?.selectQuantity}</p>
                       </div>
 
                 </div>

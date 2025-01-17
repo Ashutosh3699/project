@@ -33,9 +33,9 @@ const RenderSteps = () => {
                       <button
                           className={`grid cursor-default aspect-square w-[34px] place-items-center rounded-full border-[1px] ${
                           step === item.id
-                              ? "border-yellow-50 bg-yellow-900 text-yellow-50"
+                              ? "border-yellow-50 bg-yellow-900 text-yellow-500"
                               : "border-gray-700 bg-gray-800 text-gray-300"
-                          } ${step > item.id && "bg-yellow-50 text-yellow-50"}} `}
+                          } ${step > item.id && "bg-yellow-50 text-yellow-500"}} `}
                       >
                           {step > item.id ? (
                           <FaCheck className="font-bold text-gray-900" />

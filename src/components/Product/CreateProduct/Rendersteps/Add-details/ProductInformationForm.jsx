@@ -77,7 +77,7 @@ const ProductInformationForm = () => {
     };
 // edit is left
     const  onSubmit= async(data)=>{
-        // console.log("data is: ", data);
+        console.log("data is: ", data);
         if(editProduct){  // edit course from course slice will be true after the first save of the course
 
             if(isFormUpdated()){
@@ -154,7 +154,7 @@ const ProductInformationForm = () => {
 
 
   return (
-    <form className="space-y-8 rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-6"
+    <form className="space-y-8 rounded-md border-[1px] border-gray-700 bg-gray-800 p-6"
     onSubmit={handleSubmit(onSubmit)}
     >
             {/* product title */}
@@ -183,7 +183,7 @@ const ProductInformationForm = () => {
                 name='productDetail'
                 placeholder='Enter Product Description'
                 className='lg:min-w-[70%]  h-[120px] bg-gray-800 text-gray-50 border border-gray-700 rounded-lg py-1 px-2 text-lg  font-medium'
-                {...register("productDetail", {required:true})}
+                {...register("productDetail")}
             />
             {errors.productDetail && <p className="ml-2 text-xs tracking-wide  text-red-600">courseDescription is required.</p>}
         </label>
@@ -201,7 +201,6 @@ const ProductInformationForm = () => {
                     className='lg:w-[70%] bg-gray-800 border text-gray-50  border-gray-700 rounded-lg py-1 px-16 text-lg  font-medium'
                     placeholder='Enter Course Price'
                     {...register("Price", {
-                        required:true,
                         valueAsNumber:true,
                         pattern: {
                             value: /^(0|[1-9]\d*)(\.\d+)?$/,
@@ -222,9 +221,7 @@ const ProductInformationForm = () => {
             <select 
             id="productTags"
             defaultValue=""
-            {...register("productTags",{
-                required:true
-            })}
+            {...register("productTags")}
             className="lg:w-[70%] bg-gray-800 border text-gray-50 border-gray-700 rounded-lg py-1 px-2 text-lg font-medium"
             >
                 <option value=""  disabled>Choose a Category</option>
@@ -271,21 +268,12 @@ const ProductInformationForm = () => {
                     className='lg:w-[70%] h-[120px] bg-gray-800 text-gray-50 border resize-x-none min-h-[130px] w-full border-gray-700 rounded-lg py-1 px-2 text-lg  font-medium'
                     name='productBenefit'
                     placeholder="Enter benefits of the product"
-                    {...register("productBenefit", {required:true})}
+                    {...register("productBenefit")}
                 />
                 {errors.productBenefit && <p className="ml-2 text-xs tracking-wide text-red-600">courseBenefits is required.</p>}
         </label>
 
         {/* requirements/ instructions */}
-        <div>
-            <ProductInstruction
-                name={"productInstructions"}
-                label={"Product instructions"}
-                setValue={setValue}
-                errors={errors}
-                register={register}
-            />
-        </div>
 
 
         {/* buttons countinue without saving & save change || next */}

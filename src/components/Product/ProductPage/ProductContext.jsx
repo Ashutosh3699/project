@@ -1,7 +1,6 @@
 import React,{useEffect, useState} from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-// import { addItems } from '../../../features/cartSlice';
 import { getTagProduct } from '../../../services/operations/categoryApi';
 
 
@@ -19,9 +18,9 @@ const ProductContext = () => {
 
         setLoading(true);
         const fetchTagProduct= async()=>{
-            // console.log("tag --> category is:----> ", tagId);
+            console.log("tag --> category is:----> ", tagId);
             const response = await  getTagProduct(tagId);
-            // console.log(response);
+            console.log(response);
             setShowProduct(response.product);
             setTagName(response.TagName);
         }
@@ -59,7 +58,7 @@ const ProductContext = () => {
 
     },[sortOption])
 
-    console.log("response is : ", showProduct);
+    console.log("response is showproducts : ", showProduct);
 
     const getProductdetail= async(index)=>{
         
@@ -92,7 +91,7 @@ const ProductContext = () => {
             tagName ? tagName : <div>No product available</div>
         }</h2>
         {
-            showProduct.map((element)=>(
+            showProduct?.length>0 ? (showProduct.map((element)=>(
                 <div key={element._id} className='flex flex-col gap-2 overflow-hidden w-[100%] 
                 md:w-[31%] rounded-lg  bg-zinc-100 shadow-inner' onClick={()=>getProductdetail(element._id)}>
 
@@ -104,12 +103,12 @@ const ProductContext = () => {
                             {element.productDetail.slice(0,100)} ....
                         </p>
                         <p className='italic  text-lg text-zinc-400 font-semibold'>
-                            {element.price}
+                           Rs. {element.price}
                         </p>
 
                     </div>
                 </div>
-            ))
+            ))) :("No product available")
         }
         {
             showProduct.length==0 && <div className='text-gray-500  font-bold text-2xl '>No Product available </div>

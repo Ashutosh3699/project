@@ -8,19 +8,20 @@ require("dotenv").config();
 exports.createProduct= async (req,res) =>{
     try {
         // fetch file and data
+        console.log("body is : ",req.body);
+        
         let  {productName, 
             productDetail, 
             price, 
             whatWeWillget,
-            instructions:_instructions, 
             tags} = req.body;
 
         const  thumbnail = req.files.thumbnail;
-        const instructions = JSON.parse(_instructions);
-
-        console.log("body is : ",req.body);
         console.log("thumbnail is: ",thumbnail);
-        if(!productName || !productDetail || !price || !whatWeWillget || !thumbnail  || !tags){
+        // const instructions = JSON.parse(_instructions);
+
+        
+        if(!productName || !price  || !thumbnail  || !tags){
             return res.status(400).json({
                 success:false,
                 message: "Enter all the details",
@@ -49,7 +50,6 @@ exports.createProduct= async (req,res) =>{
             whatWeWillget,
             price,
             thumbnail:imageURL.secure_url,
-			instructions,
             tags
         });
 
@@ -153,13 +153,13 @@ exports.getAllproducts = async(req,res) =>{
 exports.getProductDetail = async(req,res)=>{
     try {
         // fetch the courseid and if any thing is required
-        // console.log("body is: ", req.body);
+        console.log("body is: ", req.body);
         const {productId} = req.body;
-        // console.log("productId: ",productId)
+        console.log("productId: ",productId)
         
         // db call and get the detail 
         const response = await  Products.findOne({_id:productId}).populate("image").exec();
-        console.log("response: ", response);
+        console.log("response of product: ", response);
 
         // return response
         return res.status(200).json({

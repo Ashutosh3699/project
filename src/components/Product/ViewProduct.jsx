@@ -141,7 +141,7 @@ const ViewProduct = () => {
                           <div className='flex flex-col gap-1'>
                             <h2 className='text-3xl font-semibold text-gray-700 uppercase'>{productData.productName}</h2>
                             <div className=' italic   font-sans text-gray-500 text-sm font-semibold text-start'>
-                                {productData.whatWeWillget}
+                                {productData?.whatWeWillget}
                             </div>
                           </div>
 

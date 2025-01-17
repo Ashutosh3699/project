@@ -14,7 +14,6 @@ const ProductInstruction = ({name,label,register,errors,setValue}) => {
         }
 
         register(name,{
-            required:true,
             validate: (value)=>value.length>0
         })
     },[]);
